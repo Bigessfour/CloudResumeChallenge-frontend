@@ -33,6 +33,12 @@ npm run ci
 
 This runs ESLint, Prettier, and matches the GitHub Actions workflow.
 
+## GitHub repository settings (maintainers)
+
+Suggested topics: `cloud-resume-challenge`, `aws`, `static-site`, `syncfusion`, `devops`, `portfolio`, `javascript`.
+
+Suggested description: _Professional Cloud Resume Challenge portfolio — static Syncfusion EJ2 frontend with CI/CD._
+
 ## Pull requests
 
 1. Branch from `main`
