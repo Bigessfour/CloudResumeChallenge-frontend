@@ -5,20 +5,21 @@
   "type": "module",
   "description": "Cloud Resume Challenge — static Syncfusion EJ2 frontend",
   "scripts": {
+    "serve": "python -m http.server 8000 --bind 127.0.0.1",
     "lint": "eslint js/",
     "lint:fix": "eslint js/ --fix",
+    "lint:html": "htmlhint index.html",
     "format": "prettier --write \"**/*.{html,css,js,json,md}\"",
     "format:check": "prettier --check \"**/*.{html,css,js,json,md}\"",
-    "ci": "npm run lint && npm run format:check",
+    "ci": "npm run lint && npm run lint:html && npm run format:check",
     "syncfusion:license": "node scripts/syncfusion-license-from-env.mjs",
-    "syncfusion:activate": "npx syncfusion-license activate",
-    "syncfusion:setup": "node scripts/syncfusion-setup.mjs",
     "syncfusion:provision": "node scripts/syncfusion-provision-from-system.mjs"
   },
   "devDependencies": {
     "@eslint/js": "^9.28.0",
     "eslint": "^9.28.0",
     "globals": "^16.2.0",
+    "htmlhint": "^1.1.4",
     "prettier": "^3.5.3"
   }
 }

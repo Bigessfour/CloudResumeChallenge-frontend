@@ -22,38 +22,32 @@ jobs:
           cache: npm
 
       - name: Install dependencies
+        run: npm ci
+
+      - name: Guard tracked secrets
         run: |
-          if [ -f package.json ]; then
-            npm ci
-          else
-            echo "No package.json found. Skipping npm install."
+          if git ls-files | grep -qE '^(js/syncfusion-license\.js|\.env|syncfusion-license\.txt)$'; then
+            echo "ERROR: Secret files must not be committed."
+            git ls-files | grep -E '^(js/syncfusion-license\.js|\.env|syncfusion-license\.txt)$'
             exit 1
           fi
+          echo "No tracked secret files."
 
-      - name: Basic project validation
+      - name: Project structure and wiring
         run: |
-          echo "Repository structure:"
-          ls -la
-
-          test -f index.html || (echo "index.html is required" && exit 1)
-          echo "index.html found"
-
-          test -f css/styles.css || (echo "css/styles.css is required" && exit 1)
-          echo "css/styles.css found"
-
-          test -f js/app.js || (echo "js/app.js is required" && exit 1)
-          echo "js/app.js found"
-
-          grep -q "ej2.min.js" index.html || (echo "index.html must reference Syncfusion CDN" && exit 1)
-          echo "Syncfusion CDN reference found in index.html"
+          test -f index.html || (echo "index.html missing" && exit 1)
+          test -f css/styles.css || (echo "css/styles.css missing" && exit 1)
+          test -f js/app.js || (echo "js/app.js missing" && exit 1)
+          grep -q 'css/styles.css' index.html || (echo "index.html must link css/styles.css" && exit 1)
+          grep -q 'js/app.js' index.html || (echo "index.html must link js/app.js" && exit 1)
+          grep -q 'ej2.min.js' index.html || (echo "index.html must reference Syncfusion CDN" && exit 1)
+          echo "Structure checks passed."
 
       - name: Lint JavaScript
         run: npm run lint
 
+      - name: Lint HTML
+        run: npm run lint:html
+
       - name: Check formatting
         run: npm run format:check
-
-      - name: HTML validation (placeholder)
-        run: |
-          echo "HTML validation step placeholder - can be expanded later (e.g. htmlhint, action-html-validator)"
-          test -f .htmlhintrc.json && echo "htmlhint config present (.htmlhintrc.json)"

@@ -15,5 +15,5 @@
     "API Gateway",
     "serverless"
   ],
-  "ignorePaths": ["node_modules", ".git", "dist", "*.min.js"]
+  "ignorePaths": ["node_modules", ".git", "dist", "*.min.js", "skills-lock.json", ".agents"]
 }
