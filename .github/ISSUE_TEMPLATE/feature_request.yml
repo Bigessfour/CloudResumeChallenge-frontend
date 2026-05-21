@@ -1,0 +1,25 @@
+name: Feature request
+description: Suggest an improvement for the portfolio or challenge milestones
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or goal
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed solution
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Frontend / UI
+        - AWS / Infrastructure
+        - CI/CD
+        - Documentation
+        - Other

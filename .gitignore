@@ -13,6 +13,7 @@ dist/
 
 # Syncfusion Agent Skills (local install: npx skills add syncfusion/javascript-ui-controls-skills -y)
 .agents/
+skills-lock.json
 
 # OS / editor
 .DS_Store
