@@ -1,0 +1,123 @@
+{
+  "files.associations": {
+    "*.html": "html",
+    "*.css": "css",
+    "*.mdc": "markdown"
+  },
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.wordWrap": "on",
+  "editor.minimap.enabled": true,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.linkedEditing": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 1000,
+  "files.exclude": {
+    "**/.git": true,
+    "**/node_modules": true,
+    "**/dist": true
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/.git": true
+  },
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "emmet.triggerExpansionOnTab": true,
+
+  "html.format.wrapLineLength": 100,
+  "html.suggest.html5": true,
+  "htmlhint.enable": true,
+
+  "css.validate": true,
+  "css.lint.unknownAtRules": "ignore",
+  "javascript.suggest.autoImports": false,
+
+  "prettier.requireConfig": true,
+  "prettier.useEditorConfig": true,
+  "prettier.configPath": ".prettierrc.json",
+
+  "eslint.enable": true,
+  "eslint.useFlatConfig": true,
+  "eslint.validate": ["javascript"],
+  "eslint.workingDirectories": [{ "mode": "auto" }],
+  "eslint.format.enable": false,
+
+  "errorLens.enabled": true,
+  "errorLens.enabledDiagnosticLevels": ["error", "warning"],
+  "errorLens.followCursor": "allLinesExceptActive",
+  "errorLens.gutterIconsEnabled": true,
+
+  "html-css-class-completion.enableEmmetSupport": true,
+  "html-css-class-completion.JavaScriptLanguages": ["javascript"],
+  "html-css-class-completion.CSSLanguages": ["css"],
+  "html-css-class-completion.getPathsFromHTMLClassNames": true,
+
+  "path-intellisense.extensionOnImport": true,
+  "path-intellisense.autoSlashAfterDirectory": true,
+  "path-intellisense.absolutePathToWorkspace": true,
+  "path-intellisense.mappings": {
+    "/": "${workspaceFolder}",
+    "./": "${workspaceFolder}",
+    "../": "${workspaceFolder}"
+  },
+
+  "auto-close-tag.enableAutoCloseTag": true,
+  "auto-close-tag.enableAutoCloseSelfClosingTag": true,
+  "auto-close-tag.activationOnLanguage": ["html", "xml"],
+  "auto-rename-tag.activationOnLanguage": ["html", "xml"],
+
+  "dotenv.enableAutocloaking": true,
+  "dotenv.fileName": ".env",
+  "dotenv.syntaxes": ["env"],
+
+  "cSpell.enabled": true,
+  "cSpell.configurationVersion": "0.2",
+  "cSpell.language": "en",
+  "cSpell.diagnosticLevel": "Hint",
+
+  "liveServer.settings.root": "/",
+  "liveServer.settings.port": 5500,
+  "liveServer.settings.file": "index.html",
+  "liveServer.settings.fullReload": true,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "liveServer.settings.ignoreFiles": [
+    ".vscode/**",
+    ".cursor/**",
+    "**/*.md",
+    "node_modules/**",
+    ".git/**"
+  ],
+
+  "python.envFile": "${workspaceFolder}/.env",
+  "python.terminal.useEnvFile": true,
+
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.wordWrap": "on"
+  },
+
+  "cursor.general.gitGraphIndexing": "enabled",
+  "cursor.composer.shouldChimeAfterChatFinishes": true
+}

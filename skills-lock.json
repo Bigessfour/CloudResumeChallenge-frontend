@@ -1,0 +1,317 @@
+{
+  "version": 1,
+  "skills": {
+    "syncfusion-javascript-accordion": {
+      "source": "syncfusion/javascript-ui-controls-skills",
+      "sourceType": "github",
+      "skillPath": "skills/syncfusion-javascript-accordion/SKILL.md",
+      "computedHash": "5abba8ca12a214c7c0fc5282d7956e9fddb1da7e4b5959ce49a67f90f4c1389e"
+    },
+    "syncfusion-javascript-accumulation-chart": {
+      "source": "syncfusion/javascript-ui-controls-skills",
+      "sourceType": "github",
+      "skillPath": "skills/syncfusion-javascript-accumulation-chart/SKILL.md",
+      "computedHash": "8f29867c631bbdb6b6ba6bf6c6e25258001df5cf7d0a33b74792f4c94ded6bd0"
+    },
+    "syncfusion-javascript-ai-assistview": {
+      "source": "syncfusion/javascript-ui-controls-skills",
+      "sourceType": "github",
+      "skillPath": "skills/syncfusion-javascript-ai-assistview/SKILL.md",
+      "computedHash": "b721dc8e576fea0584ed68b1d1e20744725d3109414fa9dde415786206023fa4"
+    },
+    "syncfusion-javascript-appbar": {
+      "source": "syncfusion/javascript-ui-controls-skills",
+      "sourceType": "github",
+      "skillPath": "skills/syncfusion-javascript-appbar/SKILL.md",
+      "computedHash": "16ffcde13841340f2d86c2f0db41640c36573f833c1b9d18ee163733d6713370"
+    },
+    "syncfusion-javascript-avatar": {
+      "source": "syncfusion/javascript-ui-controls-skills",
+      "sourceType": "github",
+      "skillPath": "skills/syncfusion-javascript-avatar/SKILL.md",
+      "computedHash": "9a0eeaf18091ace7b0d1c3db2efb4fbfba11a52ad2e50b3019b9237fa89e3b08"
+    },
+    "syncfusion-javascript-barcode": {
+      "source": "syncfusion/javascript-ui-controls-skills",
+      "sourceType": "github",
+      "skillPath": "skills/syncfusion-javascript-barcode/SKILL.md",
+      "computedHash": "bb6ef6f4b50ed8549b55da50802aa08f9c6fd68394b6586b3e90a81c46c8930f"
+    },
+    "syncfusion-javascript-block-editor": {
+      "source": "syncfusion/javascript-ui-controls-skills",
+      "sourceType": "github",
+      "skillPath": "skills/syncfusion-javascript-block-editor/SKILL.md",
+      "computedHash": "149b00c026e297e5d57e75fa5d819db5518e422127a40b6f581e9caad60fc1ac"
+    },
+    "syncfusion-javascript-breadcrumb": {
+      "source": "syncfusion/javascript-ui-controls-skills",
+      "sourceType": "github",
+      "skillPath": "skills/syncfusion-javascript-breadcrumb/SKILL.md",
+      "computedHash": "ed44b161552315c07e8c0e266946cfefe3bee8ea971c94a67d7db1ced7176f63"
+    },
+    "syncfusion-javascript-buttons": {
+      "source": "syncfusion/javascript-ui-controls-skills",
+      "sourceType": "github",
+      "skillPath": "skills/syncfusion-javascript-buttons/SKILL.md",
+      "computedHash": "5dacb9e2c54cd9b3bdb6d1e12c2a0fb3ab017af1cb72dc7c03cbc217fa10ae94"
+    },
+    "syncfusion-javascript-card": {
+      "source": "syncfusion/javascript-ui-controls-skills",
+      "sourceType": "github",
+      "skillPath": "skills/syncfusion-javascript-card/SKILL.md",
+      "computedHash": "e7c7f3f02be0ead075e9b71e58ea7d8f9fb55ee5a14d44984ddcc9879ac3d8eb"
+    },
+    "syncfusion-javascript-carousel": {
+      "source": "syncfusion/javascript-ui-controls-skills",
+      "sourceType": "github",
+      "skillPath": "skills/syncfusion-javascript-carousel/SKILL.md",
+      "computedHash": "61903609c99c15d42d82304d6f4ce48497078e290310fad14eeeebf9c449c270"
+    },
+    "syncfusion-javascript-chart": {
+      "source": "syncfusion/javascript-ui-controls-skills",
+      "sourceType": "github",
+      "skillPath": "skills/syncfusion-javascript-chart/SKILL.md",
+      "computedHash": "919b6dfa3ac51a72480e06f7f9f30d2edcb902e8063e5e4e17fa5831bbf1857e"
+    },
+    "syncfusion-javascript-chat-ui": {
+      "source": "syncfusion/javascript-ui-controls-skills",
+      "sourceType": "github",
+      "skillPath": "skills/syncfusion-javascript-chat-ui/SKILL.md",
+      "computedHash": "fb1d38b1d83eff3724897aef9fb4d6fa511246dfe28cfd3c84008ec3a73424db"
+    },
+    "syncfusion-javascript-common": {
+      "source": "syncfusion/javascript-ui-controls-skills",
+      "sourceType": "github",
+      "skillPath": "skills/syncfusion-javascript-common/SKILL.md",
+      "computedHash": "e28ba2fea994130b2e33002b76fa7e49242059bd8f1cc4069a1e02c15cb4d18f"
+    },
+    "syncfusion-javascript-context-menu": {
+      "source": "syncfusion/javascript-ui-controls-skills",
+      "sourceType": "github",
+      "skillPath": "skills/syncfusion-javascript-context-menu/SKILL.md",
+      "computedHash": "861f9c9de1fc5afe94be54d392683f17ba719f5e55fbcfa6ddceb70304ed3106"
+    },
+    "syncfusion-javascript-dashboard-layout": {
+      "source": "syncfusion/javascript-ui-controls-skills",
+      "sourceType": "github",
+      "skillPath": "skills/syncfusion-javascript-dashboard-layout/SKILL.md",
+      "computedHash": "c0f0713a3a930cab57825884858c24c5023ca49e30288d1ec2bf0a4063dde14e"
+    },
+    "syncfusion-javascript-data-manager": {
+      "source": "syncfusion/javascript-ui-controls-skills",
+      "sourceType": "github",
+      "skillPath": "skills/syncfusion-javascript-data-manager/SKILL.md",
+      "computedHash": "0c11477316e9f2a3ad7d513b6521d643883e3ab60fdaa5b1cee81d5ada7b12c3"
+    },
+    "syncfusion-javascript-datepicker": {
+      "source": "syncfusion/javascript-ui-controls-skills",
+      "sourceType": "github",
+      "skillPath": "skills/syncfusion-javascript-datepicker/SKILL.md",
+      "computedHash": "824a98944e5de7647e86d608e590c66f5bb05eb9d0013cd17f56f2ae23dfc0f7"
+    },
+    "syncfusion-javascript-diagram": {
+      "source": "syncfusion/javascript-ui-controls-skills",
+      "sourceType": "github",
+      "skillPath": "skills/syncfusion-javascript-diagram/SKILL.md",
+      "computedHash": "7e8f6f2d43a9a2d482e9140b6876bacc0e2b54e81974de74c2b79bfdd3fc9931"
+    },
+    "syncfusion-javascript-dropdowns": {
+      "source": "syncfusion/javascript-ui-controls-skills",
+      "sourceType": "github",
+      "skillPath": "skills/syncfusion-javascript-dropdowns/SKILL.md",
+      "computedHash": "f14dc35a50032db3a91f957b6759fef41f66303e1831beb66781911b85bc96a6"
+    },
+    "syncfusion-javascript-dropdowntree": {
+      "source": "syncfusion/javascript-ui-controls-skills",
+      "sourceType": "github",
+      "skillPath": "skills/syncfusion-javascript-dropdowntree/SKILL.md",
+      "computedHash": "7b754d588826228797cba2051f0b0f478d5390fe21e53a6ee8aa837599662984"
+    },
+    "syncfusion-javascript-file-manager": {
+      "source": "syncfusion/javascript-ui-controls-skills",
+      "sourceType": "github",
+      "skillPath": "skills/syncfusion-javascript-file-manager/SKILL.md",
+      "computedHash": "646f9de1551c8156c3a38181ce17bc52d8eb931377e4455ab2cd3a0fe97b399c"
+    },
+    "syncfusion-javascript-gantt-chart": {
+      "source": "syncfusion/javascript-ui-controls-skills",
+      "sourceType": "github",
+      "skillPath": "skills/syncfusion-javascript-gantt-chart/SKILL.md",
+      "computedHash": "d84113e3372c7f2028570672e2698bb2f3f0e35944d4713174fff2ae709bef07"
+    },
+    "syncfusion-javascript-grid": {
+      "source": "syncfusion/javascript-ui-controls-skills",
+      "sourceType": "github",
+      "skillPath": "skills/syncfusion-javascript-grid/SKILL.md",
+      "computedHash": "03f876339b3f591fad3da74324d93e04a2da43483e9b1ca43cbb8d5df31f181b"
+    },
+    "syncfusion-javascript-image-editor": {
+      "source": "syncfusion/javascript-ui-controls-skills",
+      "sourceType": "github",
+      "skillPath": "skills/syncfusion-javascript-image-editor/SKILL.md",
+      "computedHash": "f05a39742a3c826a431d03a35a35facc05aaef9a8265d018e89d6924ce487867"
+    },
+    "syncfusion-javascript-inline-ai-assist": {
+      "source": "syncfusion/javascript-ui-controls-skills",
+      "sourceType": "github",
+      "skillPath": "skills/syncfusion-javascript-inline-ai-assist/SKILL.md",
+      "computedHash": "be6b06392a0c59ef1364a0c0f27d3ddd979a41a173fbccf13a897b583898c044"
+    },
+    "syncfusion-javascript-inputs": {
+      "source": "syncfusion/javascript-ui-controls-skills",
+      "sourceType": "github",
+      "skillPath": "skills/syncfusion-javascript-inputs/SKILL.md",
+      "computedHash": "b94072e17733442d80bbff5e4e3f4f3bcdc842159b8fa5dd96a7832500b60fdd"
+    },
+    "syncfusion-javascript-kanban": {
+      "source": "syncfusion/javascript-ui-controls-skills",
+      "sourceType": "github",
+      "skillPath": "skills/syncfusion-javascript-kanban/SKILL.md",
+      "computedHash": "6003321f7fe5f28970e93456bb0fc48d59e0108b4bb4d340dbbf886d2ac8371a"
+    },
+    "syncfusion-javascript-license": {
+      "source": "syncfusion/javascript-ui-controls-skills",
+      "sourceType": "github",
+      "skillPath": "skills/syncfusion-javascript-license/SKILL.md",
+      "computedHash": "c9b0c8b1bc1c9bf5d395a7c6963b731d6f0317ae65080d1c8cd39cc983ee0aaa"
+    },
+    "syncfusion-javascript-list-box": {
+      "source": "syncfusion/javascript-ui-controls-skills",
+      "sourceType": "github",
+      "skillPath": "skills/syncfusion-javascript-list-box/SKILL.md",
+      "computedHash": "bec6d12e60d329c3688cea0c065d380daea7935595fac4a4140e38d7e76b2a69"
+    },
+    "syncfusion-javascript-listview": {
+      "source": "syncfusion/javascript-ui-controls-skills",
+      "sourceType": "github",
+      "skillPath": "skills/syncfusion-javascript-listview/SKILL.md",
+      "computedHash": "a117206a5cf1558b0574bb4a3ef94b67adf6961e5d8b9804432c11bcbf21cf69"
+    },
+    "syncfusion-javascript-maps": {
+      "source": "syncfusion/javascript-ui-controls-skills",
+      "sourceType": "github",
+      "skillPath": "skills/syncfusion-javascript-maps/SKILL.md",
+      "computedHash": "38613e16329d688460c8839c3584ca366e78a1b04ff1cff4ae4795e857c40272"
+    },
+    "syncfusion-javascript-markdown-converter": {
+      "source": "syncfusion/javascript-ui-controls-skills",
+      "sourceType": "github",
+      "skillPath": "skills/syncfusion-javascript-markdown-converter/SKILL.md",
+      "computedHash": "c7bf82d849e05c87aa0c18bec7c11aad3f18ca2fee897d8a2a33ba8999dc9432"
+    },
+    "syncfusion-javascript-menu": {
+      "source": "syncfusion/javascript-ui-controls-skills",
+      "sourceType": "github",
+      "skillPath": "skills/syncfusion-javascript-menu/SKILL.md",
+      "computedHash": "7d4b9587046c1a125a13652d5ffdcd1f1c09136eeada0819e73142a883c217d0"
+    },
+    "syncfusion-javascript-popups": {
+      "source": "syncfusion/javascript-ui-controls-skills",
+      "sourceType": "github",
+      "skillPath": "skills/syncfusion-javascript-popups/SKILL.md",
+      "computedHash": "85c2bc981a27d32c8bf146d2f3cd0b3deb651b82105e3009f50b9515323c30d4"
+    },
+    "syncfusion-javascript-query-builder": {
+      "source": "syncfusion/javascript-ui-controls-skills",
+      "sourceType": "github",
+      "skillPath": "skills/syncfusion-javascript-query-builder/SKILL.md",
+      "computedHash": "d288074271a945157681d85a34481088015683c6a433a4b5f8ac3bb4c368904d"
+    },
+    "syncfusion-javascript-ribbon": {
+      "source": "syncfusion/javascript-ui-controls-skills",
+      "sourceType": "github",
+      "skillPath": "skills/syncfusion-javascript-ribbon/SKILL.md",
+      "computedHash": "f20f38171f593f78da110af5e4a9eceebc4a48de31e29ed42af136977fd9c18a"
+    },
+    "syncfusion-javascript-rich-text-editor": {
+      "source": "syncfusion/javascript-ui-controls-skills",
+      "sourceType": "github",
+      "skillPath": "skills/syncfusion-javascript-rich-text-editor/SKILL.md",
+      "computedHash": "0a24a80230ac5ee20c84996ef57e87e729267d8ed9e8458a24d602aa9b881483"
+    },
+    "syncfusion-javascript-scheduler": {
+      "source": "syncfusion/javascript-ui-controls-skills",
+      "sourceType": "github",
+      "skillPath": "skills/syncfusion-javascript-scheduler/SKILL.md",
+      "computedHash": "dfe979042b8b84d188677af6e037e4243f77cf7601d2a83d85c31f8602c5676a"
+    },
+    "syncfusion-javascript-sidebar": {
+      "source": "syncfusion/javascript-ui-controls-skills",
+      "sourceType": "github",
+      "skillPath": "skills/syncfusion-javascript-sidebar/SKILL.md",
+      "computedHash": "84d0d81afbc5d82fde2c1fc6d537317a48e3bf19c4c16783aaa6d6e085c5b35d"
+    },
+    "syncfusion-javascript-speech-to-text": {
+      "source": "syncfusion/javascript-ui-controls-skills",
+      "sourceType": "github",
+      "skillPath": "skills/syncfusion-javascript-speech-to-text/SKILL.md",
+      "computedHash": "757ff0aa0c701070c4d66a78ddc85aad4d131e1f81db48e2c525490a9cffb507"
+    },
+    "syncfusion-javascript-spinner": {
+      "source": "syncfusion/javascript-ui-controls-skills",
+      "sourceType": "github",
+      "skillPath": "skills/syncfusion-javascript-spinner/SKILL.md",
+      "computedHash": "180024fe7a29ea87ca8f85dc39b8d787a36d286a1074d658fb10345727bd9fba"
+    },
+    "syncfusion-javascript-splitter": {
+      "source": "syncfusion/javascript-ui-controls-skills",
+      "sourceType": "github",
+      "skillPath": "skills/syncfusion-javascript-splitter/SKILL.md",
+      "computedHash": "327af92f352cf278bf1f415c176599ad5f3d0013ee34b4f1e1f85c5a77d47f60"
+    },
+    "syncfusion-javascript-stepper": {
+      "source": "syncfusion/javascript-ui-controls-skills",
+      "sourceType": "github",
+      "skillPath": "skills/syncfusion-javascript-stepper/SKILL.md",
+      "computedHash": "c8056788aeb833c74dfe0813c4bfe711841cb82e7aac109c9aadddbfaf00beff"
+    },
+    "syncfusion-javascript-switch": {
+      "source": "syncfusion/javascript-ui-controls-skills",
+      "sourceType": "github",
+      "skillPath": "skills/syncfusion-javascript-switch/SKILL.md",
+      "computedHash": "ba9749538a1e45a6830a172a7cd288f5a80bd31938b0bee2cbff1f78fd9f3baf"
+    },
+    "syncfusion-javascript-tab": {
+      "source": "syncfusion/javascript-ui-controls-skills",
+      "sourceType": "github",
+      "skillPath": "skills/syncfusion-javascript-tab/SKILL.md",
+      "computedHash": "33afb3ff25766d5990bf14abe7e70187d43a65682066bf2d6503f37767c45b6b"
+    },
+    "syncfusion-javascript-textbox": {
+      "source": "syncfusion/javascript-ui-controls-skills",
+      "sourceType": "github",
+      "skillPath": "skills/syncfusion-javascript-textbox/SKILL.md",
+      "computedHash": "8fc3d5ef451a1fffcbcb19f1a312f55fceb2ad9a452c2f418c59b4829bddde9a"
+    },
+    "syncfusion-javascript-themes": {
+      "source": "syncfusion/javascript-ui-controls-skills",
+      "sourceType": "github",
+      "skillPath": "skills/syncfusion-javascript-themes/SKILL.md",
+      "computedHash": "cff81481ad4122e048d356b15a2943c66eacefacc308b1dd290b4cb8563560f4"
+    },
+    "syncfusion-javascript-timeline": {
+      "source": "syncfusion/javascript-ui-controls-skills",
+      "sourceType": "github",
+      "skillPath": "skills/syncfusion-javascript-timeline/SKILL.md",
+      "computedHash": "4bcb34a948d9b9eb0c631dca15cffd5cabaa5298c9ba313ceef4e1600aa85f1b"
+    },
+    "syncfusion-javascript-toolbar": {
+      "source": "syncfusion/javascript-ui-controls-skills",
+      "sourceType": "github",
+      "skillPath": "skills/syncfusion-javascript-toolbar/SKILL.md",
+      "computedHash": "b9cffce222274c731da2930c002b354c97ac3d38ad1fc4d7f7f037640210fa41"
+    },
+    "syncfusion-javascript-treegrid": {
+      "source": "syncfusion/javascript-ui-controls-skills",
+      "sourceType": "github",
+      "skillPath": "skills/syncfusion-javascript-treegrid/SKILL.md",
+      "computedHash": "94a9abee11a378fafb90b96b676c5f75653ab6ed1873f6dc7010b5636d76bf87"
+    },
+    "syncfusion-javascript-treeview": {
+      "source": "syncfusion/javascript-ui-controls-skills",
+      "sourceType": "github",
+      "skillPath": "skills/syncfusion-javascript-treeview/SKILL.md",
+      "computedHash": "699bf918d668a6e8f869354d6cae9e288dd621d7cb496cb478e20fc0cfd1d4f1"
+    }
+  }
+}

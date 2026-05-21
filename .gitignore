@@ -1,0 +1,23 @@
+# Secrets
+syncfusion-key.txt
+syncfusion-license.txt
+js/syncfusion-license.js
+*.key
+.env
+.env.*
+!.env.example
+
+# Tooling
+node_modules/
+dist/
+
+# Syncfusion Agent Skills (local install: npx skills add syncfusion/javascript-ui-controls-skills -y)
+.agents/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/launch.json
+
+# Logs
+*.log

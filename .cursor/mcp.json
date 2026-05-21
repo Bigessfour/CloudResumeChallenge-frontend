@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "sf-typescript-mcp": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@syncfusion/typescript-assistant@latest"]
+    }
+  }
+}

@@ -1,0 +1,890 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Stephen McKitrick — DevOps Engineer, Serverless Architect, and Infrastructure Automation specialist. Cloud Resume Challenge portfolio."
+    />
+    <title>Stephen McKitrick | Cloud Resume Challenge</title>
+
+    <!-- Syncfusion EJ2 — Material 3 dark (pin version across all CDN links) -->
+    <link
+      href="https://cdn.syncfusion.com/ej2/30.1.37/ej2-base/styles/material3-dark.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.syncfusion.com/ej2/30.1.37/ej2-buttons/styles/material3-dark.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.syncfusion.com/ej2/30.1.37/ej2-navigations/styles/material3-dark.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.syncfusion.com/ej2/30.1.37/ej2-layouts/styles/material3-dark.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* ── Design tokens ── */
+      :root {
+        --bg-deep: #0a0e17;
+        --bg-mid: #111827;
+        --glass-bg: rgba(255, 255, 255, 0.04);
+        --glass-border: rgba(255, 255, 255, 0.1);
+        --glass-strong-bg: rgba(255, 255, 255, 0.07);
+        --text: #e7ecf3;
+        --muted: #94a3b8;
+        --accent-cyan: #22d3ee;
+        --accent-violet: #8b5cf6;
+        --accent-blue: #3b82f6;
+        --glow-cyan: rgba(34, 211, 238, 0.35);
+        --glow-violet: rgba(139, 92, 246, 0.3);
+        --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+        --appbar-offset: 64px;
+        --radius-lg: 20px;
+        --radius-pill: 999px;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: var(--font-sans);
+        background: var(--bg-deep);
+        color: var(--text);
+        line-height: 1.6;
+        min-height: 100vh;
+        overflow-x: hidden;
+      }
+
+      /* ── Animated background ── */
+      .bg-effects {
+        position: fixed;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+        overflow: hidden;
+      }
+
+      .bg-orb {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(80px);
+        opacity: 0.45;
+        animation: orbFloat 18s ease-in-out infinite alternate;
+      }
+
+      .bg-orb--cyan {
+        width: 420px;
+        height: 420px;
+        background: radial-gradient(circle, var(--accent-cyan) 0%, transparent 70%);
+        top: -8%;
+        left: -6%;
+      }
+
+      .bg-orb--violet {
+        width: 380px;
+        height: 380px;
+        background: radial-gradient(circle, var(--accent-violet) 0%, transparent 70%);
+        bottom: 10%;
+        right: -4%;
+        animation-delay: -6s;
+      }
+
+      .bg-orb--blue {
+        width: 300px;
+        height: 300px;
+        background: radial-gradient(circle, var(--accent-blue) 0%, transparent 70%);
+        top: 40%;
+        left: 45%;
+        animation-delay: -12s;
+      }
+
+      .bg-grid {
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        background-size: 48px 48px;
+        mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 20%, transparent 75%);
+      }
+
+      @keyframes orbFloat {
+        0% {
+          transform: translate(0, 0) scale(1);
+        }
+        100% {
+          transform: translate(30px, -20px) scale(1.08);
+        }
+      }
+
+      /* ── Floating tech accents ── */
+      .float-layer {
+        position: fixed;
+        inset: 0;
+        z-index: 1;
+        pointer-events: none;
+      }
+
+      .float-icon {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 52px;
+        height: 52px;
+        border-radius: 14px;
+        background: var(--glass-bg);
+        border: 1px solid var(--glass-border);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        box-shadow: 0 0 24px var(--glow-cyan);
+        font-size: 0.65rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        color: var(--accent-cyan);
+        animation: floatDrift 12s ease-in-out infinite;
+      }
+
+      .float-icon svg {
+        width: 28px;
+        height: 28px;
+      }
+
+      .float-icon--1 {
+        top: 18%;
+        right: 8%;
+        animation-delay: 0s;
+      }
+      .float-icon--2 {
+        top: 55%;
+        right: 14%;
+        animation-delay: -3s;
+        color: var(--accent-violet);
+        box-shadow: 0 0 24px var(--glow-violet);
+      }
+      .float-icon--3 {
+        top: 72%;
+        left: 6%;
+        animation-delay: -6s;
+      }
+      .float-icon--4 {
+        top: 28%;
+        left: 4%;
+        animation-delay: -9s;
+        color: var(--accent-blue);
+      }
+      .float-icon--5 {
+        top: 42%;
+        right: 22%;
+        animation-delay: -4s;
+        font-size: 0.55rem;
+      }
+      .float-icon--6 {
+        bottom: 22%;
+        right: 6%;
+        animation-delay: -7s;
+      }
+
+      @keyframes floatDrift {
+        0%,
+        100% {
+          transform: translateY(0) rotate(0deg);
+          opacity: 0.7;
+        }
+        50% {
+          transform: translateY(-14px) rotate(3deg);
+          opacity: 1;
+        }
+      }
+
+      /* ── AppBar overrides ── */
+      #site-appbar {
+        position: relative;
+        z-index: 100;
+        background: rgba(10, 14, 23, 0.75) !important;
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border-bottom: 1px solid var(--glass-border) !important;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.35);
+      }
+
+      #site-appbar .brand-mark {
+        font-weight: 800;
+        font-size: 0.95rem;
+        letter-spacing: 0.06em;
+        background: linear-gradient(135deg, var(--accent-cyan), var(--accent-violet));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        margin-right: 0.5rem;
+      }
+
+      #site-appbar .brand-name {
+        font-weight: 600;
+        font-size: 0.95rem;
+        color: var(--text);
+        white-space: nowrap;
+      }
+
+      #site-appbar .main-nav {
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+      }
+
+      #site-appbar .main-nav a {
+        color: var(--muted);
+        text-decoration: none;
+        font-size: 0.875rem;
+        font-weight: 500;
+        padding: 0.4rem 0.75rem;
+        border-radius: 8px;
+        transition:
+          color 0.2s,
+          background 0.2s,
+          box-shadow 0.2s;
+      }
+
+      #site-appbar .main-nav a:hover,
+      #site-appbar .main-nav a:focus-visible {
+        color: var(--accent-cyan);
+        background: rgba(34, 211, 238, 0.08);
+        outline: none;
+      }
+
+      #site-appbar #menu-btn {
+        display: none;
+      }
+
+      body.nav-open #site-appbar .main-nav {
+        display: flex;
+      }
+
+      /* ── Layout ── */
+      .page-shell {
+        position: relative;
+        z-index: 2;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: calc(var(--appbar-offset) + 2rem) 1.5rem 4rem;
+      }
+
+      section {
+        scroll-margin-top: calc(var(--appbar-offset) + 1rem);
+        margin-bottom: 3.5rem;
+      }
+
+      .section-label {
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--accent-cyan);
+        margin-bottom: 1rem;
+      }
+
+      /* ── Glassmorphism ── */
+      .glass,
+      .e-card.glass-card {
+        background: var(--glass-bg) !important;
+        border: 1px solid var(--glass-border) !important;
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        border-radius: var(--radius-lg) !important;
+        box-shadow:
+          0 8px 32px rgba(0, 0, 0, 0.35),
+          inset 0 1px 0 rgba(255, 255, 255, 0.06);
+        transition:
+          border-color 0.25s,
+          box-shadow 0.25s;
+      }
+
+      .glass-strong,
+      .e-card.glass-card--hero {
+        background: var(--glass-strong-bg) !important;
+        border: 1px solid rgba(34, 211, 238, 0.2) !important;
+        box-shadow:
+          0 12px 48px rgba(0, 0, 0, 0.45),
+          0 0 40px var(--glow-cyan),
+          inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      }
+
+      .glass-card:hover,
+      .e-card.glass-card:hover {
+        border-color: rgba(34, 211, 238, 0.35) !important;
+        box-shadow:
+          0 12px 40px rgba(0, 0, 0, 0.4),
+          0 0 28px var(--glow-cyan);
+      }
+
+      /* ── Hero ── */
+      .hero-section {
+        min-height: calc(100vh - var(--appbar-offset) - 4rem);
+        display: flex;
+        align-items: center;
+        margin-bottom: 4rem;
+      }
+
+      .hero-layout {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 2rem;
+        align-items: start;
+        width: 100%;
+      }
+
+      .hero-card.e-card {
+        padding: 0;
+        overflow: hidden;
+      }
+
+      .hero-card .e-card-header {
+        padding: 2.5rem 2.5rem 0;
+        border: none;
+        background: transparent;
+      }
+
+      .hero-card .e-card-header-caption .e-card-header-title {
+        font-size: clamp(2.25rem, 5vw, 3.75rem);
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        line-height: 1.1;
+        background: linear-gradient(
+          135deg,
+          #fff 0%,
+          var(--accent-cyan) 55%,
+          var(--accent-violet) 100%
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .hero-card .e-card-header-caption .e-card-sub-title {
+        font-size: clamp(1rem, 2.2vw, 1.25rem);
+        color: var(--muted);
+        margin-top: 0.75rem;
+        font-weight: 400;
+        line-height: 1.5;
+        max-width: 36ch;
+      }
+
+      .hero-card .e-card-content {
+        padding: 1.25rem 2.5rem;
+        color: var(--muted);
+        font-size: 1.05rem;
+        border: none;
+        background: transparent;
+      }
+
+      .hero-card .e-card-actions {
+        padding: 0 2.5rem 2.5rem;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+        border: none;
+        background: transparent;
+      }
+
+      .hero-meta {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 1rem;
+        padding-top: 0.5rem;
+      }
+
+      .visitor-pill.e-btn {
+        border-radius: var(--radius-pill) !important;
+        padding: 0.55rem 1.25rem !important;
+        font-size: 0.875rem !important;
+        font-weight: 600 !important;
+        border: 1px solid rgba(34, 211, 238, 0.45) !important;
+        background: rgba(34, 211, 238, 0.1) !important;
+        color: var(--accent-cyan) !important;
+        box-shadow: 0 0 20px var(--glow-cyan) !important;
+        letter-spacing: 0.02em;
+        position: relative;
+      }
+
+      .visitor-pill.e-btn::before {
+        content: "";
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #22c55e;
+        margin-right: 0.5rem;
+        box-shadow: 0 0 8px #22c55e;
+        animation: livePulse 2s ease-in-out infinite;
+        vertical-align: middle;
+      }
+
+      @keyframes livePulse {
+        0%,
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 0.6;
+          transform: scale(0.85);
+        }
+      }
+
+      .stub-card .e-card-content {
+        padding: 1.75rem 2rem;
+        color: var(--muted);
+        background: transparent;
+        border: none;
+      }
+
+      .stub-card .e-card-header {
+        padding: 1.5rem 2rem 0;
+        background: transparent;
+        border: none;
+      }
+
+      .stub-card .e-card-header-title {
+        font-size: 1.35rem;
+        font-weight: 700;
+        color: var(--text);
+      }
+
+      .stub-card .e-card-sub-title {
+        color: var(--accent-violet);
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-top: 0.25rem;
+      }
+
+      /* ── Contact links ── */
+      .contact-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 0.75rem;
+      }
+
+      .contact-links a {
+        color: var(--accent-cyan);
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .contact-links a:hover {
+        text-decoration: underline;
+      }
+
+      /* ── Footer ── */
+      .site-footer {
+        margin-top: 2rem;
+        padding-top: 2rem;
+        border-top: 1px solid var(--glass-border);
+        text-align: center;
+        font-size: 0.85rem;
+        color: var(--muted);
+      }
+
+      .site-footer a {
+        color: var(--accent-blue);
+        text-decoration: none;
+      }
+
+      .site-footer a:hover {
+        text-decoration: underline;
+      }
+
+      /* ── Responsive ── */
+      @media (max-width: 992px) {
+        .float-icon--5,
+        .float-icon--6 {
+          display: none;
+        }
+
+        .hero-layout {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-meta {
+          align-items: flex-start;
+        }
+      }
+
+      @media (max-width: 768px) {
+        :root {
+          --appbar-offset: 56px;
+        }
+
+        #site-appbar .brand-name {
+          display: none;
+        }
+
+        #site-appbar #menu-btn {
+          display: inline-flex;
+        }
+
+        #site-appbar .main-nav {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          flex-direction: column;
+          align-items: stretch;
+          padding: 0.75rem 1rem 1rem;
+          background: rgba(10, 14, 23, 0.95);
+          backdrop-filter: blur(16px);
+          border-bottom: 1px solid var(--glass-border);
+          gap: 0.15rem;
+        }
+
+        #site-appbar .main-nav a {
+          padding: 0.65rem 0.85rem;
+        }
+
+        body.nav-open #site-appbar .main-nav {
+          display: flex;
+        }
+
+        .float-icon--3,
+        .float-icon--4 {
+          display: none;
+        }
+
+        .hero-card .e-card-header,
+        .hero-card .e-card-content,
+        .hero-card .e-card-actions {
+          padding-left: 1.5rem;
+          padding-right: 1.5rem;
+        }
+
+        .page-shell {
+          padding-left: 1rem;
+          padding-right: 1rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .float-layer {
+          display: none;
+        }
+
+        .hero-section {
+          min-height: auto;
+        }
+
+        .visitor-pill.e-btn {
+          width: 100%;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        .bg-orb,
+        .float-icon {
+          animation: none;
+        }
+
+        .visitor-pill.e-btn::before {
+          animation: none;
+        }
+      }
+    </style>
+
+    <!-- License: register after ej2.min.js, before any control init (see README / npm run syncfusion:license) -->
+    <script src="https://cdn.syncfusion.com/ej2/30.1.37/dist/ej2.min.js"></script>
+    <script src="js/syncfusion-license.js"></script>
+  </head>
+  <body>
+    <!-- Background effects -->
+    <div class="bg-effects" aria-hidden="true">
+      <div class="bg-orb bg-orb--cyan"></div>
+      <div class="bg-orb bg-orb--violet"></div>
+      <div class="bg-orb bg-orb--blue"></div>
+      <div class="bg-grid"></div>
+    </div>
+
+    <!-- Floating tech accents -->
+    <div class="float-layer" aria-hidden="true">
+      <div class="float-icon float-icon--1" title="AWS">
+        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <text
+            x="8"
+            y="38"
+            fill="currentColor"
+            font-size="22"
+            font-weight="bold"
+            font-family="sans-serif"
+          >
+            AWS
+          </text>
+        </svg>
+      </div>
+      <div class="float-icon float-icon--2" title="Syncfusion">
+        <span>SF</span>
+      </div>
+      <div class="float-icon float-icon--3" title="Lambda">
+        <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+          <path d="M32 8 L52 52 H12 Z" stroke="currentColor" stroke-width="3" fill="none" />
+          <text x="22" y="44" fill="currentColor" font-size="11" font-weight="bold">λ</text>
+        </svg>
+      </div>
+      <div class="float-icon float-icon--4" title="Terraform">
+        <span>TF</span>
+      </div>
+      <div class="float-icon float-icon--5" title="GitHub Actions">
+        <span>CI/CD</span>
+      </div>
+      <div class="float-icon float-icon--6" title="GitHub">
+        <svg viewBox="0 0 64 64" fill="currentColor" aria-hidden="true">
+          <path
+            d="M32 6C17.6 6 6 17.9 6 32.4c0 11.7 7.6 21.6 18.1 25.1 1.3.2 1.8-.6 1.8-1.3 0-.6 0-2.3-.1-4.5-7.4 1.4-9-3.5-9-3.5-1.2-3.2-3-4-3-4-2.5-1.8.2-1.7.2-1.7 2.7.2 4.2 2.8 4.2 2.8 2.4 4.2 6.4 3 7.9 2.3.2-1.8 1-3 .2-3.7-5.9-.7-12.1-3-12.1-13.3 0-2.9 1-5.3 2.8-7.1-.3-.7-1.2-3.5.3-7.3 0 0 2.3-.7 7.5 2.7 2.2-.6 4.5-.9 6.8-.9s4.6.3 6.8.9c5.2-3.4 7.4-2.7 7.5-2.7 1.5 3.8.6 6.6.3 7.3 1.8 1.8 2.8 4.2 2.8 7.1 0 10.4-6.2 12.6-12.1 13.3 1 .8 1.8 2.4 1.8 4.9 0 3.5 0 6.3 0 7.2 0 .7.5 1.5 1.8 1.3C50.4 54 58 44.1 58 32.4 58 17.9 46.4 6 32 6z"
+          />
+        </svg>
+      </div>
+    </div>
+
+    <!-- Navigation AppBar -->
+    <header id="site-appbar">
+      <span class="brand-mark" aria-hidden="true">SM</span>
+      <span class="brand-name">Stephen McKitrick</span>
+      <div class="e-appbar-spacer"></div>
+      <nav id="main-nav" class="main-nav" aria-label="Primary">
+        <a href="#home">Home</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button
+        id="menu-btn"
+        type="button"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+      ></button>
+    </header>
+
+    <main class="page-shell">
+      <!-- Hero -->
+      <section id="home" class="hero-section" aria-labelledby="hero-title">
+        <div class="hero-layout">
+          <div
+            class="e-card glass-card glass-card--hero hero-card"
+            role="region"
+            aria-label="Introduction"
+          >
+            <div class="e-card-header">
+              <div class="e-card-header-caption">
+                <div class="e-card-header-title" id="hero-title">Stephen McKitrick</div>
+                <div class="e-card-sub-title">
+                  DevOps Engineer | Serverless Architect | Infrastructure Automation
+                </div>
+              </div>
+            </div>
+            <div class="e-card-content">
+              Building resilient, automated cloud infrastructure on AWS — from serverless APIs to
+              production-grade CI/CD pipelines.
+            </div>
+            <div class="e-card-actions e-card-vertical">
+              <button id="cta-experience" type="button"></button>
+              <button id="cta-contact" type="button"></button>
+            </div>
+          </div>
+          <div class="hero-meta">
+            <div id="visitor-counter" aria-live="polite" aria-label="Live visitor count"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience stub -->
+      <section id="experience" aria-labelledby="experience-heading">
+        <p class="section-label">Experience</p>
+        <div class="e-card glass-card stub-card">
+          <div class="e-card-header">
+            <div class="e-card-header-caption">
+              <div class="e-card-header-title" id="experience-heading">Professional Experience</div>
+              <div class="e-card-sub-title">Coming soon</div>
+            </div>
+          </div>
+          <div class="e-card-content">
+            A detailed timeline of roles, achievements, and cloud engineering impact will appear
+            here. Syncfusion Grid integration planned for the next phase.
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects stub -->
+      <section id="projects" aria-labelledby="projects-heading">
+        <p class="section-label">Projects</p>
+        <div class="e-card glass-card stub-card">
+          <div class="e-card-header">
+            <div class="e-card-header-caption">
+              <div class="e-card-header-title" id="projects-heading">Cloud Projects</div>
+              <div class="e-card-sub-title">Coming soon</div>
+            </div>
+          </div>
+          <div class="e-card-content">
+            Showcase of serverless architectures, IaC deployments, and DevOps automation workflows
+            built for the Cloud Resume Challenge.
+          </div>
+        </div>
+      </section>
+
+      <!-- Certifications stub -->
+      <section id="certifications" aria-labelledby="certifications-heading">
+        <p class="section-label">Certifications</p>
+        <div class="e-card glass-card stub-card">
+          <div class="e-card-header">
+            <div class="e-card-header-caption">
+              <div class="e-card-header-title" id="certifications-heading">Certifications</div>
+              <div class="e-card-sub-title">Coming soon</div>
+            </div>
+          </div>
+          <div class="e-card-content">
+            AWS and industry certifications with verification links will be listed in this section.
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact stub -->
+      <section id="contact" aria-labelledby="contact-heading">
+        <p class="section-label">Contact</p>
+        <div class="e-card glass-card stub-card">
+          <div class="e-card-header">
+            <div class="e-card-header-caption">
+              <div class="e-card-header-title" id="contact-heading">Get in Touch</div>
+              <div class="e-card-sub-title">Open to opportunities</div>
+            </div>
+          </div>
+          <div class="e-card-content">
+            <p>Reach out for collaborations, consulting, or cloud engineering roles.</p>
+            <div class="contact-links">
+              <a href="mailto:stephen.mckitrick@example.com">stephen.mckitrick@example.com</a>
+              <a href="https://github.com/Bigessfour" target="_blank" rel="noopener noreferrer"
+                >GitHub</a
+              >
+              <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer"
+                >LinkedIn</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="site-footer">
+        <p>
+          Built for the
+          <a href="https://cloudresumechallenge.dev/" target="_blank" rel="noopener noreferrer"
+            >Cloud Resume Challenge</a
+          >.
+        </p>
+      </footer>
+    </main>
+
+    <script>
+      (function () {
+        "use strict";
+
+        document.addEventListener("DOMContentLoaded", function () {
+          if (typeof ej === "undefined") {
+            console.error("Syncfusion EJ2 failed to load.");
+            return;
+          }
+
+          /* ── AppBar ── */
+          var appBar = new ej.navigations.AppBar({
+            colorMode: "Dark",
+            isSticky: true,
+          });
+          appBar.appendTo("#site-appbar");
+
+          /* ── Mobile menu button ── */
+          var menuBtn = new ej.buttons.Button({
+            cssClass: "e-inherit e-appbar-menu-btn",
+            iconCss: "e-icons e-menu",
+            isPrimary: false,
+          });
+          menuBtn.appendTo("#menu-btn");
+
+          menuBtn.element.addEventListener("click", function () {
+            var isOpen = document.body.classList.toggle("nav-open");
+            menuBtn.element.setAttribute("aria-expanded", isOpen ? "true" : "false");
+          });
+
+          /* ── Hero CTA buttons ── */
+          var ctaExperience = new ej.buttons.Button({
+            content: "View Experience",
+            isPrimary: true,
+            cssClass: "e-primary",
+          });
+          ctaExperience.appendTo("#cta-experience");
+
+          var ctaContact = new ej.buttons.Button({
+            content: "Contact",
+            cssClass: "e-outline",
+          });
+          ctaContact.appendTo("#cta-contact");
+
+          ctaExperience.element.addEventListener("click", function () {
+            scrollToSection("#experience");
+          });
+
+          ctaContact.element.addEventListener("click", function () {
+            scrollToSection("#contact");
+          });
+
+          /* ── Live visitor counter (static — API later) ── */
+          var visitorBtn = new ej.buttons.Button({
+            content: "Live · 1,024 visitors",
+            cssClass: "visitor-pill",
+            isPrimary: true,
+            disabled: true,
+          });
+          visitorBtn.appendTo("#visitor-counter");
+
+          /* ── Smooth scroll + close mobile nav ── */
+          var navLinks = document.querySelectorAll("#main-nav a[href^='#']");
+
+          navLinks.forEach(function (link) {
+            link.addEventListener("click", function (e) {
+              var targetId = link.getAttribute("href");
+              if (!targetId || targetId === "#") return;
+              var target = document.querySelector(targetId);
+              if (target) {
+                e.preventDefault();
+                scrollToSection(targetId);
+                document.body.classList.remove("nav-open");
+                menuBtn.element.setAttribute("aria-expanded", "false");
+              }
+            });
+          });
+
+          function scrollToSection(selector) {
+            var el = document.querySelector(selector);
+            if (el) {
+              el.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>

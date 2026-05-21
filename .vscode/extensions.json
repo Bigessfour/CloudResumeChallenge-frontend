@@ -1,0 +1,19 @@
+{
+  "recommendations": [
+    "ritwickdey.LiveServer",
+    "ecmel.vscode-html-css",
+    "esbenp.prettier-vscode",
+    "usernamehw.errorlens",
+    "dbaeumer.vscode-eslint",
+    "christian-kohler.path-intellisense",
+    "dotenv.dotenv-vscode",
+    "editorconfig.editorconfig",
+    "HTMLHint.vscode-htmlhint",
+    "formulahendry.auto-close-tag",
+    "formulahendry.auto-rename-tag",
+    "streetsidesoftware.code-spell-checker",
+    "yzhang.markdown-all-in-one",
+    "naumovs.color-highlight"
+  ],
+  "unwantedRecommendations": ["mikestead.dotenv"]
+}

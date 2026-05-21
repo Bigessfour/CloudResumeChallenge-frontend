@@ -1,0 +1,63 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Serve: Python (port 8000)",
+      "type": "shell",
+      "command": "python -m http.server 8000 --bind 127.0.0.1",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "isBackground": true,
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      }
+    },
+    {
+      "label": "npm: lint",
+      "type": "npm",
+      "script": "lint",
+      "problemMatcher": ["$eslint-stylish"],
+      "group": "test"
+    },
+    {
+      "label": "npm: format",
+      "type": "npm",
+      "script": "format",
+      "problemMatcher": []
+    },
+    {
+      "label": "npm: install (dev tools)",
+      "type": "shell",
+      "command": "npm install",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "npm: syncfusion:license",
+      "type": "npm",
+      "script": "syncfusion:license",
+      "problemMatcher": []
+    },
+    {
+      "label": "npm: syncfusion:setup",
+      "type": "npm",
+      "script": "syncfusion:setup",
+      "problemMatcher": []
+    },
+    {
+      "label": "npm: syncfusion:provision",
+      "type": "npm",
+      "script": "syncfusion:provision",
+      "problemMatcher": []
+    }
+  ]
+}

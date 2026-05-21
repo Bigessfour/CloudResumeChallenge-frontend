@@ -1,0 +1,19 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "words": [
+    "CloudFront",
+    "Syncfusion",
+    "bigesfour",
+    "ej2",
+    "noopener",
+    "noreferrer",
+    "prettier",
+    "htmlhint",
+    "terraform",
+    "GitHub",
+    "API Gateway",
+    "serverless"
+  ],
+  "ignorePaths": ["node_modules", ".git", "dist", "*.min.js"]
+}

@@ -1,0 +1,18 @@
+---
+description: Syncfusion EJ2 static site conventions for Cloud Resume Challenge
+globs: "**/*.{html,js,css}"
+alwaysApply: false
+---
+
+# Syncfusion EJ2 — Static Vanilla JS
+
+- Stack: HTML5, vanilla JavaScript, Syncfusion EJ2 via **CDN global scripts** (no Webpack/Vite unless requested).
+- When MCP returns TypeScript, convert to **ES5/global `ej`** patterns per [EJ2 JavaScript docs](https://ej2.syncfusion.com/javascript/documentation/).
+- Pin CDN version consistently (e.g. `ej2/30.1.37` — match latest stable from Syncfusion CDN).
+- Register license in gitignored `js/syncfusion-license.js` immediately after `ej2.min.js` via `ej.base.registerLicense` (generate with `npm run syncfusion:license` from `SYNCFUSION_LICENSE` or `syncfusion-license.txt`; see [license registration](https://ej2.syncfusion.com/documentation/licensing/license-key-registration)).
+- MCP uses machine env `Syncfusion_API_Key` (see `.cursor/mcp.json` — no key file in repo).
+- Theme: **Tailwind 3 dark** or **Material 3 dark** to match resume dark theme.
+- Keep `index.html` as entry; split CSS to `css/styles.css`, app logic to `js/app.js`.
+- Do not commit API keys or license keys.
+- Prefer incremental UI: one section per Agent turn (header → experience grid → charts).
+- Test with `python -m http.server 8000` from project root.

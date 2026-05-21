@@ -1,0 +1,59 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    name: Validate Project
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Install dependencies
+        run: |
+          if [ -f package.json ]; then
+            npm ci
+          else
+            echo "No package.json found. Skipping npm install."
+            exit 1
+          fi
+
+      - name: Basic project validation
+        run: |
+          echo "Repository structure:"
+          ls -la
+
+          test -f index.html || (echo "index.html is required" && exit 1)
+          echo "index.html found"
+
+          test -f css/styles.css || (echo "css/styles.css is required" && exit 1)
+          echo "css/styles.css found"
+
+          test -f js/app.js || (echo "js/app.js is required" && exit 1)
+          echo "js/app.js found"
+
+          grep -q "ej2.min.js" index.html || (echo "index.html must reference Syncfusion CDN" && exit 1)
+          echo "Syncfusion CDN reference found in index.html"
+
+      - name: Lint JavaScript
+        run: npm run lint
+
+      - name: Check formatting
+        run: npm run format:check
+
+      - name: HTML validation (placeholder)
+        run: |
+          echo "HTML validation step placeholder - can be expanded later (e.g. htmlhint, action-html-validator)"
+          test -f .htmlhintrc.json && echo "htmlhint config present (.htmlhintrc.json)"
