@@ -207,7 +207,7 @@
         {
           header: "Cloud Resume Challenge",
           content:
-            "AWS Cloud Practitioner certified. Building serverless visitor counter, Terraform IaC, GitHub Actions, and this Syncfusion EJ2 portfolio site.",
+            "AWS Cloud Practitioner certified. This portfolio: context rules + Syncfusion MCP, plan-then-implement agent prompts, <code>npm run ci</code> before deploy, OIDC GitHub Actions to S3/CloudFront, and serverless visitor counter (Terraform + API Gateway + Lambda + DynamoDB). <a href='https://github.com/Bigessfour/CloudResumeChallenge-frontend/blob/main/docs/DEV_SETUP.md' target='_blank' rel='noopener noreferrer'>Agent setup →</a>",
         },
         {
           header: "Code Platoon — AI Cloud & DevOps (Echo)",

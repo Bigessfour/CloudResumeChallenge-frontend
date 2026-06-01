@@ -1097,6 +1097,33 @@ section {
   color: var(--accent-cyan);
 }
 
+.skills-category--agentic .skills-category__title {
+  color: var(--accent-blue);
+}
+
+.skills-category--agentic p {
+  margin-bottom: 0.65rem;
+  line-height: 1.5;
+}
+
+.skills-category--agentic p:last-child {
+  margin-bottom: 0;
+}
+
+.skills-category--agentic a {
+  color: var(--accent-blue);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.skills-category--agentic a:hover {
+  text-decoration: underline;
+}
+
+.skills-category--agentic .skills-category__cred {
+  font-size: 0.88rem !important;
+}
+
 .skills-category--data .skills-category__title {
   color: var(--accent-purple);
 }
