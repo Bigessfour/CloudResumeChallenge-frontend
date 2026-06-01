@@ -172,30 +172,85 @@
           <div class="e-card-content">
             <ul>
               <li>This portfolio site (static S3-ready frontend + GitHub Actions CI)</li>
-              <li>Serverless visitor counter API (planned)</li>
-              <li>Terraform modules for hosting (planned)</li>
+              <li>Serverless visitor counter API (API Gateway + Lambda + DynamoDB)</li>
+              <li>Terraform infrastructure in CloudResumeChallenge-infra</li>
             </ul>
           </div>
         </div>
       </section>
 
-      <!-- Certifications stub -->
+      <!-- Certifications -->
       <section id="certifications" aria-labelledby="certifications-heading">
         <p class="section-label">Certifications</p>
-        <div class="e-card glass-card stub-card">
-          <div class="e-card-header">
-            <div class="e-card-header-caption">
-              <div class="e-card-header-title" id="certifications-heading">Certifications</div>
-              <div class="e-card-sub-title">Coming soon</div>
-            </div>
-          </div>
-          <div class="e-card-content">
-            <p>
-              Certifications and verification badges will be added with links to official credential
-              pages.
-            </p>
-          </div>
+        <div class="certifications-header">
+          <h2 id="certifications-heading" class="certifications-title">Verified Credentials</h2>
+          <a
+            class="credly-profile-link"
+            href="https://www.credly.com/users/stephen-mckitrick"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View all on Credly
+          </a>
         </div>
+        <ul class="cert-grid" role="list">
+          <li>
+            <article class="e-card glass-card cert-card">
+              <a
+                class="cert-card__link"
+                href="https://www.credly.com/badges/a8b60fe0-682b-471f-a1ca-7413fa434202"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  class="cert-card__badge"
+                  src="https://images.credly.com/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png"
+                  alt="AWS Certified Cloud Practitioner badge"
+                  width="120"
+                  height="120"
+                  loading="lazy"
+                />
+                <div class="cert-card__body">
+                  <h3 class="cert-card__name">AWS Certified Cloud Practitioner</h3>
+                  <p class="cert-card__issuer">Amazon Web Services Training and Certification</p>
+                  <p class="cert-card__meta">
+                    <span class="cert-card__tag">Certification</span>
+                    Issued May 2026 · Expires May 2029
+                  </p>
+                  <span class="cert-card__verify">Verify credential →</span>
+                </div>
+              </a>
+            </article>
+          </li>
+          <li>
+            <article class="e-card glass-card cert-card">
+              <a
+                class="cert-card__link"
+                href="https://www.credly.com/badges/445eab05-2280-420f-82ae-831cc9f85689"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  class="cert-card__badge"
+                  src="https://images.credly.com/images/d4185c81-d7ad-4220-bf32-46168be588bc/blob"
+                  alt="Google Data Analytics Professional Certificate badge"
+                  width="120"
+                  height="120"
+                  loading="lazy"
+                />
+                <div class="cert-card__body">
+                  <h3 class="cert-card__name">Google Data Analytics Professional Certificate</h3>
+                  <p class="cert-card__issuer">Coursera · Google</p>
+                  <p class="cert-card__meta">
+                    <span class="cert-card__tag">Professional Certificate</span>
+                    Issued April 2026 · No expiration
+                  </p>
+                  <span class="cert-card__verify">Verify credential →</span>
+                </div>
+              </a>
+            </article>
+          </li>
+        </ul>
       </section>
 
       <!-- Contact stub -->
@@ -235,6 +290,7 @@
       </footer>
     </main>
 
+    <script src="js/config.js"></script>
     <script src="js/app.js" defer></script>
   </body>
 </html>

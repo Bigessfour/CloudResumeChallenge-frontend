@@ -26,9 +26,9 @@ jobs:
 
       - name: Guard tracked secrets
         run: |
-          if git ls-files | grep -qE '^(js/syncfusion-license\.js|\.env|syncfusion-license\.txt)$'; then
+          if git ls-files | grep -qE '^(js/syncfusion-license\.js|js/config\.js|\.env|syncfusion-license\.txt)$'; then
             echo "ERROR: Secret files must not be committed."
-            git ls-files | grep -E '^(js/syncfusion-license\.js|\.env|syncfusion-license\.txt)$'
+            git ls-files | grep -E '^(js/syncfusion-license\.js|js/config\.js|\.env|syncfusion-license\.txt)$'
             exit 1
           fi
           echo "No tracked secret files."

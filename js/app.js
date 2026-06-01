@@ -50,12 +50,14 @@
     });
 
     var visitorBtn = new ej.buttons.Button({
-      content: "Live · 1,024 visitors",
+      content: "Live · loading…",
       cssClass: "visitor-pill",
       isPrimary: true,
       disabled: true,
     });
     visitorBtn.appendTo("#visitor-counter");
+
+    initVisitorCounter(visitorBtn);
 
     var navLinks = document.querySelectorAll("#main-nav a[href^='#']");
 
@@ -78,6 +80,39 @@
       if (el) {
         el.scrollIntoView({ behavior: "smooth", block: "start" });
       }
+    }
+
+    function initVisitorCounter(button) {
+      var config = window.VISITOR_API_CONFIG || {};
+      var apiUrl = config.url;
+
+      if (!apiUrl) {
+        setVisitorLabel(button, null);
+        return;
+      }
+
+      fetch(apiUrl, { method: "GET", mode: "cors" })
+        .then(function (response) {
+          if (!response.ok) {
+            throw new Error("Visitor API returned " + response.status);
+          }
+          return response.json();
+        })
+        .then(function (data) {
+          setVisitorLabel(button, typeof data.count === "number" ? data.count : null);
+        })
+        .catch(function (error) {
+          console.warn("[visitor-counter]", error.message);
+          setVisitorLabel(button, null);
+        });
+    }
+
+    function setVisitorLabel(button, count) {
+      var label =
+        count === null
+          ? "Live · — visitors"
+          : "Live · " + count.toLocaleString() + " visitors";
+      button.content = label;
     }
   });
 })();

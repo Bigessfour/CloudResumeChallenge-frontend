@@ -1,0 +1,105 @@
+# =============================================================================
+# Deploy Frontend to S3 + CloudFront
+# Runs on pushes to main. Uses GitHub OIDC — no long-lived AWS credentials.
+# =============================================================================
+
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+
+env:
+  AWS_REGION: ${{ vars.AWS_REGION || 'us-east-1' }}
+  S3_BUCKET: ${{ vars.S3_BUCKET_NAME }}
+  CLOUDFRONT_DISTRIBUTION_ID: ${{ vars.CLOUDFRONT_DISTRIBUTION_ID }}
+
+jobs:
+  deploy:
+    name: Deploy to S3 + CloudFront
+    runs-on: ubuntu-latest
+    environment: prod
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Guard tracked secrets
+        run: |
+          if git ls-files | grep -qE '^(js/syncfusion-license\.js|js/config\.js|\.env|syncfusion-license\.txt)$'; then
+            echo "ERROR: Secret or generated deploy files must not be committed."
+            git ls-files | grep -E '^(js/syncfusion-license\.js|js/config\.js|\.env|syncfusion-license\.txt)$'
+            exit 1
+          fi
+
+      - name: Run CI checks
+        run: npm run ci
+
+      - name: Generate Syncfusion license script
+        env:
+          SYNCFUSION_LICENSE_KEY: ${{ secrets.SYNCFUSION_LICENSE_KEY }}
+        run: npm run syncfusion:license
+
+      - name: Generate runtime config
+        run: |
+          cat > js/config.js <<EOF
+          window.VISITOR_API_CONFIG = {
+            url: "${{ vars.VISITOR_API_URL }}",
+          };
+          EOF
+
+      - name: Configure AWS Credentials (OIDC)
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.AWS_ROLE_ARN || secrets.AWS_ROLE_ARN }}
+          aws-region: ${{ env.AWS_REGION }}
+          role-session-name: frontend-deploy-${{ github.run_id }}
+
+      - name: Sync static site to S3
+        run: |
+          aws s3 sync . "s3://${S3_BUCKET}" --delete \
+            --exclude ".git/*" \
+            --exclude ".github/*" \
+            --exclude ".cursor/*" \
+            --exclude ".vscode/*" \
+            --exclude "node_modules/*" \
+            --exclude "docs/*" \
+            --exclude "scripts/*" \
+            --exclude "*.md" \
+            --exclude "package*.json" \
+            --exclude ".env*" \
+            --exclude ".htmlhintrc.json" \
+            --exclude ".prettier*" \
+            --exclude "eslint.config.js" \
+            --exclude "cspell.json" \
+            --exclude "skills-lock.json" \
+            --exclude "syncfusion-license.txt*" \
+            --exclude "js/syncfusion-license.example.js" \
+            --exclude "js/config.example.js"
+
+      - name: Invalidate CloudFront cache
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id "${CLOUDFRONT_DISTRIBUTION_ID}" \
+            --paths "/*"
+
+      - name: Summary
+        run: |
+          echo "## Frontend deploy complete" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "- **Bucket:** \`${S3_BUCKET}\`" >> "$GITHUB_STEP_SUMMARY"
+          echo "- **CloudFront:** \`${CLOUDFRONT_DISTRIBUTION_ID}\`" >> "$GITHUB_STEP_SUMMARY"

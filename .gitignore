@@ -2,6 +2,7 @@
 syncfusion-key.txt
 syncfusion-license.txt
 js/syncfusion-license.js
+js/config.js
 *.key
 .env
 .env.*
