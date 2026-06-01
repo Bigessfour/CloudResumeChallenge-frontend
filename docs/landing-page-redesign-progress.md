@@ -5,7 +5,7 @@
 **Reference Image:** `docs/Grok Image 2026-05-20 at 10.05.27 AM.PNG`
 
 **Status Date:** 2026-05-20  
-**Overall Status:** Phase 0 + Phase 1 + Phase 2 core complete + polish — Ready for visual review
+**Overall Status:** Shipped to GitHub (main) — Phase 0 + 1 + 2 complete + polished
 
 ---
 
@@ -15,11 +15,11 @@
 | ------------------------------- | ----------------------- | --------------------------------------------------------------------- |
 | **Phase 0** — Theme & Tokens    | Completed               | Purple/violet neon tokens + utilities added                           |
 | **Phase 1** — Hero Redesign     | Completed (polish done) | Monumental centered name + transformation tagline + strong neon       |
-| **Phase 2** — Dashboard Section | Polished & Complete     | 3 cards + metrics + 5-point chart + hover effects + mobile responsive |
-| **Phase 3** — Polish & Mobile   | Not started             | Dashboard + hero mobile refinements                                   |
+| **Phase 2** — Dashboard Section | Shipped                 | 3 cards + metrics + 5-point chart + hover effects + mobile responsive |
+| **Phase 3** — Polish & Mobile   | Not started             | Further refinements based on review                                   |
 | **Phase 4** — Future            | Not started             |                                                                       |
 
-**Current Focus:** Phase 2 complete (core dashboard live) — ready for polish + user visual review of the new landing experience
+**Current Focus:** Shipped to GitHub — awaiting review & next iteration direction
 
 ---
 
@@ -92,10 +92,13 @@ Tech accomplishments + the transition itself (not historical military scale).
 
 ---
 
-## Next Immediate Actions
+## Shipped to GitHub
 
-1. User is viewing local copy right now for feedback.
-2. Iterate based on their review (hero feel, dashboard impact, mobile, etc.).
+- Committed and pushed to `main` on 2026-05-20
+- Commit: `feat: Major landing page redesign - cinematic hero + At-a-Glance dashboard`
+- CI passed cleanly before push (lint + HTMLHint + Prettier)
+
+**Next:** Review the changes on GitHub, then iterate based on feedback.
 
 ---
 
