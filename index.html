@@ -46,6 +46,8 @@
     <script src="js/syncfusion-license.js"></script>
   </head>
   <body>
+    <a class="skip-link" href="#home">Skip to main content</a>
+
     <!-- Background effects -->
     <div class="bg-effects" aria-hidden="true">
       <div class="bg-orb bg-orb--cyan"></div>
@@ -54,8 +56,10 @@
       <div class="bg-grid"></div>
     </div>
 
-    <!-- Floating tech accents -->
-    <div class="float-layer" aria-hidden="true">
+    <div class="particles" id="particles" aria-hidden="true"></div>
+
+    <!-- Floating tech accents (AWS + Syncfusion near hero) -->
+    <div class="float-layer float-layer--hero" aria-hidden="true">
       <div class="float-icon float-icon--1" title="AWS">
         <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <text
@@ -70,42 +74,40 @@
           </text>
         </svg>
       </div>
-      <div class="float-icon float-icon--2" title="Syncfusion">
-        <span>SF</span>
-      </div>
-      <div class="float-icon float-icon--3" title="Lambda">
-        <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
-          <path d="M32 8 L52 52 H12 Z" stroke="currentColor" stroke-width="3" fill="none" />
-          <text x="22" y="44" fill="currentColor" font-size="11" font-weight="bold">λ</text>
-        </svg>
-      </div>
-      <div class="float-icon float-icon--4" title="Terraform">
-        <span>TF</span>
-      </div>
-      <div class="float-icon float-icon--5" title="GitHub Actions">
-        <span>CI/CD</span>
-      </div>
-      <div class="float-icon float-icon--6" title="GitHub">
-        <svg viewBox="0 0 64 64" fill="currentColor" aria-hidden="true">
-          <path
-            d="M32 6C17.6 6 6 17.9 6 32.4c0 11.7 7.6 21.6 18.1 25.1 1.3.2 1.8-.6 1.8-1.3 0-.6 0-2.3-.1-4.5-7.4 1.4-9-3.5-9-3.5-1.2-3.2-3-4-3-4-2.5-1.8.2-1.7.2-1.7 2.7.2 4.2 2.8 4.2 2.8 2.4 4.2 6.4 3 7.9 2.3.2-1.8 1-3 .2-3.7-5.9-.7-12.1-3-12.1-13.3 0-2.9 1-5.3 2.8-7.1-.3-.7-1.2-3.5.3-7.3 0 0 2.3-.7 7.5 2.7 2.2-.6 4.5-.9 6.8-.9s4.6.3 6.8.9c5.2-3.4 7.4-2.7 7.5-2.7 1.5 3.8.6 6.6.3 7.3 1.8 1.8 2.8 4.2 2.8 7.1 0 10.4-6.2 12.6-12.1 13.3 1 .8 1.8 2.4 1.8 4.9 0 3.5 0 6.3 0 7.2 0 .7.5 1.5 1.8 1.3C50.4 54 58 44.1 58 32.4 58 17.9 46.4 6 32 6z"
-          />
-        </svg>
+      <div class="float-icon float-icon--2 float-icon--syncfusion" title="Syncfusion">
+        <span class="sf-mark" aria-hidden="true">S</span>
       </div>
     </div>
 
     <!-- Navigation AppBar -->
     <header id="site-appbar">
-      <span class="brand-mark" aria-hidden="true">SM</span>
-      <span class="brand-name">Stephen McKitrick</span>
+      <a class="brand-aws" href="#home" aria-label="Stephen McKitrick — Home">
+        <svg
+          class="brand-aws__logo"
+          viewBox="0 0 64 32"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <text
+            x="0"
+            y="24"
+            fill="currentColor"
+            font-size="20"
+            font-weight="700"
+            font-family="system-ui, sans-serif"
+            letter-spacing="-0.02em"
+          >
+            aws
+          </text>
+        </svg>
+      </a>
       <div class="e-appbar-spacer"></div>
       <nav id="main-nav" class="main-nav" aria-label="Primary">
-        <a href="#home">Home</a>
+        <a href="#home" aria-current="page">Home</a>
         <a href="#experience">Experience</a>
-        <a href="#education">Education</a>
-        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
         <a href="#certifications">Certifications</a>
-        <a href="#awards">Awards</a>
         <a href="#contact">Contact</a>
       </nav>
       <button
@@ -117,178 +119,324 @@
     </header>
 
     <main class="page-shell">
-      <!-- Hero / Professional Summary -->
-      <section id="home" class="hero-section" aria-labelledby="hero-title">
-        <div class="hero-layout">
-          <div
-            class="e-card glass-card glass-card--hero hero-card neon-glass"
-            role="region"
-            aria-label="Professional summary"
-          >
+      <div class="glass-shell">
+        <!-- Hero / Professional Summary -->
+        <section id="home" class="hero-section hero-section--centered" aria-labelledby="hero-title">
+          <div class="hero-layout">
+            <div class="hero-inner neon-glass" role="region" aria-label="Professional summary">
+              <div class="hero-name-label">Stephen McKitrick</div>
+              <h1 class="hero-title" id="hero-title">Stephen McKitrick</h1>
+              <p class="hero-tagline">
+                DevOps Engineer | Serverless Architect | Infrastructure Automation
+              </p>
+              <div
+                id="visitor-counter"
+                class="neon-pill hero-visitor"
+                aria-live="polite"
+                aria-label="Live visitor count"
+              ></div>
+              <details class="hero-more">
+                <summary>More about me</summary>
+                <p class="hero-bio-condensed">
+                  U.S. Army Master Sergeant (E-8) turned self-taught full-stack developer with
+                  TS/SCI clearance. Proven at leading teams and delivering data-driven results under
+                  extreme pressure. Now channeling that discipline into AWS, Terraform, serverless,
+                  and AI tooling — shipping real solutions like the BusBuddy C# app that cut
+                  operational errors 30%.
+                </p>
+                <ul class="summary-chips" aria-label="Core competencies">
+                  <li>Data Automation &amp; Tooling</li>
+                  <li>Cloud &amp; DevOps</li>
+                  <li>AI &amp; Modern Tooling</li>
+                  <li>Leadership at Scale</li>
+                </ul>
+                <p class="contact-strip">
+                  <span>Wiley, Colorado</span>
+                  <span aria-hidden="true">·</span>
+                  <a href="tel:+17196402230">719-640-2230</a>
+                  <span aria-hidden="true">·</span>
+                  <a href="mailto:bigessfour@gmail.com">bigessfour@gmail.com</a>
+                  <span aria-hidden="true">·</span>
+                  <a
+                    href="https://www.linkedin.com/in/stephen-mckitrick-04301b24a"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >LinkedIn</a
+                  >
+                </p>
+                <div class="hero-actions">
+                  <button id="cta-experience" type="button"></button>
+                  <button id="cta-contact" type="button"></button>
+                </div>
+              </details>
+            </div>
+          </div>
+        </section>
+
+        <!-- Dashboard (mockup-aligned) -->
+        <section id="dashboard" class="dashboard-section" aria-labelledby="dashboard-heading">
+          <h2 id="dashboard-heading" class="visually-hidden">Portfolio dashboard</h2>
+
+          <div class="dashboard-cards-row">
+            <article class="e-card glass-card dashboard-card dashboard-card--sf">
+              <div class="e-card-header">
+                <div class="e-card-header-caption">
+                  <div class="e-card-header-title">Experience</div>
+                  <div class="e-card-sub-title">Preview Key Engineer Experience</div>
+                </div>
+              </div>
+              <div class="e-card-content" id="experience-preview">
+                <ul class="experience-preview-list">
+                  <li>
+                    <strong>Transportation Manager</strong> — Wiley School District · Led 12-person
+                    team; built BusBuddy (C# + SQL) and cut errors 30%.
+                  </li>
+                  <li>
+                    <strong>Master Sergeant (E-8)</strong> — U.S. Army · $20M asset accountability
+                    across 50+ missions; automated inventory and payroll systems.
+                  </li>
+                </ul>
+                <a class="dashboard-card-link" href="#experience">View full experience →</a>
+              </div>
+            </article>
+
+            <article class="e-card glass-card dashboard-card dashboard-card--sf">
+              <div class="e-card-header">
+                <div class="e-card-header-caption">
+                  <div class="e-card-header-title">Accordion</div>
+                  <div class="e-card-sub-title">Syncfusion EJ2 Accordion</div>
+                </div>
+              </div>
+              <div class="e-card-content dashboard-card-accordion-wrap">
+                <div id="dashboard-accordion"></div>
+              </div>
+            </article>
+
+            <article class="e-card glass-card dashboard-card dashboard-card--sf">
+              <div class="e-card-header">
+                <div class="e-card-header-caption">
+                  <div class="e-card-header-title">Projects</div>
+                  <div class="e-card-sub-title">Syncfusion cards</div>
+                </div>
+              </div>
+              <div class="e-card-content" id="dashboard-projects">
+                <div class="project-tile e-card glass-card">
+                  <div class="e-card-header">
+                    <div class="e-card-header-caption">
+                      <div class="e-card-header-title">BusBuddy</div>
+                      <div class="e-card-sub-title">C# · SQL · Operations</div>
+                    </div>
+                  </div>
+                  <div class="e-card-content">
+                    <p>Real-time reporting app — 30% error reduction in district transportation.</p>
+                  </div>
+                </div>
+                <div class="project-tile e-card glass-card">
+                  <div class="e-card-header">
+                    <div class="e-card-header-caption">
+                      <div class="e-card-header-title">Cloud Resume Challenge</div>
+                      <div class="e-card-sub-title">AWS · Terraform · Syncfusion</div>
+                    </div>
+                  </div>
+                  <div class="e-card-content">
+                    <p>
+                      This portfolio — serverless visitor counter, EJ2 UI, IaC on GitHub Actions.
+                    </p>
+                  </div>
+                </div>
+                <div class="project-tile e-card glass-card">
+                  <div class="e-card-header">
+                    <div class="e-card-header-caption">
+                      <div class="e-card-header-title">Ollama Chat on AWS</div>
+                      <div class="e-card-sub-title">ALB · ASG · Terraform</div>
+                    </div>
+                  </div>
+                  <div class="e-card-content">
+                    <p>React + Flask + Ollama behind an ALB with private-subnet ASGs.</p>
+                    <a
+                      class="dashboard-card-link"
+                      href="http://ollama-chat-alb-1204074168.us-east-1.elb.amazonaws.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >Live demo →</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="dashboard-bottom neon-glass">
+            <div class="dashboard-certs">
+              <h3 class="dashboard-certs__title">Recent Certifications</h3>
+              <p class="dashboard-certs__stat">4 credentials</p>
+              <div class="cert-badge-strip" role="list" aria-label="Recent certification badges">
+                <a
+                  class="cert-badge-strip__item"
+                  role="listitem"
+                  href="https://www.credly.com/badges/a8b60fe0-682b-471f-a1ca-7413fa434202"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="AWS Certified Cloud Practitioner on Credly"
+                >
+                  <img
+                    src="https://images.credly.com/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png"
+                    alt=""
+                    width="64"
+                    height="64"
+                    loading="lazy"
+                  />
+                </a>
+                <a
+                  class="cert-badge-strip__item"
+                  role="listitem"
+                  href="https://www.credly.com/badges/445eab05-2280-420f-82ae-831cc9f85689"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Google Data Analytics Professional Certificate on Credly"
+                >
+                  <img
+                    src="https://images.credly.com/images/d4185c81-d7ad-4220-bf32-46168be588bc/blob"
+                    alt=""
+                    width="64"
+                    height="64"
+                    loading="lazy"
+                  />
+                </a>
+                <a
+                  class="cert-badge-strip__item cert-badge-strip__item--text"
+                  role="listitem"
+                  href="https://www.codeplatoon.org/ai-cloud-devops-program"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Code Platoon AI Cloud and DevOps program"
+                >
+                  <span aria-hidden="true">CP</span>
+                </a>
+                <a
+                  class="cert-badge-strip__item cert-badge-strip__item--text cert-badge-strip__item--hma"
+                  role="listitem"
+                  href="https://mapmyfuture.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Heroes MAKE America Map My Future"
+                >
+                  <span aria-hidden="true">HMA</span>
+                </a>
+              </div>
+              <h4 class="dashboard-milestones__title">Career milestones</h4>
+              <ul class="dashboard-milestones">
+                <li>Cloud Resume Challenge — Terraform + GitHub Actions pipeline live</li>
+                <li>Serverless visitor counter API (API Gateway + Lambda + DynamoDB)</li>
+                <li>Ollama Chat ALB demo on personal AWS account</li>
+              </ul>
+              <a
+                class="dashboard-card-link"
+                href="https://www.credly.com/users/stephen-mckitrick"
+                target="_blank"
+                rel="noopener noreferrer"
+                >View all on Credly →</a
+              >
+            </div>
+
+            <div class="dashboard-chart">
+              <div class="chart-header">
+                <h3>Career Journey</h3>
+                <p class="chart-subtitle">
+                  Taking my past experiences, developing new tech skills to bring meaningful tools
+                  to existing problems
+                </p>
+              </div>
+              <div
+                id="transformation-chart"
+                class="chart-container"
+                role="img"
+                aria-label="Career journey chart showing growth across five focus areas"
+              ></div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Projects (full section) -->
+      <section id="projects" aria-labelledby="projects-heading">
+        <p class="section-label">Projects</p>
+        <h2 id="projects-heading" class="section-title">Selected Projects</h2>
+        <div class="projects-grid">
+          <article class="e-card glass-card stub-card">
             <div class="e-card-header">
               <div class="e-card-header-caption">
-                <!-- Small refined label above the monumental name (image-inspired) -->
-                <div class="hero-name-label">Stephen McKitrick</div>
-                <div class="e-card-header-title" id="hero-title">Stephen McKitrick</div>
-                <div class="e-card-sub-title hero-tagline">
-                  From 26 years of military leadership &amp; operations → Building modern cloud,
-                  automation &amp; AI tools that solve real problems
+                <div class="e-card-header-title">BusBuddy</div>
+                <div class="e-card-sub-title">
+                  C# · Microsoft SQL Server · Wiley School District
                 </div>
               </div>
             </div>
             <div class="e-card-content">
-              <p class="hero-bio-condensed">
-                U.S. Army Master Sergeant (E-8) turned self-taught full-stack developer with TS/SCI
-                clearance. Proven at leading teams and delivering data-driven results under extreme
-                pressure. Now channeling that discipline into AWS, Terraform, serverless, and AI
-                tooling — shipping real solutions like the BusBuddy C# app that cut operational
-                errors 30%.
+              <p>
+                Production transportation reporting application integrating with SQL databases —
+                delivered measurable operational improvements including a 30% reduction in errors.
               </p>
-              <ul class="summary-chips" aria-label="Core competencies">
-                <li>Data Automation &amp; Tooling</li>
-                <li>Cloud &amp; DevOps</li>
-                <li>AI &amp; Modern Tooling</li>
-                <li>Leadership at Scale</li>
-                <li>Serverless &amp; IaC</li>
-                <li>Problem-Solving Under Pressure</li>
-              </ul>
-              <p class="contact-strip">
-                <span>Wiley, Colorado</span>
-                <span aria-hidden="true">·</span>
-                <a href="tel:+17196402230">719-640-2230</a>
-                <span aria-hidden="true">·</span>
-                <a href="mailto:bigessfour@gmail.com">bigessfour@gmail.com</a>
-                <span aria-hidden="true">·</span>
+            </div>
+          </article>
+          <article class="e-card glass-card stub-card">
+            <div class="e-card-header">
+              <div class="e-card-header-caption">
+                <div class="e-card-header-title">Cloud Resume Challenge Portfolio</div>
+                <div class="e-card-sub-title">
+                  AWS · Terraform · Syncfusion EJ2 · GitHub Actions
+                </div>
+              </div>
+            </div>
+            <div class="e-card-content">
+              <p>
+                This site — glassmorphism UI, live visitor counter, IaC-managed infrastructure, and
+                CI/CD deployment pipeline.
+              </p>
+              <p class="dashboard-card-links">
                 <a
-                  href="https://www.linkedin.com/in/stephen-mckitrick-04301b24a"
+                  href="https://github.com/Bigessfour/CloudResumeChallenge-frontend"
                   target="_blank"
                   rel="noopener noreferrer"
-                  >LinkedIn</a
+                  >Frontend repo →</a
+                >
+                <a
+                  href="https://github.com/Bigessfour/CloudResumeChallenge-infra"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Infrastructure repo →</a
                 >
               </p>
             </div>
-            <div class="e-card-actions e-card-vertical">
-              <button id="cta-experience" type="button"></button>
-              <button id="cta-contact" type="button"></button>
+          </article>
+          <article class="e-card glass-card stub-card">
+            <div class="e-card-header">
+              <div class="e-card-header-caption">
+                <div class="e-card-header-title">Ollama Chat on AWS</div>
+                <div class="e-card-sub-title">React · Flask · Ollama · ALB · Terraform</div>
+              </div>
             </div>
-          </div>
-          <div class="hero-meta">
-            <div
-              id="visitor-counter"
-              class="neon-pill"
-              aria-live="polite"
-              aria-label="Live visitor count"
-            ></div>
-          </div>
-        </div>
-      </section>
-
-      <!-- At-a-Glance Dashboard (Phase 2 — image-inspired "wow" zone) -->
-      <section id="dashboard" class="dashboard-section" aria-labelledby="dashboard-heading">
-        <div class="dashboard-header">
-          <p class="section-label">At a Glance</p>
-          <h2 id="dashboard-heading" class="section-title">The Transition in Action</h2>
-        </div>
-
-        <div class="dashboard-grid">
-          <!-- Left: Tech-focused Metrics Panel -->
-          <div class="dashboard-metrics neon-glass">
-            <div class="metric">
-              <div class="metric-value">30%</div>
-              <div class="metric-label">Error reduction via custom tooling</div>
-            </div>
-            <div class="metric">
-              <div class="metric-value">1</div>
-              <div class="metric-label">Production C# + SQL app shipped (BusBuddy)</div>
-            </div>
-            <div class="metric">
-              <div class="metric-value">2</div>
-              <div class="metric-label">Active cloud &amp; analytics certifications (2026)</div>
-            </div>
-            <div class="metric">
-              <div class="metric-value">AWS + IaC</div>
-              <div class="metric-label">Terraform • Lambda • GitHub Actions live</div>
-            </div>
-          </div>
-
-          <!-- Three Teaser Cards -->
-          <div class="dashboard-cards">
-            <!-- Card 1: From the Field → Code -->
-            <article class="e-card glass-card dashboard-card">
-              <div class="e-card-header">
-                <div class="e-card-header-caption">
-                  <div class="e-card-header-title">From the Field → Code</div>
-                  <div class="e-card-sub-title">Operations to Modern Tooling</div>
-                </div>
-              </div>
-              <div class="e-card-content">
-                <p>
-                  While leading real-world logistics operations, built and shipped BusBuddy (C# +
-                  SQL) and custom VBA/SQL automation tools that delivered a measurable 30% reduction
-                  in errors.
-                </p>
-              </div>
-            </article>
-
-            <!-- Card 2: Cloud & Modern Stack -->
-            <article class="e-card glass-card dashboard-card">
-              <div class="e-card-header">
-                <div class="e-card-header-caption">
-                  <div class="e-card-header-title">Cloud &amp; Modern Stack</div>
-                  <div class="e-card-sub-title">Cloud Resume Challenge • 2026</div>
-                </div>
-              </div>
-              <div class="e-card-content">
-                <p>
-                  AWS Cloud Practitioner + Google Data Analytics certified. Building production
-                  serverless systems with Terraform, GitHub Actions, Lambda, DynamoDB, and
-                  Syncfusion EJ2 — including this site’s live visitor counter.
-                </p>
-              </div>
-            </article>
-
-            <!-- Card 3: AI & Future Impact -->
-            <article class="e-card glass-card dashboard-card">
-              <div class="e-card-header">
-                <div class="e-card-header-caption">
-                  <div class="e-card-header-title">AI &amp; Future Impact</div>
-                  <div class="e-card-sub-title">Lifelong Learning in Action</div>
-                </div>
-              </div>
-              <div class="e-card-content">
-                <p>
-                  Full-stack AI chat on AWS — React SPA, Flask API, and Ollama (gemma:2b) behind an
-                  ALB with private-subnet Auto Scaling Groups, Terraform IaC, and GHCR container
-                  delivery.
-                </p>
-                <p class="dashboard-card-links">
-                  <a
-                    href="http://ollama-chat-alb-1204074168.us-east-1.elb.amazonaws.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >Live demo →</a
-                  >
-                  <a
-                    href="https://github.com/Bigessfour/ollama-chat"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >Source code →</a
-                  >
-                </p>
-              </div>
-            </article>
-          </div>
-
-          <!-- Chart Container -->
-          <div class="dashboard-chart neon-glass">
-            <div class="chart-header">
-              <h3>From Real Problems → Modern Tooling Solutions</h3>
-              <p class="chart-subtitle">
-                Taking past experience and building new skills to deliver meaningful tools
+            <div class="e-card-content">
+              <p>
+                Full-stack AI chat — React SPA, Flask API, and Ollama (gemma:2b) behind an ALB with
+                private-subnet Auto Scaling Groups, Terraform IaC, and GHCR container delivery.
+              </p>
+              <p class="dashboard-card-links">
+                <a
+                  href="http://ollama-chat-alb-1204074168.us-east-1.elb.amazonaws.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Live demo →</a
+                >
+                <a
+                  href="https://github.com/Bigessfour/ollama-chat"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Source code →</a
+                >
               </p>
             </div>
-            <div id="transformation-chart" class="chart-container"></div>
-          </div>
+          </article>
         </div>
       </section>
 

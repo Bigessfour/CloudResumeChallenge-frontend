@@ -16,7 +16,7 @@
 | **Phase 0** — Theme & Tokens    | Completed               | Purple/violet neon tokens + utilities added                           |
 | **Phase 1** — Hero Redesign     | Completed (polish done) | Monumental centered name + transformation tagline + strong neon       |
 | **Phase 2** — Dashboard Section | Shipped                 | 3 cards + metrics + 5-point chart + hover effects + mobile responsive |
-| **Phase 3** — Polish & Mobile   | In progress             | Ollama Chat showcased on Card 3 + contact links (personal AWS ALB)   |
+| **Phase 3** — Polish & Mobile   | In progress             | Ollama Chat showcased on Card 3 + contact links (personal AWS ALB)    |
 | **Phase 4** — Future            | Not started             |                                                                       |
 
 **Current Focus:** Shipped to GitHub — awaiting review & next iteration direction

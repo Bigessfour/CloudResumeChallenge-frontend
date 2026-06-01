@@ -4,11 +4,15 @@
 (function () {
   "use strict";
 
+  var DEMO_VISITOR_COUNT = 3214;
+
   document.addEventListener("DOMContentLoaded", function () {
     if (typeof ej === "undefined") {
       console.error("Syncfusion EJ2 failed to load.");
       return;
     }
+
+    initParticles();
 
     var appBar = new ej.navigations.AppBar({
       colorMode: "Dark",
@@ -50,7 +54,7 @@
     });
 
     var visitorBtn = new ej.buttons.Button({
-      content: "Live · loading…",
+      content: "Live Visitor Counter: …",
       cssClass: "visitor-pill",
       isPrimary: true,
       disabled: true,
@@ -58,6 +62,9 @@
     visitorBtn.appendTo("#visitor-counter");
 
     initVisitorCounter(visitorBtn);
+    initDashboardAccordion();
+    initTransformationChart();
+    initNavActiveState();
 
     var experienceData = [
       {
@@ -141,41 +148,70 @@
         el.scrollIntoView({ behavior: "smooth", block: "start" });
       }
     }
-
-    function initVisitorCounter(button) {
-      var config = window.VISITOR_API_CONFIG || {};
-      var apiUrl = config.url;
-
-      if (!apiUrl) {
-        setVisitorLabel(button, null);
-        return;
-      }
-
-      fetch(apiUrl, { method: "GET", mode: "cors" })
-        .then(function (response) {
-          if (!response.ok) {
-            throw new Error("Visitor API returned " + response.status);
-          }
-          return response.json();
-        })
-        .then(function (data) {
-          setVisitorLabel(button, typeof data.count === "number" ? data.count : null);
-        })
-        .catch(function (error) {
-          console.warn("[visitor-counter]", error.message);
-          setVisitorLabel(button, null);
-        });
-    }
-
-    function setVisitorLabel(button, count) {
-      var label =
-        count === null ? "Live · — visitors" : "Live · " + count.toLocaleString() + " visitors";
-      button.content = label;
-    }
-
-    // Phase 2: Transformation Chart (5 data points)
-    initTransformationChart();
   });
+
+  function initVisitorCounter(button) {
+    var config = window.VISITOR_API_CONFIG || {};
+    var apiUrl = config.url;
+
+    if (!apiUrl) {
+      setVisitorLabel(button, DEMO_VISITOR_COUNT);
+      return;
+    }
+
+    fetch(apiUrl, { method: "GET", mode: "cors" })
+      .then(function (response) {
+        if (!response.ok) {
+          throw new Error("Visitor API returned " + response.status);
+        }
+        return response.json();
+      })
+      .then(function (data) {
+        var count = typeof data.count === "number" ? data.count : null;
+        if (count === null) {
+          setVisitorLabel(button, DEMO_VISITOR_COUNT);
+        } else {
+          setVisitorLabel(button, count);
+        }
+      })
+      .catch(function (error) {
+        console.warn("[visitor-counter]", error.message);
+        setVisitorLabel(button, DEMO_VISITOR_COUNT);
+      });
+  }
+
+  function setVisitorLabel(button, count) {
+    button.content = "Live Visitor Counter: " + count.toLocaleString();
+    button.disabled = false;
+  }
+
+  function initDashboardAccordion() {
+    var mount = document.getElementById("dashboard-accordion");
+    if (!mount || !ej.navigations || !ej.navigations.Accordion) {
+      return;
+    }
+
+    new ej.navigations.Accordion({
+      expandMode: "Single",
+      items: [
+        {
+          header: "Wiley — Transportation Manager",
+          content:
+            "Led 12-person team for on-time routes; built Access/SQL and VBA tools plus BusBuddy (C# + SQL) — 30% error reduction. <a href='#experience'>Full timeline →</a>",
+        },
+        {
+          header: "U.S. Army — Master Sergeant (E-8)",
+          content:
+            "26 years of leadership and logistics; $20M asset accountability across 50+ missions; automated inventory and payroll systems.",
+        },
+        {
+          header: "Cloud Resume Challenge",
+          content:
+            "AWS Cloud Practitioner certified. Building serverless visitor counter, Terraform IaC, GitHub Actions, and this Syncfusion EJ2 portfolio site.",
+        },
+      ],
+    }).appendTo("#dashboard-accordion");
+  }
 
   function initTransformationChart() {
     var chartContainer = document.getElementById("transformation-chart");
@@ -183,8 +219,6 @@
       return;
     }
 
-    // 5 data points telling the story:
-    // "Taking my past experiences, developing new tech skills in order to bring meaningful tools to existing problems"
     var chartData = [
       { category: "Ops & Data\nInstincts", value: 78 },
       { category: "Custom Tooling\n(BusBuddy)", value: 92 },
@@ -193,73 +227,135 @@
       { category: "AI & Future\nSolutions", value: 72 },
     ];
 
-    new ej.charts.Chart(
-      {
-        primaryXAxis: {
-          valueType: "Category",
-          labelStyle: { color: "#c4b5fd", size: "11px", fontWeight: "500" },
-          majorGridLines: { width: 0 },
-          majorTickLines: { width: 0 },
-        },
-        primaryYAxis: {
-          minimum: 0,
-          maximum: 100,
-          interval: 25,
-          labelStyle: { color: "#94a3b8", size: "10px" },
-          majorGridLines: { width: 1, color: "rgba(255,255,255,0.08)" },
-          majorTickLines: { width: 0 },
-        },
-        series: [
-          {
-            type: "Column",
-            dataSource: chartData,
-            xName: "category",
-            yName: "value",
-            name: "Focus & Impact",
-            columnWidth: 0.6,
-            fill: "url(#purpleGradient)",
-            marker: { visible: false },
-            cornerRadius: { topLeft: 4, topRight: 4 },
-          },
-          {
-            type: "Line",
-            dataSource: chartData,
-            xName: "category",
-            yName: "value",
-            name: "Momentum",
-            width: 3,
-            fill: "none",
-            marker: {
-              visible: true,
-              width: 8,
-              height: 8,
-              fill: "#c084fc",
-              border: { width: 2, color: "#fff" },
-            },
-            border: { color: "#c084fc", width: 3 },
-          },
-        ],
-        chartArea: {
-          border: { width: 0 },
-        },
-        background: "transparent",
-        tooltip: { enable: true, fill: "#1f2937", textStyle: { color: "#e7ecf3" } },
-        legendSettings: { visible: false },
+    var chart = new ej.charts.Chart({
+      primaryXAxis: {
+        valueType: "Category",
+        labelStyle: { color: "#c4b5fd", size: "11px", fontWeight: "500" },
+        majorGridLines: { width: 0 },
+        majorTickLines: { width: 0 },
       },
-      "#transformation-chart"
+      primaryYAxis: {
+        minimum: 0,
+        maximum: 100,
+        interval: 25,
+        labelFormat: "{value}",
+        labelStyle: { color: "#94a3b8", size: "10px" },
+        majorGridLines: { width: 1, color: "rgba(255,255,255,0.08)", dashArray: "4,4" },
+        majorTickLines: { width: 0 },
+      },
+      series: [
+        {
+          type: "Column",
+          dataSource: chartData,
+          xName: "category",
+          yName: "value",
+          name: "Focus & Impact",
+          columnWidth: 0.55,
+          fill: "#a855f7",
+          marker: { visible: false },
+          cornerRadius: { topLeft: 6, topRight: 6 },
+        },
+        {
+          type: "Line",
+          dataSource: chartData,
+          xName: "category",
+          yName: "value",
+          name: "Momentum",
+          width: 3,
+          fill: "none",
+          marker: {
+            visible: true,
+            width: 8,
+            height: 8,
+            fill: "#c084fc",
+            border: { width: 2, color: "#fff" },
+          },
+          border: { color: "#c084fc", width: 3 },
+        },
+      ],
+      pointRender: function (args) {
+        if (args.series.type === "Column") {
+          args.fill = args.point.index % 2 === 0 ? "#ffffff" : "#a855f7";
+          args.border = { color: "rgba(192, 132, 252, 0.4)", width: 1 };
+        }
+      },
+      chartArea: {
+        border: { width: 0 },
+      },
+      background: "transparent",
+      tooltip: { enable: true, fill: "#1f2937", textStyle: { color: "#e7ecf3" } },
+      legendSettings: { visible: false },
+      loaded: function () {
+        var svg = chartContainer.querySelector("svg");
+        if (svg && !svg.querySelector("#chartLineGlow")) {
+          var defs = document.createElementNS("http://www.w3.org/2000/svg", "defs");
+          defs.innerHTML =
+            '<filter id="chartLineGlow" x="-20%" y="-20%" width="140%" height="140%">' +
+            '<feGaussianBlur stdDeviation="2" result="blur"/>' +
+            '<feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>';
+          svg.insertBefore(defs, svg.firstChild);
+        }
+      },
+    });
+    chart.appendTo("#transformation-chart");
+  }
+
+  function initNavActiveState() {
+    var navLinks = document.querySelectorAll("#main-nav a[href^='#']");
+    if (!navLinks.length || typeof IntersectionObserver === "undefined") {
+      return;
+    }
+
+    var sectionIds = ["home", "experience", "projects", "certifications", "contact"];
+    var sections = sectionIds
+      .map(function (id) {
+        return document.getElementById(id);
+      })
+      .filter(Boolean);
+
+    var observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          var id = entry.target.id;
+          navLinks.forEach(function (link) {
+            var href = link.getAttribute("href");
+            var isActive = href === "#" + id;
+            link.classList.toggle("is-active", isActive);
+            if (isActive) {
+              link.setAttribute("aria-current", "page");
+            } else {
+              link.removeAttribute("aria-current");
+            }
+          });
+        });
+      },
+      { rootMargin: "-40% 0px -50% 0px", threshold: 0 }
     );
 
-    // Add a simple gradient definition for the bars (purple theme)
-    var svg = chartContainer.querySelector("svg");
-    if (svg) {
-      var defs = document.createElementNS("http://www.w3.org/2000/svg", "defs");
-      defs.innerHTML = `
-        <linearGradient id="purpleGradient" x1="0%" y1="100%" x2="0%" y2="0%">
-          <stop offset="0%" stop-color="#7c3aed" />
-          <stop offset="100%" stop-color="#c084fc" />
-        </linearGradient>
-      `;
-      svg.insertBefore(defs, svg.firstChild);
+    sections.forEach(function (section) {
+      observer.observe(section);
+    });
+  }
+
+  function initParticles() {
+    var container = document.getElementById("particles");
+    if (!container) return;
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      return;
+    }
+
+    var count = 36;
+    for (var i = 0; i < count; i++) {
+      var dot = document.createElement("span");
+      dot.className = "particle";
+      dot.style.left = Math.random() * 100 + "%";
+      dot.style.top = Math.random() * 100 + "%";
+      dot.style.animationDelay = Math.random() * 12 + "s";
+      dot.style.animationDuration = 8 + Math.random() * 10 + "s";
+      dot.style.opacity = String(0.25 + Math.random() * 0.55);
+      container.appendChild(dot);
     }
   }
 })();
