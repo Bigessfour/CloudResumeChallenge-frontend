@@ -624,6 +624,23 @@ section {
   line-height: 1.45;
 }
 
+.dashboard-card-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 0.75rem 0 0;
+}
+
+.dashboard-card-links a {
+  color: var(--accent-purple);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.dashboard-card-links a:hover {
+  text-decoration: underline;
+}
+
 .dashboard-chart {
   grid-column: 1 / -1;
   padding: 1.25rem 1.5rem;

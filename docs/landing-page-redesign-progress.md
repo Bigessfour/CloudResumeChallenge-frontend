@@ -16,7 +16,7 @@
 | **Phase 0** — Theme & Tokens    | Completed               | Purple/violet neon tokens + utilities added                           |
 | **Phase 1** — Hero Redesign     | Completed (polish done) | Monumental centered name + transformation tagline + strong neon       |
 | **Phase 2** — Dashboard Section | Shipped                 | 3 cards + metrics + 5-point chart + hover effects + mobile responsive |
-| **Phase 3** — Polish & Mobile   | Not started             | Further refinements based on review                                   |
+| **Phase 3** — Polish & Mobile   | In progress             | Ollama Chat showcased on Card 3 + contact links (personal AWS ALB)   |
 | **Phase 4** — Future            | Not started             |                                                                       |
 
 **Current Focus:** Shipped to GitHub — awaiting review & next iteration direction
@@ -98,7 +98,9 @@ Tech accomplishments + the transition itself (not historical military scale).
 - Commit: `feat: Major landing page redesign - cinematic hero + At-a-Glance dashboard`
 - CI passed cleanly before push (lint + HTMLHint + Prettier)
 
-**Next:** Review the changes on GitHub, then iterate based on feedback.
+**Next:** Review live Ollama Chat demo link on dashboard Card 3; iterate based on feedback.
+
+**Ollama Chat (personal AWS):** http://ollama-chat-alb-1204074168.us-east-1.elb.amazonaws.com/
 
 ---
 

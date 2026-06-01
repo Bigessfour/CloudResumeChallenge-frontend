@@ -13,7 +13,11 @@
     "terraform",
     "GitHub",
     "API Gateway",
-    "serverless"
+    "serverless",
+    "ollama",
+    "Ollama",
+    "gemma",
+    "GHCR"
   ],
   "ignorePaths": ["node_modules", ".git", "dist", "*.min.js", "skills-lock.json", ".agents"]
 }
