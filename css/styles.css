@@ -727,6 +727,9 @@ section {
   display: flex;
   flex-direction: column;
   gap: 0.65rem;
+  max-height: 380px;
+  overflow-y: auto;
+  padding-right: 0.15rem;
 }
 
 .project-tile {
@@ -1092,6 +1095,71 @@ section {
 
 .skills-category--cloud .skills-category__title {
   color: var(--accent-cyan);
+}
+
+.skills-category--data .skills-category__title {
+  color: var(--accent-purple);
+}
+
+.skills-category--platoon .skills-category__title {
+  color: var(--accent-cyan);
+}
+
+.skills-category--platoon p {
+  margin-bottom: 0.65rem;
+  line-height: 1.5;
+}
+
+.skills-category--platoon p:last-child {
+  margin-bottom: 0;
+}
+
+.skills-category--platoon a {
+  color: var(--accent-cyan);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.skills-category--platoon a:hover {
+  text-decoration: underline;
+}
+
+.skills-category--platoon .skills-category__cred {
+  font-size: 0.88rem !important;
+}
+
+.dashboard-milestones a {
+  color: var(--accent-purple);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.dashboard-milestones a:hover {
+  text-decoration: underline;
+}
+
+.skills-category--data p {
+  margin-bottom: 0.65rem;
+  line-height: 1.5;
+}
+
+.skills-category--data p:last-child {
+  margin-bottom: 0;
+}
+
+.skills-category--data a {
+  color: var(--accent-purple);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.skills-category--data a:hover {
+  text-decoration: underline;
+}
+
+.skills-category__cred {
+  margin-top: 0.25rem !important;
+  font-size: 0.88rem !important;
 }
 
 /* ── Awards ── */

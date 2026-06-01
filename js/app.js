@@ -209,6 +209,21 @@
           content:
             "AWS Cloud Practitioner certified. Building serverless visitor counter, Terraform IaC, GitHub Actions, and this Syncfusion EJ2 portfolio site.",
         },
+        {
+          header: "Code Platoon — AI Cloud & DevOps (Echo)",
+          content:
+            "Cohort curriculum: Terraform, GitHub Actions CI/CD, SageMaker, Kubernetes, Amazon Bedrock (RAG, agents), and capstone delivery. <a href='https://github.com/Bigessfour/aico-echo' target='_blank' rel='noopener noreferrer'>aico-echo →</a>",
+        },
+        {
+          header: "Town of Wiley Website",
+          content:
+            "Production municipal site at <a href='https://townofwiley.gov/' target='_blank' rel='noopener noreferrer'>townofwiley.gov</a> — Angular on AWS Amplify, AppSync CMS, and serverless backends. <a href='https://github.com/Bigessfour/Townofwiley' target='_blank' rel='noopener noreferrer'>GitHub →</a>",
+        },
+        {
+          header: "Wiley Widget (wiley-co-web)",
+          content:
+            "Blazor WebAssembly finance workspace at <a href='https://wileywidget.townofwiley.gov/' target='_blank' rel='noopener noreferrer'>wileywidget.townofwiley.gov</a> — Syncfusion UI, Aurora PostgreSQL, App Runner API. <a href='https://github.com/Bigessfour/wiley-co-web' target='_blank' rel='noopener noreferrer'>GitHub →</a>",
+        },
       ],
     }).appendTo("#dashboard-accordion");
   }

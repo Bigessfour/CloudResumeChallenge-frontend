@@ -145,7 +145,9 @@
                   operational errors 30%.
                 </p>
                 <ul class="summary-chips" aria-label="Core competencies">
+                  <li>Data Analytics (SQL · Tableau · Python)</li>
                   <li>Data Automation &amp; Tooling</li>
+                  <li>AI Cloud &amp; DevOps (Code Platoon)</li>
                   <li>Cloud &amp; DevOps</li>
                   <li>AI &amp; Modern Tooling</li>
                   <li>Leadership at Scale</li>
@@ -220,6 +222,48 @@
                 </div>
               </div>
               <div class="e-card-content" id="dashboard-projects">
+                <div class="project-tile e-card glass-card">
+                  <div class="e-card-header">
+                    <div class="e-card-header-caption">
+                      <div class="e-card-header-title">Town of Wiley Website</div>
+                      <div class="e-card-sub-title">Angular · Amplify · AppSync</div>
+                    </div>
+                  </div>
+                  <div class="e-card-content">
+                    <p>
+                      Production site for townofwiley.gov — SPA on AWS Amplify with AppSync CMS and
+                      serverless Lambdas.
+                    </p>
+                    <a
+                      class="dashboard-card-link"
+                      href="https://townofwiley.gov/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >Live site →</a
+                    >
+                  </div>
+                </div>
+                <div class="project-tile e-card glass-card">
+                  <div class="e-card-header">
+                    <div class="e-card-header-caption">
+                      <div class="e-card-header-title">Wiley Widget</div>
+                      <div class="e-card-sub-title">Blazor WASM · Amplify · Syncfusion</div>
+                    </div>
+                  </div>
+                  <div class="e-card-content">
+                    <p>
+                      Municipal finance workspace — Blazor WebAssembly on AWS Amplify with Aurora,
+                      thin API, and Syncfusion UI.
+                    </p>
+                    <a
+                      class="dashboard-card-link"
+                      href="https://wileywidget.townofwiley.gov/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >Live app →</a
+                    >
+                  </div>
+                </div>
                 <div class="project-tile e-card glass-card">
                   <div class="e-card-header">
                     <div class="e-card-header-caption">
@@ -326,6 +370,18 @@
               </div>
               <h4 class="dashboard-milestones__title">Career milestones</h4>
               <ul class="dashboard-milestones">
+                <li>Town of Wiley — production municipal site on AWS Amplify (townofwiley.gov)</li>
+                <li>
+                  Wiley Widget — Blazor/Syncfusion finance workspace (wileywidget.townofwiley.gov)
+                </li>
+                <li>
+                  Code Platoon Echo — AI Cloud &amp; DevOps cohort (<a
+                    href="https://github.com/Bigessfour/aico-echo"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >aico-echo</a
+                  >)
+                </li>
                 <li>Cloud Resume Challenge — Terraform + GitHub Actions pipeline live</li>
                 <li>Serverless visitor counter API (API Gateway + Lambda + DynamoDB)</li>
                 <li>Ollama Chat ALB demo on personal AWS account</li>
@@ -363,6 +419,66 @@
         <p class="section-label">Projects</p>
         <h2 id="projects-heading" class="section-title">Selected Projects</h2>
         <div class="projects-grid">
+          <article class="e-card glass-card stub-card">
+            <div class="e-card-header">
+              <div class="e-card-header-caption">
+                <div class="e-card-header-title">Town of Wiley Website</div>
+                <div class="e-card-sub-title">
+                  Angular · AWS Amplify · AppSync · Lambda · Route 53
+                </div>
+              </div>
+            </div>
+            <div class="e-card-content">
+              <p>
+                Production municipal website for Wiley, Colorado — Angular SPA hosted on AWS Amplify
+                with Amplify Studio / AppSync CMS, bilingual EN/ES, document hub, NWS weather proxy,
+                severe-weather alert signup, contact-update workflows, SES email alias routing, and
+                Paystar payment integration scaffold.
+              </p>
+              <p class="dashboard-card-links">
+                <a href="https://townofwiley.gov/" target="_blank" rel="noopener noreferrer"
+                  >Live site →</a
+                >
+                <a
+                  href="https://github.com/Bigessfour/Townofwiley"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Source code →</a
+                >
+              </p>
+            </div>
+          </article>
+          <article class="e-card glass-card stub-card">
+            <div class="e-card-header">
+              <div class="e-card-header-caption">
+                <div class="e-card-header-title">Wiley Widget (wiley-co-web)</div>
+                <div class="e-card-sub-title">
+                  Blazor WASM · .NET · Syncfusion · Aurora · App Runner
+                </div>
+              </div>
+            </div>
+            <div class="e-card-content">
+              <p>
+                Wiley Widget for AWS — hosted Blazor WebAssembly municipal finance workspace with
+                Syncfusion panel-first UI, Aurora PostgreSQL, thin API on App Runner, Cognito auth,
+                QuickBooks import pipeline, and Jarvis AI recommendations via xAI/Grok integration.
+              </p>
+              <p class="dashboard-card-links">
+                <a
+                  href="https://wileywidget.townofwiley.gov/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Live app →</a
+                >
+                <a
+                  href="https://github.com/Bigessfour/wiley-co-web"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Source code →</a
+                >
+              </p>
+            </div>
+          </article>
           <article class="e-card glass-card stub-card">
             <div class="e-card-header">
               <div class="e-card-header-caption">
@@ -496,19 +612,77 @@
           <div class="e-card-content skills-grid">
             <div class="skills-category">
               <h3 class="skills-category__title">Software</h3>
-              <p>Visual Studio, GitHub, Microsoft Access/Excel (VBA/Pivot), SharePoint</p>
+              <p>
+                Visual Studio, GitHub, Microsoft Access/Excel (VBA/Pivot), SharePoint, Flask, React
+                (Code Platoon — Bedrock module), Amazon SageMaker &amp; Bedrock consoles
+              </p>
             </div>
             <div class="skills-category">
               <h3 class="skills-category__title">Operating Systems</h3>
-              <p>Windows</p>
+              <p>Windows, macOS</p>
             </div>
             <div class="skills-category">
               <h3 class="skills-category__title">Programming</h3>
-              <p>C# (.NET), SQL, VBA, HTML/CSS basics</p>
+              <p>C# (.NET), SQL, Python &amp; Flask, VBA, HTML/CSS basics</p>
             </div>
-            <div class="skills-category">
+            <div class="skills-category skills-category--data">
+              <h3 class="skills-category__title">
+                Data Analytics (Google Professional Certificate)
+              </h3>
+              <p>
+                <strong>Tools:</strong> SQL, Tableau, Python, Microsoft Excel &amp; Google Sheets,
+                Kaggle, presentation tools (Google Slides / PowerPoint)
+              </p>
+              <p>
+                <strong>Practice:</strong> ask data-driven questions; prepare, clean, and process
+                datasets; exploratory analysis; dashboards and stakeholder visualizations;
+                recommendations from analysis; capstone case study
+              </p>
+              <p>
+                <strong>AI for analytics:</strong> data cleaning and structuring, complex formulas,
+                analysis prep, and visualization planning (per
+                <a
+                  href="https://grow.google/enroll-certificates/data-analytics-mid/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Google Data Analytics Certificate</a
+                >
+                curriculum)
+              </p>
+              <p class="skills-category__cred">
+                <a
+                  href="https://www.credly.com/badges/445eab05-2280-420f-82ae-831cc9f85689"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Verify on Credly →</a
+                >
+              </p>
+            </div>
+            <div class="skills-category skills-category--platoon">
               <h3 class="skills-category__title">Tools &amp; Methods</h3>
-              <p>Agile/Scrum, Data Pipelines, Remote Dev Environments</p>
+              <p>
+                Agile/Scrum, Data Pipelines, Remote Dev Environments, Unix/CLI &amp; shell
+                workflows, Terraform (IaC, modules, remote state), GitHub Actions CI/CD, AWS
+                deployments &amp; networking fundamentals, Kubernetes, LangChain, Amazon SageMaker
+                (ML pipelines), Amazon Bedrock (RAG, agents &amp; flows), Amazon Lex, prompt
+                engineering &amp; production AI evaluation
+              </p>
+              <p class="skills-category__cred">
+                <strong>Code Platoon (Echo):</strong>
+                <a
+                  href="https://github.com/Bigessfour/aico-echo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >aico-echo curriculum →</a
+                >
+                ·
+                <a
+                  href="https://www.codeplatoon.org/ai-cloud-devops-program"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >program overview →</a
+                >
+              </p>
             </div>
             <div class="skills-category skills-category--cloud">
               <h3 class="skills-category__title">Cloud &amp; DevOps (Cloud Resume Challenge)</h3>
@@ -595,19 +769,19 @@
             <article class="e-card glass-card cert-card cert-card--text">
               <a
                 class="cert-card__link"
-                href="https://www.codeplatoon.org/ai-cloud-devops-program"
+                href="https://github.com/Bigessfour/aico-echo"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <span class="cert-card__avatar" aria-hidden="true">CP</span>
                 <div class="cert-card__body">
                   <h3 class="cert-card__name">VA VR&amp;E Full-Stack Bootcamp — Code Platoon</h3>
-                  <p class="cert-card__issuer">AI Cloud &amp; DevOps Engineering</p>
+                  <p class="cert-card__issuer">AI Cloud &amp; DevOps Engineering · Echo Platoon</p>
                   <p class="cert-card__meta">
                     <span class="cert-card__tag cert-card__tag--progress">In Progress</span>
-                    Expected 2026
+                    Echo Platoon · Expected 2026 · Program at codeplatoon.org
                   </p>
-                  <span class="cert-card__verify">View program →</span>
+                  <span class="cert-card__verify">View aico-echo curriculum →</span>
                 </div>
               </a>
             </article>
@@ -700,6 +874,12 @@
                 >GitHub — @Bigessfour</a
               >
               <a
+                href="https://github.com/Bigessfour/aico-echo"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Code Platoon curriculum (aico-echo)</a
+              >
+              <a
                 href="https://github.com/Bigessfour/CloudResumeChallenge-frontend"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -722,6 +902,27 @@
                 target="_blank"
                 rel="noopener noreferrer"
                 >Ollama Chat live demo</a
+              >
+              <a href="https://townofwiley.gov/" target="_blank" rel="noopener noreferrer"
+                >Town of Wiley site</a
+              >
+              <a
+                href="https://github.com/Bigessfour/Townofwiley"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Town of Wiley repo</a
+              >
+              <a
+                href="https://wileywidget.townofwiley.gov/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Wiley Widget app</a
+              >
+              <a
+                href="https://github.com/Bigessfour/wiley-co-web"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Wiley Widget repo</a
               >
             </div>
           </div>
