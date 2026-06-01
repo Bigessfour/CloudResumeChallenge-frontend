@@ -5,15 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Stephen McKitrick — DevOps Engineer, Serverless Architect, and Infrastructure Automation specialist. Cloud Resume Challenge portfolio."
+      content="Stephen Scott McKitrick — DevOps Engineer, U.S. Army Master Sergeant (E-8), Cloud Resume Challenge portfolio. Logistics automation, full-stack development, AWS."
     />
-    <meta property="og:title" content="Stephen McKitrick | Cloud Resume Challenge" />
+    <meta
+      property="og:title"
+      content="Stephen McKitrick | DevOps Engineer | Cloud Resume Challenge"
+    />
     <meta
       property="og:description"
-      content="DevOps Engineer portfolio — AWS, serverless infrastructure, and Syncfusion EJ2."
+      content="DevOps Engineer portfolio — AWS Cloud Practitioner, serverless infrastructure, Syncfusion EJ2, Code Platoon AI Cloud & DevOps."
     />
     <meta property="og:type" content="website" />
-    <title>Stephen McKitrick | Cloud Resume Challenge</title>
+    <title>Stephen McKitrick | DevOps Engineer | Cloud Resume Challenge</title>
 
     <link
       href="https://cdn.syncfusion.com/ej2/30.1.37/ej2-base/styles/material3-dark.css"
@@ -31,6 +34,12 @@
       href="https://cdn.syncfusion.com/ej2/30.1.37/ej2-layouts/styles/material3-dark.css"
       rel="stylesheet"
     />
+    <link
+      href="https://cdn.syncfusion.com/ej2/30.1.37/ej2-grids/styles/material3-dark.css"
+      rel="stylesheet"
+    />
+    <!-- Unified Material 3 Dark for Charts (required for proper theming of ej.charts) -->
+    <link href="https://cdn.syncfusion.com/ej2/30.1.37/material3-dark.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/styles.css" />
 
     <script src="https://cdn.syncfusion.com/ej2/30.1.37/dist/ej2.min.js"></script>
@@ -93,8 +102,10 @@
       <nav id="main-nav" class="main-nav" aria-label="Primary">
         <a href="#home">Home</a>
         <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
         <a href="#certifications">Certifications</a>
+        <a href="#awards">Awards</a>
         <a href="#contact">Contact</a>
       </nav>
       <button
@@ -106,25 +117,55 @@
     </header>
 
     <main class="page-shell">
-      <!-- Hero -->
+      <!-- Hero / Professional Summary -->
       <section id="home" class="hero-section" aria-labelledby="hero-title">
         <div class="hero-layout">
           <div
-            class="e-card glass-card glass-card--hero hero-card"
+            class="e-card glass-card glass-card--hero hero-card neon-glass"
             role="region"
-            aria-label="Introduction"
+            aria-label="Professional summary"
           >
             <div class="e-card-header">
               <div class="e-card-header-caption">
+                <!-- Small refined label above the monumental name (image-inspired) -->
+                <div class="hero-name-label">Stephen McKitrick</div>
                 <div class="e-card-header-title" id="hero-title">Stephen McKitrick</div>
-                <div class="e-card-sub-title">
-                  DevOps Engineer | Serverless Architect | Infrastructure Automation
+                <div class="e-card-sub-title hero-tagline">
+                  From 26 years of military leadership &amp; operations → Building modern cloud,
+                  automation &amp; AI tools that solve real problems
                 </div>
               </div>
             </div>
             <div class="e-card-content">
-              Building resilient, automated cloud infrastructure on AWS — from serverless APIs to
-              production-grade CI/CD pipelines.
+              <p class="hero-bio-condensed">
+                U.S. Army Master Sergeant (E-8) turned self-taught full-stack developer with TS/SCI
+                clearance. Proven at leading teams and delivering data-driven results under extreme
+                pressure. Now channeling that discipline into AWS, Terraform, serverless, and AI
+                tooling — shipping real solutions like the BusBuddy C# app that cut operational
+                errors 30%.
+              </p>
+              <ul class="summary-chips" aria-label="Core competencies">
+                <li>Data Automation &amp; Tooling</li>
+                <li>Cloud &amp; DevOps</li>
+                <li>AI &amp; Modern Tooling</li>
+                <li>Leadership at Scale</li>
+                <li>Serverless &amp; IaC</li>
+                <li>Problem-Solving Under Pressure</li>
+              </ul>
+              <p class="contact-strip">
+                <span>Wiley, Colorado</span>
+                <span aria-hidden="true">·</span>
+                <a href="tel:+17196402230">719-640-2230</a>
+                <span aria-hidden="true">·</span>
+                <a href="mailto:bigessfour@gmail.com">bigessfour@gmail.com</a>
+                <span aria-hidden="true">·</span>
+                <a
+                  href="https://www.linkedin.com/in/stephen-mckitrick-04301b24a"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >LinkedIn</a
+                >
+              </p>
             </div>
             <div class="e-card-actions e-card-vertical">
               <button id="cta-experience" type="button"></button>
@@ -132,58 +173,197 @@
             </div>
           </div>
           <div class="hero-meta">
-            <div id="visitor-counter" aria-live="polite" aria-label="Live visitor count"></div>
+            <div
+              id="visitor-counter"
+              class="neon-pill"
+              aria-live="polite"
+              aria-label="Live visitor count"
+            ></div>
           </div>
         </div>
       </section>
 
-      <!-- Experience stub -->
+      <!-- At-a-Glance Dashboard (Phase 2 — image-inspired "wow" zone) -->
+      <section id="dashboard" class="dashboard-section" aria-labelledby="dashboard-heading">
+        <div class="dashboard-header">
+          <p class="section-label">At a Glance</p>
+          <h2 id="dashboard-heading" class="section-title">The Transition in Action</h2>
+        </div>
+
+        <div class="dashboard-grid">
+          <!-- Left: Tech-focused Metrics Panel -->
+          <div class="dashboard-metrics neon-glass">
+            <div class="metric">
+              <div class="metric-value">30%</div>
+              <div class="metric-label">Error reduction via custom tooling</div>
+            </div>
+            <div class="metric">
+              <div class="metric-value">1</div>
+              <div class="metric-label">Production C# + SQL app shipped (BusBuddy)</div>
+            </div>
+            <div class="metric">
+              <div class="metric-value">2</div>
+              <div class="metric-label">Active cloud &amp; analytics certifications (2026)</div>
+            </div>
+            <div class="metric">
+              <div class="metric-value">AWS + IaC</div>
+              <div class="metric-label">Terraform • Lambda • GitHub Actions live</div>
+            </div>
+          </div>
+
+          <!-- Three Teaser Cards -->
+          <div class="dashboard-cards">
+            <!-- Card 1: From the Field → Code -->
+            <article class="e-card glass-card dashboard-card">
+              <div class="e-card-header">
+                <div class="e-card-header-caption">
+                  <div class="e-card-header-title">From the Field → Code</div>
+                  <div class="e-card-sub-title">Operations to Modern Tooling</div>
+                </div>
+              </div>
+              <div class="e-card-content">
+                <p>
+                  While leading real-world logistics operations, built and shipped BusBuddy (C# +
+                  SQL) and custom VBA/SQL automation tools that delivered a measurable 30% reduction
+                  in errors.
+                </p>
+              </div>
+            </article>
+
+            <!-- Card 2: Cloud & Modern Stack -->
+            <article class="e-card glass-card dashboard-card">
+              <div class="e-card-header">
+                <div class="e-card-header-caption">
+                  <div class="e-card-header-title">Cloud &amp; Modern Stack</div>
+                  <div class="e-card-sub-title">Cloud Resume Challenge • 2026</div>
+                </div>
+              </div>
+              <div class="e-card-content">
+                <p>
+                  AWS Cloud Practitioner + Google Data Analytics certified. Building production
+                  serverless systems with Terraform, GitHub Actions, Lambda, DynamoDB, and
+                  Syncfusion EJ2 — including this site’s live visitor counter.
+                </p>
+              </div>
+            </article>
+
+            <!-- Card 3: AI & Future Impact -->
+            <article class="e-card glass-card dashboard-card">
+              <div class="e-card-header">
+                <div class="e-card-header-caption">
+                  <div class="e-card-header-title">AI &amp; Future Impact</div>
+                  <div class="e-card-sub-title">Lifelong Learning in Action</div>
+                </div>
+              </div>
+              <div class="e-card-content">
+                <p>
+                  Currently in Code Platoon’s AI Cloud &amp; DevOps Engineering program (VA VR&amp;E
+                  funded). Exploring how modern tooling and AI can be applied to real operational
+                  problems — the next chapter of a 26-year journey of building solutions that
+                  matter.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <!-- Chart Container -->
+          <div class="dashboard-chart neon-glass">
+            <div class="chart-header">
+              <h3>From Real Problems → Modern Tooling Solutions</h3>
+              <p class="chart-subtitle">
+                Taking past experience and building new skills to deliver meaningful tools
+              </p>
+            </div>
+            <div id="transformation-chart" class="chart-container"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience -->
       <section id="experience" aria-labelledby="experience-heading">
         <p class="section-label">Experience</p>
-        <div class="e-card glass-card stub-card">
-          <div class="e-card-header">
-            <div class="e-card-header-caption">
-              <div class="e-card-header-title" id="experience-heading">Professional Experience</div>
-              <div class="e-card-sub-title">Coming soon</div>
+        <h2 id="experience-heading" class="section-title">Professional Experience</h2>
+        <div
+          id="experience-grid"
+          class="experience-grid-wrap"
+          role="region"
+          aria-label="Professional experience timeline"
+        ></div>
+      </section>
+
+      <!-- Education -->
+      <section id="education" aria-labelledby="education-heading">
+        <p class="section-label">Education</p>
+        <h2 id="education-heading" class="section-title">Education</h2>
+        <div class="education-grid">
+          <article class="e-card glass-card stub-card">
+            <div class="e-card-header">
+              <div class="e-card-header-caption">
+                <div class="e-card-header-title">Bachelor of Science, Agribusiness</div>
+                <div class="e-card-sub-title">Agricultural Business Operations · May 1992</div>
+              </div>
             </div>
-          </div>
-          <div class="e-card-content">
-            <p>Building in public as part of the Cloud Resume Challenge.</p>
-            <ul>
-              <li>DevOps and infrastructure automation across AWS environments</li>
-              <li>CI/CD pipelines, IaC, and operational reliability</li>
-              <li>Serverless patterns (API Gateway, Lambda) — visitor API next</li>
-            </ul>
-            <p><em>Full timeline with Syncfusion Grid — in progress.</em></p>
+            <div class="e-card-content">
+              <p>Colorado State University, Fort Collins, CO</p>
+            </div>
+          </article>
+          <article class="e-card glass-card stub-card">
+            <div class="e-card-header">
+              <div class="e-card-header-caption">
+                <div class="e-card-header-title">
+                  ACE-Recommended Military Credits (95+ Semester Hours)
+                </div>
+                <div class="e-card-sub-title">U.S. Army Joint Services Transcript · 1988–2014</div>
+              </div>
+            </div>
+            <div class="e-card-content">
+              <p>
+                <strong>Associate-level:</strong> Management (24 SH), Health Sciences (21 SH),
+                Logistics (18 SH)
+              </p>
+              <p><strong>Vocational:</strong> Motor Transport (15 SH), Supply Chain (12 SH)</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Technical Skills -->
+      <section id="skills" aria-labelledby="skills-heading">
+        <p class="section-label">Skills</p>
+        <h2 id="skills-heading" class="section-title">Technical Skills</h2>
+        <div class="e-card glass-card stub-card">
+          <div class="e-card-content skills-grid">
+            <div class="skills-category">
+              <h3 class="skills-category__title">Software</h3>
+              <p>Visual Studio, GitHub, Microsoft Access/Excel (VBA/Pivot), SharePoint</p>
+            </div>
+            <div class="skills-category">
+              <h3 class="skills-category__title">Operating Systems</h3>
+              <p>Windows</p>
+            </div>
+            <div class="skills-category">
+              <h3 class="skills-category__title">Programming</h3>
+              <p>C# (.NET), SQL, VBA, HTML/CSS basics</p>
+            </div>
+            <div class="skills-category">
+              <h3 class="skills-category__title">Tools &amp; Methods</h3>
+              <p>Agile/Scrum, Data Pipelines, Remote Dev Environments</p>
+            </div>
+            <div class="skills-category skills-category--cloud">
+              <h3 class="skills-category__title">Cloud &amp; DevOps (Cloud Resume Challenge)</h3>
+              <p>AWS, Terraform, GitHub Actions, Syncfusion EJ2, API Gateway, Lambda, DynamoDB</p>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- Projects stub -->
-      <section id="projects" aria-labelledby="projects-heading">
-        <p class="section-label">Projects</p>
-        <div class="e-card glass-card stub-card">
-          <div class="e-card-header">
-            <div class="e-card-header-caption">
-              <div class="e-card-header-title" id="projects-heading">Cloud Projects</div>
-              <div class="e-card-sub-title">Coming soon</div>
-            </div>
-          </div>
-          <div class="e-card-content">
-            <ul>
-              <li>This portfolio site (static S3-ready frontend + GitHub Actions CI)</li>
-              <li>Serverless visitor counter API (API Gateway + Lambda + DynamoDB)</li>
-              <li>Terraform infrastructure in CloudResumeChallenge-infra</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- Certifications -->
+      <!-- Certifications & Badges -->
       <section id="certifications" aria-labelledby="certifications-heading">
-        <p class="section-label">Certifications</p>
+        <p class="section-label">Credentials</p>
         <div class="certifications-header">
-          <h2 id="certifications-heading" class="certifications-title">Verified Credentials</h2>
+          <h2 id="certifications-heading" class="certifications-title">
+            Certifications &amp; Badges
+          </h2>
           <a
             class="credly-profile-link"
             href="https://www.credly.com/users/stephen-mckitrick"
@@ -250,30 +430,125 @@
               </a>
             </article>
           </li>
+          <li>
+            <article class="e-card glass-card cert-card cert-card--text">
+              <a
+                class="cert-card__link"
+                href="https://www.codeplatoon.org/ai-cloud-devops-program"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span class="cert-card__avatar" aria-hidden="true">CP</span>
+                <div class="cert-card__body">
+                  <h3 class="cert-card__name">VA VR&amp;E Full-Stack Bootcamp — Code Platoon</h3>
+                  <p class="cert-card__issuer">AI Cloud &amp; DevOps Engineering</p>
+                  <p class="cert-card__meta">
+                    <span class="cert-card__tag cert-card__tag--progress">In Progress</span>
+                    Expected 2026
+                  </p>
+                  <span class="cert-card__verify">View program →</span>
+                </div>
+              </a>
+            </article>
+          </li>
+          <li>
+            <article class="e-card glass-card cert-card cert-card--text">
+              <a
+                class="cert-card__link"
+                href="https://mapmyfuture.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span class="cert-card__avatar cert-card__avatar--mmf" aria-hidden="true">HMA</span>
+                <div class="cert-card__body">
+                  <h3 class="cert-card__name">Heroes MAKE America — Map My Future</h3>
+                  <p class="cert-card__issuer">
+                    The Manufacturing Institute · 25+ Foundational Badges
+                  </p>
+                  <p class="cert-card__meta">
+                    <span class="cert-card__tag">Digital Badges</span>
+                    Logistics Tech/Data Analysis, Quality Control, Leadership/Teamwork · 2025
+                  </p>
+                  <span class="cert-card__verify">Open Map My Future →</span>
+                </div>
+              </a>
+            </article>
+          </li>
         </ul>
+        <div class="e-card glass-card stub-card cert-other">
+          <div class="e-card-content">
+            <h3 class="cert-other__title">Additional credentials</h3>
+            <ul>
+              <li>
+                Commercial Driver's License (CDL) — Active with School Bus and Passenger
+                Endorsements
+              </li>
+              <li>Military: Warrant Officer Candidate School (2009)</li>
+              <li>Basic Noncommissioned Officer Course (BNCOC), 1996</li>
+              <li>Primary Leadership Development Course (PLDC), 1993</li>
+            </ul>
+          </div>
+        </div>
       </section>
 
-      <!-- Contact stub -->
+      <!-- Notable Awards -->
+      <section id="awards" aria-labelledby="awards-heading">
+        <p class="section-label">Recognition</p>
+        <h2 id="awards-heading" class="section-title">Notable Awards</h2>
+        <div class="e-card glass-card stub-card">
+          <div class="e-card-content">
+            <ul class="awards-list">
+              <li>Meritorious Service Medal (2014)</li>
+              <li>Army Commendation Medal (3rd Award)</li>
+              <li>Army Achievement Medal (3rd Award)</li>
+              <li>Army Good Conduct Medal</li>
+              <li>Army Reserve Components Achievement Medal (2nd Award)</li>
+              <li>Iraq Campaign Medal with 2 Bronze Stars</li>
+              <li>National Defense Service Medal</li>
+              <li>Armed Forces Reserve Medal (2nd Award)</li>
+              <li>Driver and Mechanic Badge</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
       <section id="contact" aria-labelledby="contact-heading">
         <p class="section-label">Contact</p>
         <div class="e-card glass-card stub-card">
           <div class="e-card-header">
             <div class="e-card-header-caption">
               <div class="e-card-header-title" id="contact-heading">Get in Touch</div>
-              <div class="e-card-sub-title">Open to opportunities</div>
+              <div class="e-card-sub-title">
+                Open to remote software and cloud engineering roles
+              </div>
             </div>
           </div>
           <div class="e-card-content">
-            <p>Reach out for collaborations, consulting, or cloud engineering roles.</p>
+            <p>Wiley, Colorado · TS/SCI clearance</p>
             <div class="contact-links">
+              <a href="mailto:bigessfour@gmail.com">bigessfour@gmail.com</a>
+              <a href="tel:+17196402230">719-640-2230</a>
+              <a
+                href="https://www.linkedin.com/in/stephen-mckitrick-04301b24a"
+                target="_blank"
+                rel="noopener noreferrer"
+                >LinkedIn</a
+              >
               <a href="https://github.com/Bigessfour" target="_blank" rel="noopener noreferrer"
                 >GitHub — @Bigessfour</a
               >
               <a
-                href="https://github.com/Bigessfour/CloudResumeChallenge-frontend/issues"
+                href="https://github.com/Bigessfour/CloudResumeChallenge-frontend"
                 target="_blank"
                 rel="noopener noreferrer"
-                >Project issues</a
+                >Frontend repo</a
+              >
+              <a
+                href="https://github.com/Bigessfour/CloudResumeChallenge-infra"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Infrastructure repo</a
               >
             </div>
           </div>
