@@ -5,7 +5,7 @@
   "type": "module",
   "description": "Cloud Resume Challenge — static Syncfusion EJ2 frontend",
   "scripts": {
-    "serve": "python -m http.server 8000 --bind 127.0.0.1",
+    "serve": "python3 -m http.server 8000 --bind 127.0.0.1",
     "lint": "eslint js/",
     "lint:fix": "eslint js/ --fix",
     "lint:html": "htmlhint index.html",

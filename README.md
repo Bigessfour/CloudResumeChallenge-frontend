@@ -4,26 +4,26 @@
 
 Portfolio site for the [Cloud Resume Challenge](https://cloudresumechallenge.dev/): a dark, responsive resume built with **vanilla HTML/CSS/JavaScript** and **Syncfusion Essential JS 2**, deployed on AWS (S3 + CloudFront) as the challenge progresses.
 
-**Live demo:** _Coming soon — CloudFront URL will be added after deployment._
+**Live demo:** [stephenmckitrick.com](https://stephenmckitrick.com)
 
 <!-- screenshot: add assets/images/screenshot.png when ready -->
 
 ## What this demonstrates
 
 - Professional landing page with glassmorphism UI and Syncfusion AppBar, Cards, and Buttons
-- Static site suitable for S3 + CloudFront hosting
-- GitHub Actions CI (ESLint, Prettier, HTMLHint, structure checks)
-- Foundation for serverless visitor counter (API Gateway + Lambda) and IaC (Terraform)
+- **AWS Resources** section mapping all 16 CRC challenge steps to deployed infrastructure
+- Static site on S3 + CloudFront with serverless visitor counter (API Gateway + Lambda + DynamoDB)
+- GitHub Actions CI (ESLint, Prettier, HTMLHint, structure checks) and OIDC deploy pipeline
 
 ## Tech stack
 
-| Layer           | Choice                                         |
-| --------------- | ---------------------------------------------- |
-| Frontend        | HTML5, CSS3, vanilla JavaScript                |
-| UI              | Syncfusion EJ2 30.1.37 (CDN, Material 3 dark)  |
-| Quality         | ESLint, Prettier, HTMLHint, cspell             |
-| CI              | GitHub Actions                                 |
-| Cloud (planned) | S3, CloudFront, API Gateway, Lambda, Terraform |
+| Layer    | Choice                                                   |
+| -------- | -------------------------------------------------------- |
+| Frontend | HTML5, CSS3, vanilla JavaScript                          |
+| UI       | Syncfusion EJ2 30.1.37 (CDN, Material 3 dark)            |
+| Quality  | ESLint, Prettier, HTMLHint, cspell                       |
+| CI       | GitHub Actions                                           |
+| Cloud    | S3, CloudFront, API Gateway, Lambda, DynamoDB, Terraform |
 
 ## Quick start
 
@@ -48,10 +48,12 @@ Open [http://127.0.0.1:8000](http://127.0.0.1:8000).
 ## Roadmap
 
 - [x] Landing page + navigation + CI pipeline
-- [ ] Experience section with Syncfusion Grid
-- [ ] Live visitor counter (API + DynamoDB)
-- [ ] S3 + CloudFront + custom domain
-- [ ] Terraform and full challenge write-up
+- [x] Experience section with Syncfusion Grid
+- [x] Live visitor counter (API + DynamoDB)
+- [x] S3 + CloudFront + custom domain (Route 53 NS cutover pending)
+- [x] AWS Resources section (challenge progress + resource inventory)
+- [ ] Lambda pytest suite (CRC step 11)
+- [ ] Challenge blog post (CRC step 16)
 
 ## Project structure
 

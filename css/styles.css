@@ -1189,6 +1189,310 @@ section {
   font-size: 0.88rem !important;
 }
 
+/* ── AWS Resources (Cloud Resume Challenge) ── */
+.aws-resources-intro {
+  margin: 0 0 1.5rem;
+  max-width: 72ch;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.aws-resources-intro a {
+  color: var(--accent-cyan);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.aws-resources-intro a:hover {
+  text-decoration: underline;
+}
+
+.aws-resources-intro--compact {
+  margin-bottom: 1rem;
+  font-size: 0.88rem;
+}
+
+.aws-security-grid .aws-resource-card__link {
+  display: inline-block;
+  margin-right: 0.75rem;
+}
+
+.aws-security-card .e-card-content {
+  position: relative;
+  padding-top: 1.75rem;
+}
+
+.security-status {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: inline-block;
+  padding: 0.15rem 0.55rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+.security-status--automatic {
+  color: var(--accent-violet);
+  background: rgba(167, 139, 250, 0.12);
+  border: 1px solid rgba(167, 139, 250, 0.35);
+}
+
+.security-status--active {
+  color: #6ee7b7;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+}
+
+.security-status--configured {
+  color: var(--accent-cyan);
+  background: rgba(34, 211, 238, 0.12);
+  border: 1px solid rgba(34, 211, 238, 0.35);
+}
+
+.aws-security-footnote {
+  margin: -0.5rem 0 1.75rem;
+  max-width: 72ch;
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.aws-resources-block {
+  margin-bottom: 1.5rem;
+}
+
+.aws-resources-subtitle {
+  margin: 0 0 1rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.aws-resources-subtitle--inline {
+  margin-bottom: 0.75rem;
+}
+
+.aws-resources-accordion-wrap {
+  padding-top: 0.25rem;
+}
+
+.aws-resources-accordion-wrap .e-accordion {
+  background: transparent !important;
+  border: none !important;
+}
+
+.aws-resources-accordion-wrap .e-acrdn-item {
+  background: transparent !important;
+  border-color: rgba(192, 132, 252, 0.2) !important;
+}
+
+.aws-resources-accordion-wrap .e-acrdn-header-content {
+  color: var(--text) !important;
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+}
+
+.aws-resources-accordion-wrap .e-acrdn-content {
+  color: var(--muted) !important;
+  font-size: 0.85rem !important;
+  line-height: 1.5 !important;
+  background: rgba(0, 0, 0, 0.12) !important;
+}
+
+.aws-resources-accordion-wrap .e-acrdn-header:focus-visible {
+  outline: 2px solid var(--neon-purple) !important;
+  outline-offset: 2px;
+}
+
+.crc-step-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.crc-step-list li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.35rem 1rem;
+  align-items: start;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.crc-step-list li:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.crc-step-list__title {
+  margin: 0;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text);
+  grid-column: 1;
+}
+
+.crc-step-list__detail {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--muted);
+  grid-column: 1;
+}
+
+.crc-step-list__link {
+  margin: 0;
+  font-size: 0.82rem;
+  grid-column: 1;
+}
+
+.crc-step-list__link a {
+  color: var(--accent-cyan);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.crc-step-list__link a:hover {
+  text-decoration: underline;
+}
+
+.crc-status {
+  display: inline-block;
+  padding: 0.15rem 0.55rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: start;
+}
+
+.crc-status--complete {
+  color: #6ee7b7;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+}
+
+.crc-status--progress {
+  color: var(--accent-cyan);
+  background: rgba(34, 211, 238, 0.12);
+  border: 1px solid rgba(34, 211, 238, 0.35);
+}
+
+.crc-status--planned {
+  color: var(--muted);
+  background: rgba(148, 163, 184, 0.1);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+}
+
+.aws-resource-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+}
+
+.aws-resource-card {
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.aws-resource-card:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.35),
+    0 0 20px var(--glow-violet);
+}
+
+.aws-resource-card .e-card-content {
+  padding: 1.25rem 1.35rem;
+}
+
+.aws-resource-card__name {
+  margin: 0 0 0.45rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.aws-resource-card__purpose {
+  margin: 0 0 0.5rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.aws-resource-card__steps {
+  margin: 0 0 0.65rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-violet);
+}
+
+.aws-resource-card__link {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent-cyan);
+  text-decoration: none;
+}
+
+.aws-resource-card__link:hover {
+  text-decoration: underline;
+}
+
+.aws-resources-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  align-items: center;
+}
+
+.aws-resources-links a {
+  color: var(--accent-cyan);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.aws-resources-links a:hover {
+  text-decoration: underline;
+}
+
+.aws-resources-links__note {
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+.aws-resources-links__note code {
+  font-size: 0.78rem;
+  color: var(--accent-violet);
+}
+
+@media (max-width: 540px) {
+  .crc-step-list li {
+    grid-template-columns: 1fr;
+  }
+
+  .crc-status {
+    grid-column: 1;
+    grid-row: auto;
+    justify-self: start;
+  }
+}
+
 /* ── Awards ── */
 .awards-list {
   list-style: none;

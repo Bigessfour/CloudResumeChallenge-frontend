@@ -107,6 +107,7 @@
         <a href="#home" aria-current="page">Home</a>
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
+        <a href="#aws-resources">AWS Resources</a>
         <a href="#certifications">Certifications</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -287,6 +288,7 @@
                       This portfolio — agent-assisted build (context rules, MCP, CI-gated deploy),
                       serverless visitor counter, EJ2 UI, and IaC on GitHub Actions.
                     </p>
+                    <a class="dashboard-card-link" href="#aws-resources">View stack →</a>
                   </div>
                 </div>
                 <div class="project-tile e-card glass-card">
@@ -512,6 +514,7 @@
                 quality gates before every production release.
               </p>
               <p class="dashboard-card-links">
+                <a href="#aws-resources">AWS Resources →</a>
                 <a
                   href="https://github.com/Bigessfour/CloudResumeChallenge-frontend"
                   target="_blank"
@@ -721,7 +724,603 @@
             </div>
             <div class="skills-category skills-category--cloud">
               <h3 class="skills-category__title">Cloud &amp; DevOps (Cloud Resume Challenge)</h3>
-              <p>AWS, Terraform, GitHub Actions, Syncfusion EJ2, API Gateway, Lambda, DynamoDB</p>
+              <p>
+                AWS serverless stack deployed with Terraform and GitHub Actions OIDC — see the
+                <a href="#aws-resources">AWS Resources</a> section for challenge progress and live
+                infrastructure inventory.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- AWS Resources (Cloud Resume Challenge) -->
+      <section id="aws-resources" aria-labelledby="aws-resources-heading">
+        <p class="section-label">Cloud Resume Challenge</p>
+        <h2 id="aws-resources-heading" class="section-title">AWS Resources</h2>
+        <p class="aws-resources-intro">
+          Progress against the
+          <a
+            href="https://cloudresumechallenge.dev/docs/the-challenge/aws/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >official AWS challenge</a
+          >
+          and the Terraform-managed services running this portfolio. Full architecture diagram and
+          runbook live in the
+          <a
+            href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/docs/ARCHITECTURE.md"
+            target="_blank"
+            rel="noopener noreferrer"
+            >infra repo</a
+          >.
+        </p>
+
+        <div class="e-card glass-card stub-card aws-resources-block">
+          <div class="e-card-header">
+            <div class="e-card-header-caption">
+              <div class="e-card-header-title">Challenge Progress</div>
+              <div class="e-card-sub-title">16 steps · 13 complete · 1 in progress · 2 planned</div>
+            </div>
+          </div>
+          <div class="e-card-content aws-resources-accordion-wrap">
+            <div
+              id="aws-resources-accordion"
+              aria-label="Cloud Resume Challenge steps by phase"
+            ></div>
+          </div>
+        </div>
+
+        <h3 class="aws-resources-subtitle">Production Stack</h3>
+        <div class="aws-resource-grid">
+          <article class="e-card glass-card aws-resource-card">
+            <div class="e-card-content">
+              <h4 class="aws-resource-card__name">Amazon S3</h4>
+              <p class="aws-resource-card__purpose">
+                Private static website bucket — HTML, CSS, JS assets
+              </p>
+              <p class="aws-resource-card__steps">CRC steps 4–5</p>
+              <a
+                class="aws-resource-card__link"
+                href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/environments/prod/storage.tf"
+                target="_blank"
+                rel="noopener noreferrer"
+                >storage.tf →</a
+              >
+            </div>
+          </article>
+          <article class="e-card glass-card aws-resource-card">
+            <div class="e-card-content">
+              <h4 class="aws-resource-card__name">Amazon CloudFront</h4>
+              <p class="aws-resource-card__purpose">
+                HTTPS CDN with OAC, security headers, www redirect
+              </p>
+              <p class="aws-resource-card__steps">CRC steps 5–6</p>
+              <a
+                class="aws-resource-card__link"
+                href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/environments/prod/cdn.tf"
+                target="_blank"
+                rel="noopener noreferrer"
+                >cdn.tf →</a
+              >
+            </div>
+          </article>
+          <article class="e-card glass-card aws-resource-card">
+            <div class="e-card-content">
+              <h4 class="aws-resource-card__name">AWS Certificate Manager</h4>
+              <p class="aws-resource-card__purpose">TLS certificate in us-east-1 for CloudFront</p>
+              <p class="aws-resource-card__steps">CRC step 5</p>
+              <a
+                class="aws-resource-card__link"
+                href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/environments/prod/dns.tf"
+                target="_blank"
+                rel="noopener noreferrer"
+                >dns.tf →</a
+              >
+            </div>
+          </article>
+          <article class="e-card glass-card aws-resource-card">
+            <div class="e-card-content">
+              <h4 class="aws-resource-card__name">Amazon Route 53</h4>
+              <p class="aws-resource-card__purpose">
+                Hosted zone, apex/www aliases, cert validation
+              </p>
+              <p class="aws-resource-card__steps">CRC step 6</p>
+              <a
+                class="aws-resource-card__link"
+                href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/environments/prod/dns.tf"
+                target="_blank"
+                rel="noopener noreferrer"
+                >dns.tf →</a
+              >
+            </div>
+          </article>
+          <article class="e-card glass-card aws-resource-card">
+            <div class="e-card-content">
+              <h4 class="aws-resource-card__name">API Gateway HTTP API</h4>
+              <p class="aws-resource-card__purpose">
+                GET /visitors endpoint with CORS for the resume site
+              </p>
+              <p class="aws-resource-card__steps">CRC steps 7–9</p>
+              <a
+                class="aws-resource-card__link"
+                href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/environments/prod/visitor_counter.tf"
+                target="_blank"
+                rel="noopener noreferrer"
+                >visitor_counter.tf →</a
+              >
+            </div>
+          </article>
+          <article class="e-card glass-card aws-resource-card">
+            <div class="e-card-content">
+              <h4 class="aws-resource-card__name">AWS Lambda</h4>
+              <p class="aws-resource-card__purpose">
+                Python 3.12 visitor counter — atomic DynamoDB increment
+              </p>
+              <p class="aws-resource-card__steps">CRC steps 9–10</p>
+              <a
+                class="aws-resource-card__link"
+                href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/lambda/visitor_counter/handler.py"
+                target="_blank"
+                rel="noopener noreferrer"
+                >handler.py →</a
+              >
+            </div>
+          </article>
+          <article class="e-card glass-card aws-resource-card">
+            <div class="e-card-content">
+              <h4 class="aws-resource-card__name">Amazon DynamoDB</h4>
+              <p class="aws-resource-card__purpose">On-demand table storing visitor hit count</p>
+              <p class="aws-resource-card__steps">CRC step 8</p>
+              <a
+                class="aws-resource-card__link"
+                href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/environments/prod/visitor_counter.tf"
+                target="_blank"
+                rel="noopener noreferrer"
+                >visitor_counter.tf →</a
+              >
+            </div>
+          </article>
+          <article class="e-card glass-card aws-resource-card">
+            <div class="e-card-content">
+              <h4 class="aws-resource-card__name">Amazon CloudWatch Logs</h4>
+              <p class="aws-resource-card__purpose">Lambda execution logs with 14-day retention</p>
+              <p class="aws-resource-card__steps">Ops / observability</p>
+              <a
+                class="aws-resource-card__link"
+                href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/environments/prod/visitor_counter.tf"
+                target="_blank"
+                rel="noopener noreferrer"
+                >visitor_counter.tf →</a
+              >
+            </div>
+          </article>
+        </div>
+
+        <h3 class="aws-resources-subtitle">Security &amp; Resilience (Free Tier)</h3>
+        <p class="aws-resources-intro aws-resources-intro--compact">
+          Documented protections from
+          <a
+            href="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/welcome.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            >AWS security guidance</a
+          >. Paid services (WAF, Shield Advanced, GuardDuty) are intentionally not used. No account
+          IDs, role ARNs, or alert emails are published here.
+        </p>
+        <div class="aws-resource-grid aws-security-grid">
+          <article class="e-card glass-card aws-resource-card aws-security-card">
+            <div class="e-card-content">
+              <span class="security-status security-status--automatic">Automatic</span>
+              <h4 class="aws-resource-card__name">AWS Shield Standard</h4>
+              <p class="aws-resource-card__purpose">
+                Managed DDoS protection at the CloudFront and Route 53 edge — included for all AWS
+                customers.
+              </p>
+              <a
+                class="aws-resource-card__link"
+                href="https://docs.aws.amazon.com/waf/latest/developerguide/ddos-standard-summary.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                >AWS docs →</a
+              >
+            </div>
+          </article>
+          <article class="e-card glass-card aws-resource-card aws-security-card">
+            <div class="e-card-content">
+              <span class="security-status security-status--active">Active</span>
+              <h4 class="aws-resource-card__name">S3 Block Public Access &amp; Encryption</h4>
+              <p class="aws-resource-card__purpose">
+                All four block-public settings, SSE-S3 (AES256), versioning, and bucket-owner
+                enforced ownership.
+              </p>
+              <a
+                class="aws-resource-card__link"
+                href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                >AWS docs →</a
+              >
+              <a
+                class="aws-resource-card__link"
+                href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/environments/prod/storage.tf"
+                target="_blank"
+                rel="noopener noreferrer"
+                >storage.tf →</a
+              >
+            </div>
+          </article>
+          <article class="e-card glass-card aws-resource-card aws-security-card">
+            <div class="e-card-content">
+              <span class="security-status security-status--active">Active</span>
+              <h4 class="aws-resource-card__name">CloudFront OAC &amp; HTTPS-Only S3</h4>
+              <p class="aws-resource-card__purpose">
+                Origin Access Control for private S3 reads plus DenyInsecureTransport on the bucket
+                policy.
+              </p>
+              <a
+                class="aws-resource-card__link"
+                href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                >AWS docs →</a
+              >
+              <a
+                class="aws-resource-card__link"
+                href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/environments/prod/cdn.tf"
+                target="_blank"
+                rel="noopener noreferrer"
+                >cdn.tf →</a
+              >
+            </div>
+          </article>
+          <article class="e-card glass-card aws-resource-card aws-security-card">
+            <div class="e-card-content">
+              <span class="security-status security-status--active">Active</span>
+              <h4 class="aws-resource-card__name">Security Response Headers</h4>
+              <p class="aws-resource-card__purpose">
+                CloudFront policy adds HSTS, XSS protection, frame deny, and referrer policy on
+                every response.
+              </p>
+              <a
+                class="aws-resource-card__link"
+                href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/response-headers-policies.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                >AWS docs →</a
+              >
+              <a
+                class="aws-resource-card__link"
+                href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/environments/prod/cdn.tf"
+                target="_blank"
+                rel="noopener noreferrer"
+                >cdn.tf →</a
+              >
+            </div>
+          </article>
+          <article class="e-card glass-card aws-resource-card aws-security-card">
+            <div class="e-card-content">
+              <span class="security-status security-status--active">Active</span>
+              <h4 class="aws-resource-card__name">GitHub Actions OIDC</h4>
+              <p class="aws-resource-card__purpose">
+                CI/CD uses short-lived STS credentials — no long-lived AWS access keys in GitHub.
+              </p>
+              <a
+                class="aws-resource-card__link"
+                href="https://aws.amazon.com/blogs/security/use-iam-roles-to-connect-github-actions-to-actions-in-aws/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >AWS docs →</a
+              >
+              <a
+                class="aws-resource-card__link"
+                href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/bootstrap/main.tf"
+                target="_blank"
+                rel="noopener noreferrer"
+                >bootstrap/main.tf →</a
+              >
+            </div>
+          </article>
+          <article class="e-card glass-card aws-resource-card aws-security-card">
+            <div class="e-card-content">
+              <span class="security-status security-status--active">Active</span>
+              <h4 class="aws-resource-card__name">OIDC Scoped to main</h4>
+              <p class="aws-resource-card__purpose">
+                IAM trust policy allows only the infra and frontend repos on the main branch to
+                assume the deploy role.
+              </p>
+              <a
+                class="aws-resource-card__link"
+                href="https://aws.amazon.com/blogs/security/use-iam-roles-to-connect-github-actions-to-actions-in-aws/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >AWS docs →</a
+              >
+              <a
+                class="aws-resource-card__link"
+                href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/bootstrap/main.tf"
+                target="_blank"
+                rel="noopener noreferrer"
+                >bootstrap/main.tf →</a
+              >
+            </div>
+          </article>
+          <article class="e-card glass-card aws-resource-card aws-security-card">
+            <div class="e-card-content">
+              <span class="security-status security-status--active">Active</span>
+              <h4 class="aws-resource-card__name">API Gateway Throttling</h4>
+              <p class="aws-resource-card__purpose">
+                HTTP API stage rate and burst limits return 429 when traffic exceeds configured
+                thresholds.
+              </p>
+              <a
+                class="aws-resource-card__link"
+                href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-throttling.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                >AWS docs →</a
+              >
+              <a
+                class="aws-resource-card__link"
+                href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/environments/prod/visitor_counter.tf"
+                target="_blank"
+                rel="noopener noreferrer"
+                >visitor_counter.tf →</a
+              >
+            </div>
+          </article>
+          <article class="e-card glass-card aws-resource-card aws-security-card">
+            <div class="e-card-content">
+              <span class="security-status security-status--active">Active</span>
+              <h4 class="aws-resource-card__name">CORS Origin Allowlist</h4>
+              <p class="aws-resource-card__purpose">
+                Visitor API accepts browser requests only from production site origins (plus
+                localhost for local dev).
+              </p>
+              <a
+                class="aws-resource-card__link"
+                href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                >AWS docs →</a
+              >
+              <a
+                class="aws-resource-card__link"
+                href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/environments/prod/visitor_counter.tf"
+                target="_blank"
+                rel="noopener noreferrer"
+                >visitor_counter.tf →</a
+              >
+            </div>
+          </article>
+          <article class="e-card glass-card aws-resource-card aws-security-card">
+            <div class="e-card-content">
+              <span class="security-status security-status--active">Active</span>
+              <h4 class="aws-resource-card__name">Lambda Least Privilege</h4>
+              <p class="aws-resource-card__purpose">
+                Execution role grants DynamoDB GetItem and UpdateItem on the visitor counter table
+                only.
+              </p>
+              <a
+                class="aws-resource-card__link"
+                href="https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                >AWS docs →</a
+              >
+              <a
+                class="aws-resource-card__link"
+                href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/environments/prod/visitor_counter.tf"
+                target="_blank"
+                rel="noopener noreferrer"
+                >visitor_counter.tf →</a
+              >
+            </div>
+          </article>
+          <article class="e-card glass-card aws-resource-card aws-security-card">
+            <div class="e-card-content">
+              <span class="security-status security-status--active">Active</span>
+              <h4 class="aws-resource-card__name">Lambda Concurrency Cap</h4>
+              <p class="aws-resource-card__purpose">
+                Reserved concurrency limits parallel executions to reduce runaway cost during abuse.
+              </p>
+              <a
+                class="aws-resource-card__link"
+                href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-concurrency.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                >AWS docs →</a
+              >
+              <a
+                class="aws-resource-card__link"
+                href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/environments/prod/visitor_counter.tf"
+                target="_blank"
+                rel="noopener noreferrer"
+                >visitor_counter.tf →</a
+              >
+            </div>
+          </article>
+          <article class="e-card glass-card aws-resource-card aws-security-card">
+            <div class="e-card-content">
+              <span class="security-status security-status--active">Active</span>
+              <h4 class="aws-resource-card__name">IAM Access Analyzer</h4>
+              <p class="aws-resource-card__purpose">
+                External-access analyzer monitors for unintended public or cross-account resource
+                access.
+              </p>
+              <a
+                class="aws-resource-card__link"
+                href="https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                >AWS docs →</a
+              >
+              <a
+                class="aws-resource-card__link"
+                href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/environments/prod/security.tf"
+                target="_blank"
+                rel="noopener noreferrer"
+                >security.tf →</a
+              >
+            </div>
+          </article>
+          <article class="e-card glass-card aws-resource-card aws-security-card">
+            <div class="e-card-content">
+              <span class="security-status security-status--configured">Configured</span>
+              <h4 class="aws-resource-card__name">AWS Budgets Alerts</h4>
+              <p class="aws-resource-card__purpose">
+                Monthly cost budget notifies the account owner on forecast and actual spend — alert
+                email set in private tfvars only.
+              </p>
+              <a
+                class="aws-resource-card__link"
+                href="https://aws.amazon.com/aws-cost-management/aws-budgets/pricing/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >AWS docs →</a
+              >
+              <a
+                class="aws-resource-card__link"
+                href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/environments/prod/budgets.tf"
+                target="_blank"
+                rel="noopener noreferrer"
+                >budgets.tf →</a
+              >
+            </div>
+          </article>
+          <article class="e-card glass-card aws-resource-card aws-security-card">
+            <div class="e-card-content">
+              <span class="security-status security-status--active">Active</span>
+              <h4 class="aws-resource-card__name">CloudWatch Alarms</h4>
+              <p class="aws-resource-card__purpose">
+                Standard Lambda metrics trigger alarms on errors and unusually high daily
+                invocations.
+              </p>
+              <a
+                class="aws-resource-card__link"
+                href="https://aws.amazon.com/cloudwatch/pricing/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >AWS docs →</a
+              >
+              <a
+                class="aws-resource-card__link"
+                href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/environments/prod/security.tf"
+                target="_blank"
+                rel="noopener noreferrer"
+                >security.tf →</a
+              >
+            </div>
+          </article>
+        </div>
+        <p class="aws-security-footnote">
+          GitHub supply chain: branch protection, secret scanning, Dependabot, and manual approval
+          on infra prod deploys (repo settings). Secrets and license keys are injected at deploy —
+          never committed to source control.
+        </p>
+
+        <h3 class="aws-resources-subtitle">DevOps / IaC Foundation</h3>
+        <div class="aws-resource-grid">
+          <article class="e-card glass-card aws-resource-card">
+            <div class="e-card-content">
+              <h4 class="aws-resource-card__name">Amazon S3 (Terraform state)</h4>
+              <p class="aws-resource-card__purpose">
+                Remote state storage for infrastructure versioning
+              </p>
+              <p class="aws-resource-card__steps">CRC step 12</p>
+              <a
+                class="aws-resource-card__link"
+                href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/bootstrap/main.tf"
+                target="_blank"
+                rel="noopener noreferrer"
+                >bootstrap/main.tf →</a
+              >
+            </div>
+          </article>
+          <article class="e-card glass-card aws-resource-card">
+            <div class="e-card-content">
+              <h4 class="aws-resource-card__name">Amazon DynamoDB (state lock)</h4>
+              <p class="aws-resource-card__purpose">
+                Terraform state locking — prevents concurrent applies
+              </p>
+              <p class="aws-resource-card__steps">CRC step 12</p>
+              <a
+                class="aws-resource-card__link"
+                href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/bootstrap/main.tf"
+                target="_blank"
+                rel="noopener noreferrer"
+                >bootstrap/main.tf →</a
+              >
+            </div>
+          </article>
+          <article class="e-card glass-card aws-resource-card">
+            <div class="e-card-content">
+              <h4 class="aws-resource-card__name">IAM OIDC Provider</h4>
+              <p class="aws-resource-card__purpose">
+                GitHub Actions federation — no long-lived AWS keys in CI
+              </p>
+              <p class="aws-resource-card__steps">CRC steps 14–15</p>
+              <a
+                class="aws-resource-card__link"
+                href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/bootstrap/main.tf"
+                target="_blank"
+                rel="noopener noreferrer"
+                >bootstrap/main.tf →</a
+              >
+            </div>
+          </article>
+          <article class="e-card glass-card aws-resource-card">
+            <div class="e-card-content">
+              <h4 class="aws-resource-card__name">IAM Roles &amp; Policies</h4>
+              <p class="aws-resource-card__purpose">
+                Scoped permissions for Terraform apply and S3 deploy
+              </p>
+              <p class="aws-resource-card__steps">CRC steps 14–15</p>
+              <a
+                class="aws-resource-card__link"
+                href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/bootstrap/main.tf"
+                target="_blank"
+                rel="noopener noreferrer"
+                >bootstrap/main.tf →</a
+              >
+            </div>
+          </article>
+        </div>
+
+        <div class="e-card glass-card stub-card aws-resources-block">
+          <div class="e-card-content">
+            <h3 class="aws-resources-subtitle aws-resources-subtitle--inline">Quick Links</h3>
+            <div class="aws-resources-links">
+              <a
+                href="https://cloudresumechallenge.dev/docs/the-challenge/aws/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Challenge docs</a
+              >
+              <a
+                href="https://github.com/Bigessfour/CloudResumeChallenge-infra"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Infra repo</a
+              >
+              <a
+                href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/docs/ARCHITECTURE.md"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Architecture doc</a
+              >
+              <a href="https://stephenmckitrick.com" target="_blank" rel="noopener noreferrer"
+                >Live site</a
+              >
+              <a
+                href="https://github.com/Bigessfour/CloudResumeChallenge-frontend"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Frontend repo</a
+              >
+              <span class="aws-resources-links__note"
+                >Visitor API URL injected at deploy via <code>js/config.js</code></span
+              >
             </div>
           </div>
         </div>

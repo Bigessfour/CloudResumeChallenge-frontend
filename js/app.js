@@ -63,6 +63,7 @@
 
     initVisitorCounter(visitorBtn);
     initDashboardAccordion();
+    initAwsResourcesAccordion();
     initTransformationChart();
     initNavActiveState();
 
@@ -228,6 +229,98 @@
     }).appendTo("#dashboard-accordion");
   }
 
+  function initAwsResourcesAccordion() {
+    var mount = document.getElementById("aws-resources-accordion");
+    if (!mount || !ej.navigations || !ej.navigations.Accordion) {
+      return;
+    }
+
+    new ej.navigations.Accordion({
+      expandMode: "Multiple",
+      expandedIndices: [0],
+      items: [
+        {
+          header: "Foundation (steps 1–3)",
+          content:
+            '<ul class="crc-step-list">' +
+            '<li><span class="crc-status crc-status--complete">Complete</span>' +
+            '<p class="crc-step-list__title">1. Certification</p>' +
+            '<p class="crc-step-list__detail">AWS Certified Cloud Practitioner on resume and Credly.</p>' +
+            '<p class="crc-step-list__link"><a href="#certifications">View credentials →</a></p></li>' +
+            '<li><span class="crc-status crc-status--complete">Complete</span>' +
+            '<p class="crc-step-list__title">2. HTML</p>' +
+            '<p class="crc-step-list__detail">Semantic resume markup in index.html.</p></li>' +
+            '<li><span class="crc-status crc-status--complete">Complete</span>' +
+            '<p class="crc-step-list__title">3. CSS</p>' +
+            '<p class="crc-step-list__detail">Dark glassmorphism theme in css/styles.css.</p></li>' +
+            "</ul>",
+        },
+        {
+          header: "Hosting (steps 4–6)",
+          content:
+            '<ul class="crc-step-list">' +
+            '<li><span class="crc-status crc-status--complete">Complete</span>' +
+            '<p class="crc-step-list__title">4. Static Website</p>' +
+            '<p class="crc-step-list__detail">Private S3 bucket deployed via Terraform; frontend sync on push.</p>' +
+            '<p class="crc-step-list__link"><a href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/environments/prod/storage.tf" target="_blank" rel="noopener noreferrer">storage.tf →</a></p></li>' +
+            '<li><span class="crc-status crc-status--complete">Complete</span>' +
+            '<p class="crc-step-list__title">5. HTTPS</p>' +
+            '<p class="crc-step-list__detail">CloudFront distribution with OAC and ACM TLS.</p>' +
+            '<p class="crc-step-list__link"><a href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/environments/prod/cdn.tf" target="_blank" rel="noopener noreferrer">cdn.tf →</a></p></li>' +
+            '<li><span class="crc-status crc-status--progress">In progress</span>' +
+            '<p class="crc-step-list__title">6. DNS</p>' +
+            '<p class="crc-step-list__detail">Route 53 zone and records live; nameserver cutover pending.</p>' +
+            '<p class="crc-step-list__link"><a href="https://stephenmckitrick.com" target="_blank" rel="noopener noreferrer">Live site →</a></p></li>' +
+            "</ul>",
+        },
+        {
+          header: "Serverless (steps 7–11)",
+          content:
+            '<ul class="crc-step-list">' +
+            '<li><span class="crc-status crc-status--complete">Complete</span>' +
+            '<p class="crc-step-list__title">7. Javascript</p>' +
+            '<p class="crc-step-list__detail">Visitor counter pill fetches count on page load.</p></li>' +
+            '<li><span class="crc-status crc-status--complete">Complete</span>' +
+            '<p class="crc-step-list__title">8. Database</p>' +
+            '<p class="crc-step-list__detail">DynamoDB on-demand table for hit counts.</p></li>' +
+            '<li><span class="crc-status crc-status--complete">Complete</span>' +
+            '<p class="crc-step-list__title">9. API</p>' +
+            '<p class="crc-step-list__detail">API Gateway HTTP API proxies to Lambda.</p></li>' +
+            '<li><span class="crc-status crc-status--complete">Complete</span>' +
+            '<p class="crc-step-list__title">10. Python</p>' +
+            '<p class="crc-step-list__detail">handler.py uses boto3 UpdateItem ADD for atomic increments.</p>' +
+            '<p class="crc-step-list__link"><a href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/lambda/visitor_counter/handler.py" target="_blank" rel="noopener noreferrer">handler.py →</a></p></li>' +
+            '<li><span class="crc-status crc-status--planned">Planned</span>' +
+            '<p class="crc-step-list__title">11. Tests</p>' +
+            '<p class="crc-step-list__detail">pytest suite for Lambda handler — next infra milestone.</p></li>' +
+            "</ul>",
+        },
+        {
+          header: "Delivery (steps 12–16)",
+          content:
+            '<ul class="crc-step-list">' +
+            '<li><span class="crc-status crc-status--complete">Complete</span>' +
+            '<p class="crc-step-list__title">12. Infrastructure as Code</p>' +
+            '<p class="crc-step-list__detail">Full Terraform stack (bootstrap + prod) instead of SAM.</p>' +
+            '<p class="crc-step-list__link"><a href="https://github.com/Bigessfour/CloudResumeChallenge-infra/tree/main/environments/prod" target="_blank" rel="noopener noreferrer">environments/prod →</a></p></li>' +
+            '<li><span class="crc-status crc-status--complete">Complete</span>' +
+            '<p class="crc-step-list__title">13. Source Control</p>' +
+            '<p class="crc-step-list__detail">Separate GitHub repos for frontend and infrastructure.</p></li>' +
+            '<li><span class="crc-status crc-status--complete">Complete</span>' +
+            '<p class="crc-step-list__title">14. CI/CD (Back end)</p>' +
+            '<p class="crc-step-list__detail">terraform-plan on PR, terraform-apply on main via OIDC.</p></li>' +
+            '<li><span class="crc-status crc-status--complete">Complete</span>' +
+            '<p class="crc-step-list__title">15. CI/CD (Front end)</p>' +
+            '<p class="crc-step-list__detail">ci.yml lint gates; deploy.yml S3 sync + CloudFront invalidation.</p></li>' +
+            '<li><span class="crc-status crc-status--planned">Planned</span>' +
+            '<p class="crc-step-list__title">16. Blog post</p>' +
+            '<p class="crc-step-list__detail">Write-up of lessons learned — link will be added when published.</p></li>' +
+            "</ul>",
+        },
+      ],
+    }).appendTo("#aws-resources-accordion");
+  }
+
   function initTransformationChart() {
     var chartContainer = document.getElementById("transformation-chart");
     if (!chartContainer || typeof ej === "undefined" || !ej.charts) {
@@ -321,7 +414,14 @@
       return;
     }
 
-    var sectionIds = ["home", "experience", "projects", "certifications", "contact"];
+    var sectionIds = [
+      "home",
+      "experience",
+      "projects",
+      "aws-resources",
+      "certifications",
+      "contact",
+    ];
     var sections = sectionIds
       .map(function (id) {
         return document.getElementById(id);
