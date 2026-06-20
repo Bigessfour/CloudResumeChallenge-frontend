@@ -16,3 +16,8 @@ alwaysApply: false
 - Do not commit API keys or license keys.
 - Prefer incremental UI: one section per Agent turn (header → experience grid → charts).
 - Test with `python -m http.server 8000` from project root.
+- Cool features defaults (turn these on by default when scaffolding new EJ2 controls):
+  - Grid: `allowFiltering` with `filterSettings: { type: "Excel" }`, `allowGrouping`, `allowResizing`, `allowReordering`, `showColumnChooser`, toolbar with Search + ColumnChooser + ExcelExport + PdfExport + Print, `allowExcelExport` + `allowPdfExport`, `pageSettings.pageSizes`.
+  - Chart: `zoomSettings` (selection + mouseWheel + pinch + scrollbar), `crosshair` enabled, shared tooltip, visible bottom legend, per-series animation.
+  - Accordion: per-item `iconCss` and custom `expandIcon` / `collapseIcon`.
+  - Button: meaningful `iconCss` + `iconPosition` instead of plain labels.

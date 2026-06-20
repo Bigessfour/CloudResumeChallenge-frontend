@@ -13,7 +13,8 @@
     "format:check": "prettier --check \"**/*.{html,css,js,json,md}\"",
     "ci": "npm run lint && npm run lint:html && npm run format:check",
     "syncfusion:license": "node scripts/syncfusion-license-from-env.mjs",
-    "syncfusion:provision": "node scripts/syncfusion-provision-from-system.mjs"
+    "syncfusion:provision": "node scripts/syncfusion-provision-from-system.mjs",
+    "syncfusion:provision:macos": "node scripts/syncfusion-provision-from-macos.mjs"
   },
   "devDependencies": {
     "@eslint/js": "^9.28.0",

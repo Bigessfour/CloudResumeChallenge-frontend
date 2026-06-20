@@ -23,12 +23,28 @@ Optional: copy [`.env.example`](../.env.example) to `.env` (gitignored).
 ## Syncfusion license (local)
 
 1. Get a key from [License & Downloads](https://www.syncfusion.com/account/downloads) — **v30.x**, platform **JavaScript**.
-2. `setx SYNCFUSION_LICENSE "Your_Key"` or copy `syncfusion-license.txt.example` → `syncfusion-license.txt`.
-3. Run `npm run syncfusion:provision`.
+2. Pick the path that matches your OS:
+
+| OS      | One-time secret setup                                                                                    | Provision command                    |
+| ------- | -------------------------------------------------------------------------------------------------------- | ------------------------------------ |
+| macOS   | Store in Keychain (see [SYNCFUSION_SETUP_MACOS.md](SYNCFUSION_SETUP_MACOS.md))                           | `npm run syncfusion:provision:macos` |
+| Windows | `setx SYNCFUSION_LICENSE "Your_Key"` or copy `syncfusion-license.txt.example` → `syncfusion-license.txt` | `npm run syncfusion:provision`       |
+| Linux   | Export `SYNCFUSION_LICENSE` in `~/.profile` or paste into `syncfusion-license.txt`                       | `npm run syncfusion:license`         |
 
 ## Cursor MCP
 
-[`.cursor/mcp.json`](../.cursor/mcp.json) points at `@syncfusion/typescript-assistant`. Confirm **Connected** under Cursor Settings → MCP.
+[`.cursor/mcp.json`](../.cursor/mcp.json) points at [`@syncfusion/typescript-assistant`](https://www.npmjs.com/package/@syncfusion/typescript-assistant). Confirm **Connected** under Cursor Settings → MCP.
+
+The server reads its API key from the `Syncfusion_API_Key` environment variable. On macOS, source it from Keychain via `~/.zshenv` — see [SYNCFUSION_SETUP_MACOS.md](SYNCFUSION_SETUP_MACOS.md) for the exact one-liner. On Windows, set `Syncfusion_API_Key` under Environment Variables and restart Cursor.
+
+Available tools (full descriptors in `.cursor/projects/.../mcps/.../tools/`):
+
+| Tool                       | Use for                                                 |
+| -------------------------- | ------------------------------------------------------- |
+| `sf_typescript_assistant`  | "How does property X behave?" — agent-callable docs     |
+| `sf_typescript_control`    | Specific control API reference (e.g. `grid`, `chart`)   |
+| `sf_typescript_style`      | Theme + icon catalog (Material 3, Tailwind 3, Fluent 2) |
+| `sf_typescript_ui_builder` | Multi-step UI build orchestration for full sections     |
 
 Example prompts:
 
