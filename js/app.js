@@ -311,9 +311,9 @@
             '<p class="crc-step-list__title">5. HTTPS</p>' +
             '<p class="crc-step-list__detail">CloudFront distribution with OAC and ACM TLS.</p>' +
             '<p class="crc-step-list__link"><a href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/environments/prod/cdn.tf" target="_blank" rel="noopener noreferrer">cdn.tf →</a></p></li>' +
-            '<li><span class="crc-status crc-status--progress">In progress</span>' +
+            '<li><span class="crc-status crc-status--complete">Complete</span>' +
             '<p class="crc-step-list__title">6. DNS</p>' +
-            '<p class="crc-step-list__detail">Route 53 zone and records live; nameserver cutover pending.</p>' +
+            '<p class="crc-step-list__detail">Custom domain stephenmckitrick.com served via Porkbun DNS → CloudFront. CRC spec accepts any DNS provider.</p>' +
             '<p class="crc-step-list__link"><a href="https://stephenmckitrick.com" target="_blank" rel="noopener noreferrer">Live site →</a></p></li>' +
             "</ul>",
         },
@@ -335,9 +335,10 @@
             '<p class="crc-step-list__title">10. Python</p>' +
             '<p class="crc-step-list__detail">handler.py uses boto3 UpdateItem ADD for atomic increments.</p>' +
             '<p class="crc-step-list__link"><a href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/lambda/visitor_counter/handler.py" target="_blank" rel="noopener noreferrer">handler.py →</a></p></li>' +
-            '<li><span class="crc-status crc-status--planned">Planned</span>' +
+            '<li><span class="crc-status crc-status--complete">Complete</span>' +
             '<p class="crc-step-list__title">11. Tests</p>' +
-            '<p class="crc-step-list__detail">pytest suite for Lambda handler — next infra milestone.</p></li>' +
+            '<p class="crc-step-list__detail">pytest suite with moto-mocked DynamoDB; 7 tests gate every terraform apply via GitHub Actions.</p>' +
+            '<p class="crc-step-list__link"><a href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/lambda/visitor_counter/test_handler.py" target="_blank" rel="noopener noreferrer">test_handler.py →</a></p></li>' +
             "</ul>",
         },
         {
@@ -567,12 +568,27 @@
       enableStickyHeader: true,
       height: "auto",
       cssClass: "glass-grid",
+      // Default is "CurrentPage" which silently drops all but the visible page
+      // from print output. We want every row included.
+      printMode: "AllPages",
       toolbarClick: (args) => {
         const id = args.item && args.item.id ? args.item.id : "";
         if (id.endsWith("_excelexport")) {
-          grid.excelExport();
+          // exportType: "AllPages" overrides the default current-page-only behavior.
+          grid.excelExport({
+            exportType: "AllPages",
+            fileName: "Stephen-McKitrick-Experience.xlsx",
+            hierarchyExportMode: "All",
+          });
         } else if (id.endsWith("_pdfexport")) {
-          grid.pdfExport();
+          // Landscape gives the wide Highlights column room to wrap legibly.
+          grid.pdfExport({
+            exportType: "AllPages",
+            fileName: "Stephen-McKitrick-Experience.pdf",
+            pageOrientation: "Landscape",
+            pageSize: "Letter",
+            hierarchyExportMode: "All",
+          });
         } else if (id.endsWith("_print")) {
           grid.print();
         }

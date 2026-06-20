@@ -69,7 +69,9 @@ jobs:
           aws-region: ${{ env.AWS_REGION }}
           role-session-name: frontend-deploy-${{ github.run_id }}
 
-      - name: Sync static site to S3
+      # Pass 1 — body sync. Uploads bodies + handles --delete cleanup.
+      # We intentionally do NOT pass --cache-control here; pass 2 sets it per pattern.
+      - name: Sync static site bodies to S3
         run: |
           aws s3 sync . "s3://${S3_BUCKET}" --delete \
             --exclude ".git/*" \
@@ -91,11 +93,84 @@ jobs:
             --exclude "js/syncfusion-license.example.js" \
             --exclude "js/config.example.js"
 
+      # Pass 2 — set Cache-Control per content kind via in-place server-side copy.
+      # This implements Phase 1 of docs/CACHE_CONTROL_PLAN.md. The strategy:
+      #   HTML  → revalidate every request (browser sends If-None-Match → 304s are free)
+      #   JS/CSS → 5 min browser cache + revalidate (bounded staleness without hard refresh)
+      #   Images → 1 day cache + stale-while-revalidate for a week
+      #   Fonts → 30 day immutable (none today; ready for future additions)
+      - name: Set Cache-Control on HTML
+        run: |
+          aws s3 cp "s3://${S3_BUCKET}" "s3://${S3_BUCKET}" \
+            --recursive --exclude "*" --include "*.html" \
+            --metadata-directive REPLACE \
+            --content-type "text/html; charset=utf-8" \
+            --cache-control "no-cache, must-revalidate"
+
+      - name: Set Cache-Control on JavaScript
+        run: |
+          aws s3 cp "s3://${S3_BUCKET}" "s3://${S3_BUCKET}" \
+            --recursive --exclude "*" --include "*.js" \
+            --metadata-directive REPLACE \
+            --content-type "application/javascript; charset=utf-8" \
+            --cache-control "public, max-age=300, must-revalidate"
+
+      - name: Set Cache-Control on CSS
+        run: |
+          aws s3 cp "s3://${S3_BUCKET}" "s3://${S3_BUCKET}" \
+            --recursive --exclude "*" --include "*.css" \
+            --metadata-directive REPLACE \
+            --content-type "text/css; charset=utf-8" \
+            --cache-control "public, max-age=300, must-revalidate"
+
+      - name: Set Cache-Control on images
+        run: |
+          for ext in png jpg jpeg gif webp svg ico; do
+            aws s3 cp "s3://${S3_BUCKET}" "s3://${S3_BUCKET}" \
+              --recursive --exclude "*" --include "*.${ext}" \
+              --metadata-directive REPLACE \
+              --cache-control "public, max-age=86400, stale-while-revalidate=604800"
+          done
+
       - name: Invalidate CloudFront cache
         run: |
           aws cloudfront create-invalidation \
             --distribution-id "${CLOUDFRONT_DISTRIBUTION_ID}" \
             --paths "/*"
+
+      # Verify that the Cache-Control headers actually made it to CloudFront.
+      # Fails the build if a key asset is missing Cache-Control entirely or has
+      # the wrong directive — catches regressions if someone adds a file type
+      # without wiring up its cp step above.
+      - name: Verify Cache-Control headers reach CloudFront
+        run: |
+          set -euo pipefail
+          HOST="https://stephenmckitrick.com"
+
+          # Give CloudFront a moment to honor the invalidation at the edge.
+          sleep 15
+
+          check() {
+            local path="$1"
+            local must_contain="$2"
+            local actual
+            actual=$(curl -sLI "${HOST}${path}" \
+              | tr -d '\r' \
+              | awk -F': ' 'tolower($1)=="cache-control"{print $2}')
+            if [[ -z "$actual" ]]; then
+              echo "::error ::Missing Cache-Control on ${path}"
+              return 1
+            fi
+            if [[ "$actual" != *"$must_contain"* ]]; then
+              echo "::error ::Unexpected Cache-Control on ${path}: '${actual}' (expected to contain '${must_contain}')"
+              return 1
+            fi
+            echo "OK ${path} → ${actual}"
+          }
+
+          check "/" "no-cache"
+          check "/js/app.js" "max-age=300"
+          check "/css/styles.css" "max-age=300"
 
       - name: Summary
         run: |
@@ -103,3 +178,4 @@ jobs:
           echo "" >> "$GITHUB_STEP_SUMMARY"
           echo "- **Bucket:** \`${S3_BUCKET}\`" >> "$GITHUB_STEP_SUMMARY"
           echo "- **CloudFront:** \`${CLOUDFRONT_DISTRIBUTION_ID}\`" >> "$GITHUB_STEP_SUMMARY"
+          echo "- **Cache-Control:** HTML=no-cache, JS/CSS=max-age=300, images=max-age=86400+SWR" >> "$GITHUB_STEP_SUMMARY"

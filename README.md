@@ -53,16 +53,17 @@ Open [http://127.0.0.1:8000](http://127.0.0.1:8000).
 ## Roadmap
 
 - [x] Landing page + navigation + CI pipeline
-- [x] Experience section with Syncfusion Grid
+- [x] Experience section with Syncfusion Grid (Excel/PDF/Print exports all pages)
 - [x] Live visitor counter (API + DynamoDB)
-- [x] S3 + CloudFront + custom domain (Route 53 NS cutover pending)
+- [x] S3 + CloudFront + custom domain (Porkbun DNS → CloudFront)
 - [x] AWS Resources section (challenge progress + resource inventory)
-- [x] Certifications & Badges Wall (AWS AI Practitioner added)
+- [x] Certifications & Badges Wall (Code Platoon + VA VR&E added)
 - [x] Visitor counter UX (skeleton + count-up + a11y)
 - [x] Glassmorphism UI polish (wider Syncfusion containers, larger badges)
-- [ ] Lambda pytest suite (CRC step 11)
-- [ ] Next: Full OIDC → Terraform apply (see [docs/TERRAFORM-STRUCTURE.md](docs/TERRAFORM-STRUCTURE.md))
-- [ ] Challenge blog post (CRC step 16)
+- [x] Lambda pytest suite — 7 tests, moto-mocked, gates terraform apply (CRC step 11)
+- [x] Backend CI/CD restored — `TF_VAR_*` injection from GitHub Actions vars (CRC step 14)
+- [ ] Cache-Control headers via per-pattern S3 sync (see [docs/CACHE_CONTROL_PLAN.md](docs/CACHE_CONTROL_PLAN.md))
+- [ ] Challenge blog post (CRC step 16 — final remaining CRC requirement)
 
 ## Documentation
 
