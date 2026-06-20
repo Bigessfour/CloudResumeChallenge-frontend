@@ -313,7 +313,7 @@
             '<p class="crc-step-list__link"><a href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/environments/prod/cdn.tf" target="_blank" rel="noopener noreferrer">cdn.tf →</a></p></li>' +
             '<li><span class="crc-status crc-status--complete">Complete</span>' +
             '<p class="crc-step-list__title">6. DNS</p>' +
-            '<p class="crc-step-list__detail">Custom domain stephenmckitrick.com served via Porkbun DNS → CloudFront. CRC spec accepts any DNS provider.</p>' +
+            '<p class="crc-step-list__detail">Custom domain stephenmckitrick.com served via Porkbun DNS → CloudFront. CRC spec accepts any DNS provider. Route 53 cutover queued after the 60-day ICANN registrar-transfer lock expires.</p>' +
             '<p class="crc-step-list__link"><a href="https://stephenmckitrick.com" target="_blank" rel="noopener noreferrer">Live site →</a></p></li>' +
             "</ul>",
         },
