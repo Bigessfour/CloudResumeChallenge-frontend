@@ -39,6 +39,12 @@ html {
   scroll-behavior: smooth;
 }
 
+.text-muted {
+  color: var(--muted);
+  font-size: 0.8rem;
+  margin-top: 0.35rem;
+}
+
 body {
   font-family: var(--font-sans);
   background:
@@ -731,9 +737,6 @@ section {
   display: flex;
   flex-direction: column;
   gap: 0.65rem;
-  max-height: 380px;
-  overflow-y: auto;
-  padding-right: 0.15rem;
 }
 
 .project-tile {
