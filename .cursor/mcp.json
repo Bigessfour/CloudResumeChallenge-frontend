@@ -2,8 +2,11 @@
   "mcpServers": {
     "sf-typescript-mcp": {
       "type": "stdio",
-      "command": "npx",
-      "args": ["-y", "@syncfusion/typescript-assistant@latest"]
+      "command": "/Users/stephenmckitrick/Library/CloudStorage/Box-Box/Cloud_Resume_Challenge/CloudResumeChallenge-frontend/.cursor/scripts/run-sf-typescript-mcp.sh",
+      "args": [],
+      "env": {
+        "Syncfusion_API_Key_Path": "/Users/stephenmckitrick/.cursor/secrets/syncfusion_api_key"
+      }
     }
   }
 }

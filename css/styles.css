@@ -598,6 +598,8 @@ section {
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
   margin-bottom: 1.25rem;
+  /* Accordion panels grow taller than sibling cards; stretch + overflow clips content. */
+  align-items: start;
 }
 
 .dashboard-bottom {
@@ -721,6 +723,8 @@ section {
 
 .dashboard-card-accordion-wrap {
   padding: 0 !important;
+  /* Syncfusion Accordion needs a non-clipping host (Card content defaults to overflow:hidden). */
+  overflow: visible !important;
 }
 
 #dashboard-projects {
@@ -768,6 +772,11 @@ section {
     border-color 0.2s ease;
   position: relative;
   overflow: hidden;
+}
+
+/* Accordion-in-Card: keep glow clip off so expanded panels stay fully viewable. */
+.dashboard-card:has(.e-accordion) {
+  overflow: visible;
 }
 
 .dashboard-card--sf .e-card-header-caption {
@@ -1279,6 +1288,11 @@ section {
 
 .aws-resources-accordion-wrap {
   padding-top: 0.25rem;
+  overflow: visible !important;
+}
+
+.aws-resources-block.e-card {
+  overflow: visible;
 }
 
 .aws-resources-accordion-wrap .e-accordion {
@@ -1869,7 +1883,12 @@ section {
 
 .glass-shell .e-accordion .e-acrdn-header-content,
 .glass-shell .e-accordion .e-acrdn-content {
-  padding: 1.5rem 1.75rem;
+  padding: 0.85rem 1rem;
+}
+
+.aws-resources-accordion-wrap .e-acrdn-header-content,
+.aws-resources-accordion-wrap .e-acrdn-content {
+  padding: 1rem 1.15rem;
 }
 
 .glass-shell .e-grid {
@@ -2067,5 +2086,11 @@ section {
 }
 
 .glass-shell .e-accordion .e-acrdn-header .e-toggle-icon {
+  color: var(--accent-violet);
+}
+
+/* Syncfusion Accordion style guide: color the built-in toggle icons (do not invent expandIcon props).
+   https://ej2.syncfusion.com/documentation/accordion/style */
+.glass-shell .e-accordion .e-acrdn-item .e-acrdn-header .e-toggle-icon .e-icons {
   color: var(--accent-violet);
 }

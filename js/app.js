@@ -222,14 +222,18 @@
       return;
     }
 
+    // Syncfusion Accordion API: expandMode, expandedIndices, items[].header|content|iconCss|expanded.
+    // Toggle icons are customized via CSS (.e-tgl-collapse-icon), not expandIcon/collapseIcon props.
+    // See: https://ej2.syncfusion.com/documentation/api/accordion/
     new ej.navigations.Accordion({
       expandMode: "Single",
-      expandIcon: "e-icons e-chevron-down-fill",
-      collapseIcon: "e-icons e-chevron-up-fill",
+      width: "100%",
+      height: "auto",
       items: [
         {
           header: "Wiley — Transportation Manager",
           iconCss: "e-icons e-trending-chart",
+          expanded: true,
           content:
             "Led 12-person team for on-time routes; built Access/SQL and VBA tools plus BusBuddy (C# + SQL) — 30% error reduction. <a href='#experience'>Full timeline →</a>",
         },
@@ -277,13 +281,13 @@
 
     new ej.navigations.Accordion({
       expandMode: "Multiple",
-      expandedIndices: [0],
-      expandIcon: "e-icons e-chevron-down-fill",
-      collapseIcon: "e-icons e-chevron-up-fill",
+      width: "100%",
+      height: "auto",
       items: [
         {
           header: "Foundation (steps 1–3)",
           iconCss: "e-icons e-folder-open",
+          expanded: true,
           content:
             '<ul class="crc-step-list">' +
             '<li><span class="crc-status crc-status--complete">Complete</span>' +
