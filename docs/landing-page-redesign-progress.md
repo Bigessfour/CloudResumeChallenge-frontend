@@ -100,7 +100,8 @@ Tech accomplishments + the transition itself (not historical military scale).
 
 **Next:** Review live Ollama Chat demo link on dashboard Card 3; iterate based on feedback.
 
-**Ollama Chat (personal AWS):** [Live ALB demo](http://ollama-chat-alb-1204074168.us-east-1.elb.amazonaws.com/)
+**Ollama Chat (personal AWS):** [GitHub repo](https://github.com/Bigessfour/ollama-chat) — ALB demo
+stack is powered down for cost; redeploy via Terraform for interviews.
 
 ---
 
