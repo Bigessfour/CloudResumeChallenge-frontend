@@ -299,7 +299,7 @@
           header: "Wiley Widget (wiley-co-web)",
           iconCss: "e-icons e-table-properties",
           content:
-            "Blazor WebAssembly finance workspace at <a href='https://wileywidget.townofwiley.gov/' target='_blank' rel='noopener noreferrer'>wileywidget.townofwiley.gov</a> — Syncfusion UI, Aurora PostgreSQL, App Runner API. <a href='https://github.com/Bigessfour/wiley-co-web' target='_blank' rel='noopener noreferrer'>GitHub →</a>",
+            "Blazor WebAssembly finance workspace (Amplify + Aurora + App Runner) — Syncfusion UI. Custom domain TLS is pending repair; <a href='https://github.com/Bigessfour/wiley-co-web' target='_blank' rel='noopener noreferrer'>GitHub →</a>",
         },
       ],
     });
