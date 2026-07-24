@@ -14,7 +14,7 @@
 
 When picking this up in a fresh chat, paste:
 
-```
+```text
 Resume the Cache-Control plan in docs/CACHE_CONTROL_PLAN.md.
 Pick up at the first un-checked task in the "Phase progress" section
 and continue until phase end or until you hit an open question.

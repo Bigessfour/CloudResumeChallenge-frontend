@@ -4,7 +4,7 @@
 
 **Reference Image:** `docs/Grok Image 2026-05-20 at 10.05.27 AM.PNG`
 
-**Status Date:** 2026-05-20  
+**Status Date:** 2026-05-20
 **Overall Status:** Shipped to GitHub (main) — Phase 0 + 1 + 2 complete + polished
 
 ---
@@ -25,13 +25,13 @@
 
 ## Narrative (Locked)
 
-**Core Story:**  
+**Core Story:**
 "I came from the military world (26 years of leadership, logistics, data-driven operations). I am now deliberately moving into a new tech life — pursuing my lifelong goal of learning and building with modern tools. My focus is using AI, cloud, automation, and data tooling to bring meaningful, practical solutions to real-world problems."
 
-**Chart Story (Locked):**  
+**Chart Story (Locked):**
 "Taking my past experiences, developing new tech skills in order to bring meaningful tools to existing problems."
 
-**Dashboard Emphasis (Locked):**  
+**Dashboard Emphasis (Locked):**
 Tech accomplishments + the transition itself (not historical military scale).
 
 **Approved Teaser Cards:**
@@ -100,8 +100,10 @@ Tech accomplishments + the transition itself (not historical military scale).
 
 **Next:** Review live Ollama Chat demo link on dashboard Card 3; iterate based on feedback.
 
-**Ollama Chat (personal AWS):** http://ollama-chat-alb-1204074168.us-east-1.elb.amazonaws.com/
+**Ollama Chat (personal AWS):** [Live ALB demo](http://ollama-chat-alb-1204074168.us-east-1.elb.amazonaws.com/)
 
 ---
 
-**Let's build something that makes employers say "I want to hire this person."**
+### Closing note
+
+Let's build something that makes employers say "I want to hire this person."

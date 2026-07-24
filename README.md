@@ -72,7 +72,7 @@ Open [http://127.0.0.1:8000](http://127.0.0.1:8000).
 
 ## Project structure
 
-```
+```text
 ├── index.html              # Page markup
 ├── css/styles.css          # Site styles
 ├── js/

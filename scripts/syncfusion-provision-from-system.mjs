@@ -35,7 +35,7 @@ const key =
 if (!key) {
   console.error(
     "No Syncfusion license in Windows User/Machine env or current process.\n" +
-      "Set SYNCFUSION_LICENSE_KEY or SYNCFUSION_LICENSE, then restart Cursor.",
+      "Set SYNCFUSION_LICENSE_KEY or SYNCFUSION_LICENSE, then restart Cursor."
   );
   process.exit(1);
 }
@@ -84,7 +84,7 @@ const activate = spawnSync("npx", ["syncfusion-license", "activate"], {
 if (activate.status !== 0) {
   console.warn(
     "npx syncfusion-license activate skipped or failed (optional for static CDN).\n" +
-      "CDN runtime uses js/syncfusion-license.js + ej.base.registerLicense — already generated.",
+      "CDN runtime uses js/syncfusion-license.js + ej.base.registerLicense — already generated."
   );
 }
 

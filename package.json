@@ -22,5 +22,10 @@
     "globals": "^16.2.0",
     "htmlhint": "^1.1.4",
     "prettier": "^3.5.3"
+  },
+  "overrides": {
+    "js-yaml": "^4.3.0",
+    "brace-expansion@1": "1.1.16",
+    "brace-expansion@5": "5.0.8"
   }
 }

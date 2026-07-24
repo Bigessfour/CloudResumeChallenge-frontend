@@ -2,8 +2,7 @@ import { existsSync, readFileSync, writeFileSync } from "node:fs";
 
 const PLACEHOLDER = "YOUR_SYNCFUSION_LICENSE_KEY";
 const LICENSE_FILE = "syncfusion-license.txt";
-const DOCS_URL =
-  "https://ej2.syncfusion.com/documentation/licensing/license-key-registration";
+const DOCS_URL = "https://ej2.syncfusion.com/documentation/licensing/license-key-registration";
 
 /**
  * Parse syncfusion-license.txt: first non-empty, non-comment line is the key.
@@ -96,7 +95,7 @@ if (!resolved) {
       "  npm run syncfusion:setup",
       "",
       "Generate a key: https://www.syncfusion.com/account/downloads",
-    ].join("\n"),
+    ].join("\n")
   );
   process.exit(1);
 }

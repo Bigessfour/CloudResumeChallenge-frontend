@@ -48,7 +48,7 @@ Available tools (full descriptors in `.cursor/projects/.../mcps/.../tools/`):
 
 Example prompts:
 
-```
+```text
 #sf_typescript_assistant How do I create an EJ2 Grid with paging?
 #sf_typescript_ui_builder Build a dark Material 3 experience section with Grid.
 ```
