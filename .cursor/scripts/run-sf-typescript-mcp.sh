@@ -24,6 +24,7 @@ fi
 
 if [[ -z "${Syncfusion_API_Key:-}" && -z "${SYNCFUSION_API_KEY:-}" ]]; then
   for pair in \
+    "com.bigessfour.cloudresume.syncfusion-mcp:SYNCFUSION_API_KEY" \
     "com.wileyco.syncfusion.blazor-mcp:SYNCFUSION_API_KEY" \
     "SYNCFUSION_API_KEY:SYNCFUSION_API_KEY"; do
     s="${pair%%:*}"; a="${pair##*:}"

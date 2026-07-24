@@ -39,21 +39,27 @@
 
     initParticles();
 
-    // Code Platoon note: AppBar gives us the sticky top nav frame.
-    // colorMode "Dark" pairs it with the Material 3 dark theme stylesheet.
-    // mode "Top" + isSticky true is the canonical fixed-header config.
+    // MCP AppBar metadata: colorMode, mode (Regular|Dense|Prominent), position (Top|Bottom),
+    // isSticky, cssClass — NOT mode:"Top" (that belongs on position).
     const appBar = new ej.navigations.AppBar({
       colorMode: "Dark",
-      mode: "Top",
+      mode: "Regular",
+      position: "Top",
       isSticky: true,
+      enableRtl: false,
+      cssClass: "site-appbar",
     });
     appBar.appendTo("#site-appbar");
 
-    // Hamburger button toggles the mobile nav drawer (body.nav-open).
+    // MCP Button + AppBar sample: e-inherit hamburger with e-icons e-menu.
     const menuBtn = new ej.buttons.Button({
       cssClass: "e-inherit e-appbar-menu-btn",
       iconCss: "e-icons e-menu",
       isPrimary: false,
+      isToggle: false,
+      disabled: false,
+      enableHtmlSanitizer: true,
+      enableRtl: false,
     });
     menuBtn.appendTo("#menu-btn");
 
@@ -62,22 +68,30 @@
       menuBtn.element.setAttribute("aria-expanded", isOpen ? "true" : "false");
     });
 
-    // Hero CTAs — primary scrolls to experience, outline scrolls to contact.
-    // Icons give visual rhythm and help screen-readers via aria-label inheritance.
+    // MCP Button: content, isPrimary/outline via cssClass, iconCss, iconPosition.
     const ctaExperience = new ej.buttons.Button({
       content: "View Experience",
       isPrimary: true,
       cssClass: "e-primary",
       iconCss: "e-icons e-chevron-right-fill",
       iconPosition: "Right",
+      isToggle: false,
+      disabled: false,
+      enableHtmlSanitizer: true,
+      enableRtl: false,
     });
     ctaExperience.appendTo("#cta-experience");
 
     const ctaContact = new ej.buttons.Button({
       content: "Contact",
+      isPrimary: false,
       cssClass: "e-outline",
       iconCss: "e-icons e-comment-show",
       iconPosition: "Left",
+      isToggle: false,
+      disabled: false,
+      enableHtmlSanitizer: true,
+      enableRtl: false,
     });
     ctaContact.appendTo("#cta-contact");
 
@@ -118,7 +132,10 @@
       content: "Live Visitor Counter: …",
       cssClass: "visitor-pill",
       isPrimary: true,
+      isToggle: false,
       disabled: true,
+      enableHtmlSanitizer: true,
+      enableRtl: false,
       iconCss: "e-icons e-people",
       iconPosition: "Left",
     });
@@ -214,6 +231,15 @@
   // Accordions
   // ──────────────────────────────────────────────────────────────────────────
 
+  // MCP Accordion defaults: SlideDown/SlideUp animation; honor reduced motion.
+  function accordionAnimation() {
+    const duration = prefersReducedMotion ? 0 : 400;
+    return {
+      expand: { effect: "SlideDown", duration: duration, easing: "linear" },
+      collapse: { effect: "SlideUp", duration: duration, easing: "linear" },
+    };
+  }
+
   // Code Platoon note: dashboard accordion summarizes the portfolio in
   // collapsible sections — keeps the page short while still being scannable.
   function initDashboardAccordion() {
@@ -222,15 +248,18 @@
       return;
     }
 
-    // Syncfusion Accordion API: expandMode, expandedIndices, items[].header|content|iconCss|expanded.
-    // Toggle icons are customized via CSS (.e-tgl-collapse-icon), not expandIcon/collapseIcon props.
-    // See: https://ej2.syncfusion.com/documentation/api/accordion/
-    new ej.navigations.Accordion({
+    // MCP Accordion: expandMode, width, height, animation, enableHtmlSanitizer,
+    // items[].header|content|iconCss|expanded|id — toggle icons via CSS only.
+    const accordion = new ej.navigations.Accordion({
       expandMode: "Single",
       width: "100%",
       height: "auto",
+      enableHtmlSanitizer: true,
+      enableRtl: false,
+      animation: accordionAnimation(),
       items: [
         {
+          id: "dash-wiley-transport",
           header: "Wiley — Transportation Manager",
           iconCss: "e-icons e-trending-chart",
           expanded: true,
@@ -238,37 +267,43 @@
             "Led 12-person team for on-time routes; built Access/SQL and VBA tools plus BusBuddy (C# + SQL) — 30% error reduction. <a href='#experience'>Full timeline →</a>",
         },
         {
+          id: "dash-army-msg",
           header: "U.S. Army — Master Sergeant (E-8)",
           iconCss: "e-icons e-medal",
           content:
             "26 years of leadership and logistics; $20M asset accountability across 50+ missions; automated inventory and payroll systems.",
         },
         {
+          id: "dash-crc",
           header: "Cloud Resume Challenge",
           iconCss: "e-icons e-cloud",
           content:
             "AWS Cloud Practitioner certified. This portfolio: context rules + Syncfusion MCP, plan-then-implement agent prompts, <code>npm run ci</code> before deploy, OIDC GitHub Actions to S3/CloudFront, and serverless visitor counter (Terraform + API Gateway + Lambda + DynamoDB). <a href='https://github.com/Bigessfour/CloudResumeChallenge-frontend/blob/main/docs/DEV_SETUP.md' target='_blank' rel='noopener noreferrer'>Agent setup →</a>",
         },
         {
+          id: "dash-code-platoon",
           header: "Code Platoon — AI Cloud & DevOps (Echo)",
           iconCss: "e-icons e-graduation",
           content:
             "Cohort curriculum: Terraform, GitHub Actions CI/CD, SageMaker, Kubernetes, Amazon Bedrock (RAG, agents), and capstone delivery. <a href='https://github.com/Bigessfour/aico-echo' target='_blank' rel='noopener noreferrer'>aico-echo →</a>",
         },
         {
+          id: "dash-town-wiley",
           header: "Town of Wiley Website",
           iconCss: "e-icons e-globe-2",
           content:
             "Production municipal site at <a href='https://townofwiley.gov/' target='_blank' rel='noopener noreferrer'>townofwiley.gov</a> — Angular on AWS Amplify, AppSync CMS, and serverless backends. <a href='https://github.com/Bigessfour/Townofwiley' target='_blank' rel='noopener noreferrer'>GitHub →</a>",
         },
         {
+          id: "dash-wiley-widget",
           header: "Wiley Widget (wiley-co-web)",
           iconCss: "e-icons e-table-properties",
           content:
             "Blazor WebAssembly finance workspace at <a href='https://wileywidget.townofwiley.gov/' target='_blank' rel='noopener noreferrer'>wileywidget.townofwiley.gov</a> — Syncfusion UI, Aurora PostgreSQL, App Runner API. <a href='https://github.com/Bigessfour/wiley-co-web' target='_blank' rel='noopener noreferrer'>GitHub →</a>",
         },
       ],
-    }).appendTo("#dashboard-accordion");
+    });
+    accordion.appendTo("#dashboard-accordion");
   }
 
   // Code Platoon note: AWS Resources accordion mirrors the 16 CRC steps.
@@ -283,8 +318,12 @@
       expandMode: "Multiple",
       width: "100%",
       height: "auto",
+      enableHtmlSanitizer: true,
+      enableRtl: false,
+      animation: accordionAnimation(),
       items: [
         {
+          id: "crc-foundation",
           header: "Foundation (steps 1–3)",
           iconCss: "e-icons e-folder-open",
           expanded: true,
@@ -303,6 +342,7 @@
             "</ul>",
         },
         {
+          id: "crc-hosting",
           header: "Hosting (steps 4–6)",
           iconCss: "e-icons e-globe-2",
           content:
@@ -322,6 +362,7 @@
             "</ul>",
         },
         {
+          id: "crc-serverless",
           header: "Serverless (steps 7–11)",
           iconCss: "e-icons e-code-view",
           content:
@@ -346,6 +387,7 @@
             "</ul>",
         },
         {
+          id: "crc-delivery",
           header: "Delivery (steps 12–16)",
           iconCss: "e-icons e-send-1",
           content:
@@ -393,6 +435,17 @@
     ];
 
     const chart = new ej.charts.Chart({
+      // MCP Chart: theme + axes + multi-series + tooltip/legend/zoom
+      theme: "Material3Dark",
+      width: "100%",
+      height: "100%",
+      title: "Career Transformation Arc",
+      titleStyle: { color: "#e9d5ff", size: "14px", fontWeight: "600" },
+      subTitle: "Ops → Tooling → Cloud → IaC → AI",
+      subTitleStyle: { color: "#94a3b8", size: "11px" },
+      enableAnimation: !prefersReducedMotion,
+      enableHtmlSanitizer: true,
+      enableRtl: false,
       primaryXAxis: {
         valueType: "Category",
         labelStyle: { color: "#c4b5fd", size: "11px", fontWeight: "500" },
@@ -419,7 +472,11 @@
           fill: "#a855f7",
           marker: { visible: false },
           cornerRadius: { topLeft: 6, topRight: 6 },
-          animation: { enable: true, duration: 1400, delay: 200 },
+          animation: {
+            enable: !prefersReducedMotion,
+            duration: 1400,
+            delay: 200,
+          },
         },
         {
           type: "Line",
@@ -437,7 +494,11 @@
             border: { width: 2, color: "#fff" },
           },
           border: { color: "#c084fc", width: 3 },
-          animation: { enable: true, duration: 1600, delay: 600 },
+          animation: {
+            enable: !prefersReducedMotion,
+            duration: 1600,
+            delay: 600,
+          },
         },
       ],
       zoomSettings: {
@@ -543,8 +604,20 @@
     const grid = new ej.grids.Grid({
       dataSource: experienceData,
       columns: [
-        { field: "organization", headerText: "Organization", width: 220, minWidth: 160 },
-        { field: "role", headerText: "Role", width: 240, minWidth: 170 },
+        {
+          field: "organization",
+          headerText: "Organization",
+          width: 220,
+          minWidth: 160,
+          clipMode: "EllipsisWithTooltip",
+        },
+        {
+          field: "role",
+          headerText: "Role",
+          width: 240,
+          minWidth: 170,
+          clipMode: "EllipsisWithTooltip",
+        },
         { field: "period", headerText: "Period", width: 140, minWidth: 110 },
         {
           field: "highlights",
@@ -552,25 +625,42 @@
           width: 420,
           minWidth: 220,
           allowFiltering: false,
+          clipMode: "EllipsisWithTooltip",
         },
       ],
+      // MCP Grid usage sample + portfolio export needs
       allowPaging: true,
-      pageSettings: { pageSize: 5, pageSizes: [5, 10, 25, "All"] },
+      pageSettings: { pageSize: 5, pageCount: 5, pageSizes: [5, 10, 25, "All"] },
       allowSorting: true,
-      allowTextWrap: true,
+      allowMultiSorting: true,
       allowFiltering: true,
-      filterSettings: { type: "Excel" },
+      filterSettings: { type: "Excel", mode: "Immediate" },
       allowGrouping: true,
-      groupSettings: { showGroupedColumn: false },
+      groupSettings: {
+        showGroupedColumn: false,
+        showDropArea: true,
+        showUngroupButton: true,
+      },
       allowResizing: true,
       allowReordering: true,
+      allowTextWrap: true,
+      textWrapSettings: { wrapMode: "Both" },
       allowExcelExport: true,
       allowPdfExport: true,
+      allowKeyboard: true,
+      allowSelection: true,
+      selectionSettings: { mode: "Row", type: "Single" },
       showColumnChooser: true,
       toolbar: ["Search", "ColumnChooser", "ExcelExport", "PdfExport", "Print"],
+      searchSettings: { ignoreCase: true, operator: "contains" },
       enableHover: true,
+      enableAltRow: true,
       enableStickyHeader: true,
+      enableHtmlSanitizer: true,
+      enableRtl: false,
+      gridLines: "Default",
       height: "auto",
+      width: "100%",
       cssClass: "glass-grid",
       // Default is "CurrentPage" which silently drops all but the visible page
       // from print output. We want every row included.
