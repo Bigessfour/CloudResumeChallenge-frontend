@@ -16,10 +16,13 @@ dist/
 .agents/
 skills-lock.json
 
-# OS / editor
+# OS / editor / personal IDE (do not commit playground config)
 .DS_Store
 Thumbs.db
-.vscode/launch.json
+.cursor/
+.trunk/
+.vscode/*
+!.vscode/extensions.json
 
 # Logs
 *.log

@@ -2,7 +2,7 @@
 
 This page documents wiring the two Syncfusion secrets this repo needs on a Mac:
 
-1. **`Syncfusion_API_Key`** — read by the Syncfusion TypeScript MCP server registered in [`.cursor/mcp.json`](../.cursor/mcp.json). Required for `#sf_typescript_assistant` and friends to return docs to the agent.
+1. **`Syncfusion_API_Key`** — read by the Syncfusion TypeScript MCP server in your **user** Cursor MCP config (`~/.cursor/mcp.json`). Required for `#sf_typescript_assistant` and friends to return docs to the agent.
 2. **EJ2 license key** — registered at runtime via `ej.base.registerLicense(...)` inside the gitignored `js/syncfusion-license.js`. Suppresses the trial banner when running locally.
 
 Both keys already live in your macOS Keychain. The `security` CLI can pull them without GUI prompts as long as you grant access the first time.
@@ -74,12 +74,12 @@ Verify the license is active:
 
 ## Recap: what's in the repo vs. what's on your machine
 
-| Lives in repo (committed)                                                                       | Lives on your Mac only (gitignored / Keychain)                 |
-| ----------------------------------------------------------------------------------------------- | -------------------------------------------------------------- |
-| [`.cursor/mcp.json`](../.cursor/mcp.json) (server config)                                       | `Syncfusion_API_Key` env var (sourced from Keychain by zshenv) |
-| [`scripts/syncfusion-provision-from-macos.mjs`](../scripts/syncfusion-provision-from-macos.mjs) | `syncfusion-license.txt`                                       |
-| [`scripts/syncfusion-license-from-env.mjs`](../scripts/syncfusion-license-from-env.mjs)         | `js/syncfusion-license.js`                                     |
-| This document                                                                                   | Keychain entries listed in the inventory above                 |
+| Lives in repo (committed)                                                                       | Lives on your Mac only (gitignored / Keychain)      |
+| ----------------------------------------------------------------------------------------------- | --------------------------------------------------- |
+| [docs/DEV_SETUP.md](DEV_SETUP.md) (MCP is user-scope, not in this repo)                         | `~/.cursor/mcp.json` + `Syncfusion_API_Key` env var |
+| [`scripts/syncfusion-provision-from-macos.mjs`](../scripts/syncfusion-provision-from-macos.mjs) | `syncfusion-license.txt`                            |
+| [`scripts/syncfusion-license-from-env.mjs`](../scripts/syncfusion-license-from-env.mjs)         | `js/syncfusion-license.js`                          |
+| This document                                                                                   | Keychain entries listed in the inventory above      |
 
 No plaintext API key ever lands on disk in this setup — only the EJ2 runtime license, which has to be a literal string the browser can register.
 

@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="How Stephen McKitrick built a production Cloud Resume Challenge site: vanilla HTML plus Syncfusion, Terraform, OIDC, and free-tier trade-offs."
+    />
+    <title>Building a production Cloud Resume | Stephen McKitrick</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body class="e-dark-mode">
+    <a class="skip-link" href="#article">Skip to article</a>
+    <article id="article" class="blog-page">
+      <a class="blog-back" href="index.html">← Back to resume</a>
+      <p class="section-label">Cloud Resume Challenge · Step 16</p>
+      <h1>From E-8 logistics to a live serverless resume</h1>
+      <p class="blog-meta">Stephen McKitrick · August 2026 · stephenmckitrick.com</p>
+
+      <p>
+        The Cloud Resume Challenge asks you to put a resume on AWS and prove you can ship. I used it
+        to show a longer story: 26 years of Army logistics leadership, production work for a small
+        Colorado town, and a deliberate move into DevOps. This post covers the trade-offs behind
+        <a href="https://stephenmckitrick.com">stephenmckitrick.com</a>
+        — not a tutorial of every console click.
+      </p>
+
+      <h2>What I optimized for</h2>
+      <p>
+        Employers scan fast. The site had to be live, secure, and cheap enough to leave running,
+        with source they can open in two GitHub repos. I split
+        <a href="https://github.com/Bigessfour/CloudResumeChallenge-frontend">frontend</a>
+        from
+        <a href="https://github.com/Bigessfour/CloudResumeChallenge-infra">infrastructure</a>
+        so a static HTML change does not require a Terraform plan, and an IAM change does not
+        redeploy CSS.
+      </p>
+
+      <h2>Why vanilla HTML plus Syncfusion</h2>
+      <p>
+        Town of Wiley is Angular and PrimeNG. This portfolio is vanilla HTML, CSS, and JavaScript
+        with Syncfusion Essential JS 2 from a CDN. That was deliberate:
+      </p>
+      <ul>
+        <li>
+          <strong>No build step in production.</strong> GitHub Actions lints, injects license and
+          API config, then syncs files to S3. Fewer moving parts than a SPA for a single resume.
+        </li>
+        <li>
+          <strong>CRC fidelity.</strong> The challenge wants HTML, CSS, and JavaScript you wrote —
+          not a framework hiding the work.
+        </li>
+        <li>
+          <strong>Real UI controls.</strong> AppBar, Accordion, Grid (Excel/PDF/Print), and Chart
+          show I can ship accessible components, not only a styled document.
+        </li>
+      </ul>
+      <p>
+        The cost is a Syncfusion license for local preview and a heavier CDN payload than a
+        hand-rolled page. I accepted that to keep the resume interactive without standing up a
+        frontend build pipeline. Long term I may align this site with the Angular stack used on
+        townofwiley.gov; for the challenge, lightweight and inspectable won.
+      </p>
+
+      <h2>OIDC instead of long-lived keys</h2>
+      <p>
+        The first version of many CRC write-ups stores AWS access keys in GitHub Secrets. I used
+        GitHub OIDC: Actions assumes an IAM role scoped to these two repos and the
+        <code>main</code> branch. Credentials are short-lived. Rotating a leaked key is not part of
+        the runbook because there is no static key in CI.
+      </p>
+      <p>
+        Bootstrap still runs locally once (state bucket, lock table, OIDC provider, deploy role).
+        After that, plan-on-PR and apply-on-main are the only mutation path for production
+        infrastructure.
+      </p>
+
+      <h2>Free-tier decisions I would make again</h2>
+      <ul>
+        <li>
+          <strong>Private S3 + CloudFront OAC.</strong> The bucket is not a public website. Only
+          CloudFront reads objects. HTTPS and security headers live at the edge.
+        </li>
+        <li>
+          <strong>HTTP API + Lambda + DynamoDB</strong> for the visitor counter. Atomic
+          <code>ADD</code>, CORS allowlist, throttling, and a least-privilege execution role. Pytest
+          with moto gates every Terraform apply.
+        </li>
+        <li>
+          <strong>No WAF, GuardDuty, or Shield Advanced.</strong> Shield Standard is already on
+          CloudFront. Paid controls would dominate the monthly bill for a personal site.
+        </li>
+        <li>
+          <strong>Porkbun DNS for now.</strong> CRC accepts any DNS provider. Route 53 records are
+          ready after the registrar-transfer lock; the site already serves on the custom domain.
+        </li>
+      </ul>
+
+      <h2>What the military-to-cloud path actually taught me</h2>
+      <p>
+        The useful carry-over is not “I can follow a checklist.” It is accountability under
+        constraints. BusBuddy cut transportation errors 30% because the people running the routes
+        needed a tool that matched the work. townofwiley.gov is in production because a clerk’s
+        office cannot use a demo. The resume stack is the same habit: make it operable, keep the
+        blast radius small, write down how it is secured.
+      </p>
+      <h2>What I would change next</h2>
+      <ul>
+        <li>Light Playwright coverage for the visitor counter and featured sections.</li>
+        <li>A downloadable PDF resume next to the live site.</li>
+        <li>Keep collapsing density. Depth stays one click away for interviews.</li>
+      </ul>
+
+      <p>
+        If you are hiring for DevOps, cloud, or municipal/civic tech: the live site, the two repos,
+        and this post are the packet. Start at
+        <a href="index.html">the resume</a>, then open
+        <a
+          href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/docs/ARCHITECTURE.md"
+          >ARCHITECTURE.md</a
+        >
+        if you want the diagram.
+      </p>
+    </article>
+  </body>
+</html>

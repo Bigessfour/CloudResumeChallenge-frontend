@@ -31,11 +31,13 @@ Optional: copy [`.env.example`](../.env.example) to `.env` (gitignored).
 | Windows | `setx SYNCFUSION_LICENSE "Your_Key"` or copy `syncfusion-license.txt.example` → `syncfusion-license.txt` | `npm run syncfusion:provision`       |
 | Linux   | Export `SYNCFUSION_LICENSE` in `~/.profile` or paste into `syncfusion-license.txt`                       | `npm run syncfusion:license`         |
 
-## Cursor MCP
+## Cursor MCP (optional, local only)
 
-[`.cursor/mcp.json`](../.cursor/mcp.json) points at [`@syncfusion/typescript-assistant`](https://www.npmjs.com/package/@syncfusion/typescript-assistant). Confirm **Connected** under Cursor Settings → MCP.
+`.cursor/` is gitignored. Configure Syncfusion MCP in your **user** Cursor settings (`~/.cursor/mcp.json`), not in this repo. Use [`@syncfusion/typescript-assistant`](https://www.npmjs.com/package/@syncfusion/typescript-assistant) and confirm **Connected** under Cursor Settings → MCP.
 
-The server reads its API key from the `Syncfusion_API_Key` environment variable. On macOS, source it from Keychain via `~/.zshenv` — see [SYNCFUSION_SETUP_MACOS.md](SYNCFUSION_SETUP_MACOS.md) for the exact one-liner. On Windows, set `Syncfusion_API_Key` under Environment Variables and restart Cursor.
+The server reads its API key from the `Syncfusion_API_Key` environment variable. On macOS, source it from Keychain via `~/.zshenv` — see [SYNCFUSION_SETUP_MACOS.md](SYNCFUSION_SETUP_MACOS.md). On Windows, set `Syncfusion_API_Key` under Environment Variables and restart Cursor.
+
+Static EJ2 conventions: [SYNCFUSION_STATIC_EJ2.md](SYNCFUSION_STATIC_EJ2.md).
 
 Available tools (full descriptors in `.cursor/projects/.../mcps/.../tools/`):
 
@@ -53,7 +55,7 @@ Example prompts:
 #sf_typescript_ui_builder Build a dark Material 3 experience section with Grid.
 ```
 
-Ask the agent to convert TypeScript output to **vanilla JS + EJ2 CDN globals** per [`.cursor/rules/syncfusion-static-ej2.mdc`](../.cursor/rules/syncfusion-static-ej2.mdc).
+Ask the agent to convert TypeScript output to **vanilla JS + EJ2 CDN globals** per [SYNCFUSION_STATIC_EJ2.md](SYNCFUSION_STATIC_EJ2.md).
 
 ## Agent skills (optional, local)
 

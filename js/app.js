@@ -70,7 +70,7 @@
 
     // MCP Button: content, isPrimary/outline via cssClass, iconCss, iconPosition.
     const ctaExperience = new ej.buttons.Button({
-      content: "View Experience",
+      content: "View work",
       isPrimary: true,
       cssClass: "e-primary",
       iconCss: "e-icons e-chevron-right-fill",
@@ -95,7 +95,7 @@
     });
     ctaContact.appendTo("#cta-contact");
 
-    ctaExperience.element.addEventListener("click", () => scrollToSection("#experience"));
+    ctaExperience.element.addEventListener("click", () => scrollToSection("#projects"));
     ctaContact.element.addEventListener("click", () => scrollToSection("#contact"));
 
     // Code Platoon note: the visitor counter is the "Cloud" half of the CRC.
@@ -262,7 +262,7 @@
           id: "dash-wiley-transport",
           header: "Wiley — Transportation Manager",
           iconCss: "e-icons e-trending-chart",
-          expanded: true,
+          expanded: false,
           content:
             "Led 12-person team for on-time routes; built Access/SQL and VBA tools plus BusBuddy (C# + SQL) — 30% error reduction. <a href='#experience'>Full timeline →</a>",
         },
@@ -326,7 +326,7 @@
           id: "crc-foundation",
           header: "Foundation (steps 1–3)",
           iconCss: "e-icons e-folder-open",
-          expanded: true,
+          expanded: false,
           content:
             '<ul class="crc-step-list">' +
             '<li><span class="crc-status crc-status--complete">Complete</span>' +
@@ -405,9 +405,10 @@
             '<li><span class="crc-status crc-status--complete">Complete</span>' +
             '<p class="crc-step-list__title">15. CI/CD (Front end)</p>' +
             '<p class="crc-step-list__detail">ci.yml lint gates; deploy.yml S3 sync + CloudFront invalidation.</p></li>' +
-            '<li><span class="crc-status crc-status--planned">Planned</span>' +
+            '<li><span class="crc-status crc-status--complete">Complete</span>' +
             '<p class="crc-step-list__title">16. Blog post</p>' +
-            '<p class="crc-step-list__detail">Write-up of lessons learned — link will be added when published.</p></li>' +
+            '<p class="crc-step-list__detail">Lessons from vanilla + Syncfusion, OIDC, free-tier choices, and the military-to-cloud path.</p>' +
+            '<p class="crc-step-list__link"><a href="blog.html">Read the post →</a></p></li>' +
             "</ul>",
         },
       ],
@@ -730,14 +731,7 @@
       return;
     }
 
-    const sectionIds = [
-      "home",
-      "experience",
-      "projects",
-      "aws-resources",
-      "certifications",
-      "contact",
-    ];
+    const sectionIds = ["home", "impact", "projects", "experience", "contact"];
     const sections = sectionIds.map((id) => document.getElementById(id)).filter(Boolean);
 
     const observer = new IntersectionObserver(
@@ -768,7 +762,7 @@
     if (!container) return;
     if (prefersReducedMotion) return;
 
-    const count = 36;
+    const count = 14;
     for (let i = 0; i < count; i++) {
       const dot = document.createElement("span");
       dot.className = "particle";

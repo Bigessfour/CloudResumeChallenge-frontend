@@ -39,6 +39,7 @@ jobs:
       - name: Project structure and wiring
         run: |
           test -f index.html || (echo "index.html missing" && exit 1)
+          test -f blog.html || (echo "blog.html missing" && exit 1)
           test -f css/styles.css || (echo "css/styles.css missing" && exit 1)
           test -f js/app.js || (echo "js/app.js missing" && exit 1)
           grep -q 'css/styles.css' index.html || (echo "index.html must link css/styles.css" && exit 1)

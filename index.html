@@ -5,18 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Stephen Scott McKitrick — DevOps Engineer, U.S. Army Master Sergeant (E-8), Cloud Resume Challenge portfolio. Logistics automation, full-stack development, AWS."
+      content="Veteran DevOps Engineer. Production municipal systems, 30% error reduction at Wiley Schools, and a serverless AWS portfolio with Terraform and OIDC."
     />
     <meta
       property="og:title"
-      content="Stephen McKitrick | DevOps Engineer | Cloud Resume Challenge"
+      content="Stephen McKitrick | Veteran DevOps Engineer | Cloud Resume Challenge"
     />
     <meta
       property="og:description"
-      content="DevOps Engineer portfolio — AWS Cloud Practitioner, serverless infrastructure, Syncfusion EJ2, Code Platoon AI Cloud & DevOps."
+      content="Veteran DevOps Engineer — production municipal systems plus a full serverless AWS portfolio with Terraform and OIDC."
     />
     <meta property="og:type" content="website" />
-    <title>Stephen McKitrick | DevOps Engineer | Cloud Resume Challenge</title>
+    <title>Stephen McKitrick | Veteran DevOps Engineer</title>
 
     <link
       href="https://cdn.syncfusion.com/ej2/30.1.37/ej2-base/styles/material3-dark.css"
@@ -105,10 +105,10 @@
       <div class="e-appbar-spacer"></div>
       <nav id="main-nav" class="main-nav" aria-label="Primary">
         <a href="#home" aria-current="page">Home</a>
-        <a href="#experience">Experience</a>
+        <a href="#impact">Impact</a>
         <a href="#projects">Projects</a>
-        <a href="#aws-resources">AWS Resources</a>
-        <a href="#certifications">Certifications</a>
+        <a href="#experience">Experience</a>
+        <a href="blog.html">Blog</a>
         <a href="#contact">Contact</a>
       </nav>
       <button
@@ -125,10 +125,11 @@
         <section id="home" class="hero-section hero-section--centered" aria-labelledby="hero-title">
           <div class="hero-layout">
             <div class="hero-inner neon-glass" role="region" aria-label="Professional summary">
-              <div class="hero-name-label">Stephen McKitrick</div>
+              <p class="hero-name-label">E-8 · Veteran · DevOps</p>
               <h1 class="hero-title" id="hero-title">Stephen McKitrick</h1>
               <p class="hero-tagline">
-                DevOps Engineer | Serverless Architect | Infrastructure Automation
+                Veteran DevOps Engineer. Built production municipal systems and a full serverless
+                AWS portfolio with Terraform.
               </p>
               <div
                 id="visitor-counter"
@@ -141,22 +142,46 @@
                   <span>Counting visitors…</span>
                 </span>
               </div>
-              <details class="hero-more">
-                <summary>More about me</summary>
-                <p class="hero-bio-condensed">
-                  U.S. Army Master Sergeant (E-8) turned self-taught full-stack developer with
-                  TS/SCI clearance. Proven at leading teams and delivering data-driven results under
-                  extreme pressure. Now channeling that discipline into AWS, Terraform, serverless,
-                  and AI tooling — shipping real solutions like the BusBuddy C# app that cut
-                  operational errors 30%.
+              <aside class="recruiter-tldr" aria-label="Recruiter summary">
+                <p>
+                  <strong>Recruiter TL;DR</strong> — E-8 logistics leader turned municipal
+                  technologist. Quantified ops impact and IaC you can click through.
                 </p>
+              </aside>
+              <ul class="impact-metrics" aria-label="Highlighted outcomes">
+                <li>
+                  <strong>30%</strong>
+                  <span>fewer transportation errors via BusBuddy</span>
+                </li>
+                <li>
+                  <strong>Live</strong>
+                  <span>production site for a municipality</span>
+                </li>
+                <li>
+                  <strong>IaC + OIDC</strong>
+                  <span>serverless AWS portfolio, no long-lived keys</span>
+                </li>
+              </ul>
+              <p class="hero-bio-condensed">
+                U.S. Army Master Sergeant (E-8) who now ships AWS, Terraform, and serverless systems
+                — including
+                <a href="https://townofwiley.gov/" target="_blank" rel="noopener noreferrer"
+                  >townofwiley.gov</a
+                >
+                and the BusBuddy tooling that cut school-transport errors 30%.
+              </p>
+              <div class="hero-actions">
+                <button id="cta-experience" type="button"></button>
+                <button id="cta-contact" type="button"></button>
+                <a class="hero-text-link" href="blog.html">Read the build story</a>
+              </div>
+              <details class="hero-more">
+                <summary>Contact and skills</summary>
                 <ul class="summary-chips" aria-label="Core competencies">
-                  <li>Data Analytics (SQL · Tableau · Python)</li>
-                  <li>Data Automation &amp; Tooling</li>
-                  <li>AI Cloud &amp; DevOps (Code Platoon)</li>
-                  <li>Cloud &amp; DevOps</li>
-                  <li>Agentic Dev (context · plan · verify)</li>
-                  <li>Leadership at Scale</li>
+                  <li>Terraform · AWS · GitHub Actions</li>
+                  <li>C# / .NET · SQL · Python</li>
+                  <li>Angular · Blazor · serverless</li>
+                  <li>Leadership at scale (E-8)</li>
                 </ul>
                 <p class="contact-strip">
                   <span>Wiley, Colorado</span>
@@ -172,26 +197,21 @@
                     >LinkedIn</a
                   >
                 </p>
-                <div class="hero-actions">
-                  <button id="cta-experience" type="button"></button>
-                  <button id="cta-contact" type="button"></button>
-                  <!-- TODO: Download PDF Resume button → wire to assets/resume.pdf once finalized -->
-                </div>
               </details>
             </div>
           </div>
         </section>
 
         <!-- Dashboard (mockup-aligned) -->
-        <section id="dashboard" class="dashboard-section" aria-labelledby="dashboard-heading">
-          <h2 id="dashboard-heading" class="visually-hidden">Portfolio dashboard</h2>
+        <section id="impact" class="dashboard-section" aria-labelledby="dashboard-heading">
+          <h2 id="dashboard-heading" class="visually-hidden">Featured impact</h2>
 
           <div class="dashboard-cards-row">
             <article class="e-card glass-card dashboard-card dashboard-card--sf">
               <div class="e-card-header">
                 <div class="e-card-header-caption">
                   <div class="e-card-header-title">Experience</div>
-                  <div class="e-card-sub-title">Preview Key Engineer Experience</div>
+                  <div class="e-card-sub-title">Leadership that shipped tools</div>
                 </div>
               </div>
               <div class="e-card-content" id="experience-preview">
@@ -212,8 +232,8 @@
             <article class="e-card glass-card dashboard-card dashboard-card--sf">
               <div class="e-card-header">
                 <div class="e-card-header-caption">
-                  <div class="e-card-header-title">Accordion</div>
-                  <div class="e-card-sub-title">Syncfusion EJ2 Accordion</div>
+                  <div class="e-card-header-title">Transition</div>
+                  <div class="e-card-sub-title">Military → municipal tech → cloud</div>
                 </div>
               </div>
               <div class="e-card-content dashboard-card-accordion-wrap">
@@ -224,22 +244,37 @@
             <article class="e-card glass-card dashboard-card dashboard-card--sf">
               <div class="e-card-header">
                 <div class="e-card-header-caption">
-                  <div class="e-card-header-title">Projects</div>
-                  <div class="e-card-sub-title">Syncfusion cards</div>
+                  <div class="e-card-header-title">Featured work</div>
+                  <div class="e-card-sub-title">Impact first, then the stack</div>
                 </div>
               </div>
               <div class="e-card-content" id="dashboard-projects">
                 <div class="project-tile e-card glass-card">
                   <div class="e-card-header">
                     <div class="e-card-header-caption">
-                      <div class="e-card-header-title">Town of Wiley Website</div>
-                      <div class="e-card-sub-title">Angular · Amplify · AppSync</div>
+                      <div class="e-card-header-title">This Cloud Resume</div>
+                      <div class="e-card-sub-title">S3 · CloudFront · Terraform · OIDC</div>
                     </div>
                   </div>
                   <div class="e-card-content">
                     <p>
-                      Production site for townofwiley.gov — SPA on AWS Amplify with AppSync CMS and
-                      serverless Lambdas.
+                      Live serverless portfolio — private S3, CloudFront OAC, visitor API, and
+                      GitHub Actions with no long-lived AWS keys.
+                    </p>
+                    <a class="dashboard-card-link" href="#aws-resources">Architecture →</a>
+                  </div>
+                </div>
+                <div class="project-tile e-card glass-card">
+                  <div class="e-card-header">
+                    <div class="e-card-header-caption">
+                      <div class="e-card-header-title">Town of Wiley</div>
+                      <div class="e-card-sub-title">Production municipal site</div>
+                    </div>
+                  </div>
+                  <div class="e-card-content">
+                    <p>
+                      Live townofwiley.gov — Angular on Amplify with AppSync CMS and serverless
+                      backends for a real municipality.
                     </p>
                     <a
                       class="dashboard-card-link"
@@ -253,56 +288,14 @@
                 <div class="project-tile e-card glass-card">
                   <div class="e-card-header">
                     <div class="e-card-header-caption">
-                      <div class="e-card-header-title">Wiley Widget</div>
-                      <div class="e-card-sub-title">Blazor WASM · Amplify · Syncfusion</div>
+                      <div class="e-card-header-title">BusBuddy</div>
+                      <div class="e-card-sub-title">30% fewer transport errors</div>
                     </div>
                   </div>
                   <div class="e-card-content">
                     <p>
-                      Municipal finance workspace — Blazor WebAssembly on AWS Amplify with Aurora,
-                      thin API, and Syncfusion UI.
-                    </p>
-                    <a
-                      class="dashboard-card-link"
-                      href="https://github.com/Bigessfour/wiley-co-web"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      >Source →</a
-                    >
-                  </div>
-                </div>
-                <div class="project-tile e-card glass-card">
-                  <div class="e-card-header">
-                    <div class="e-card-header-caption">
-                      <div class="e-card-header-title">TIKR</div>
-                      <div class="e-card-sub-title">Blazor · SQLite · Ollama</div>
-                    </div>
-                  </div>
-                  <div class="e-card-content">
-                    <p>
-                      Local-first institutional knowledge tracker for small-town clerks — deadlines,
-                      documents, and AI on Synology/NAS.
-                    </p>
-                    <a
-                      class="dashboard-card-link"
-                      href="https://github.com/Bigessfour/TIKR-Town-Institutional-Knowledge-Tracker"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      >Source →</a
-                    >
-                  </div>
-                </div>
-                <div class="project-tile e-card glass-card">
-                  <div class="e-card-header">
-                    <div class="e-card-header-caption">
-                      <div class="e-card-header-title">BusBuddy 3</div>
-                      <div class="e-card-sub-title">.NET 9 · WPF · Syncfusion</div>
-                    </div>
-                  </div>
-                  <div class="e-card-content">
-                    <p>
-                      School fleet &amp; route management — rooted in the ops app that cut
-                      transportation errors 30%.
+                      School fleet and route tooling that cut operational errors 30% for a 12-person
+                      transportation team.
                     </p>
                     <a
                       class="dashboard-card-link"
@@ -316,14 +309,14 @@
                 <div class="project-tile e-card glass-card">
                   <div class="e-card-header">
                     <div class="e-card-header-caption">
-                      <div class="e-card-header-title">Hangar Liquor Store</div>
-                      <div class="e-card-sub-title">TypeScript · PWA · Lambda</div>
+                      <div class="e-card-header-title">Hangar Liquor</div>
+                      <div class="e-card-sub-title">Live inventory PWA</div>
                     </div>
                   </div>
                   <div class="e-card-content">
                     <p>
-                      Mobile-first inventory PWA — UPC scan, reorder alerts, and Lambda sales
-                      forecast for a local retailer.
+                      Mobile-first inventory for a local retailer — UPC scan, reorder alerts, and
+                      Lambda sales forecast.
                     </p>
                     <a
                       class="dashboard-card-link"
@@ -334,84 +327,101 @@
                     >
                   </div>
                 </div>
-                <div class="project-tile e-card glass-card">
-                  <div class="e-card-header">
-                    <div class="e-card-header-caption">
-                      <div class="e-card-header-title">Cloud Resume Challenge</div>
-                      <div class="e-card-sub-title">AWS · Terraform · Syncfusion</div>
+                <details class="disclosure-block">
+                  <summary>Additional projects</summary>
+                  <div class="project-tile e-card glass-card">
+                    <div class="e-card-header">
+                      <div class="e-card-header-caption">
+                        <div class="e-card-header-title">Wiley Widget</div>
+                        <div class="e-card-sub-title">Blazor WASM · Aurora · Syncfusion</div>
+                      </div>
+                    </div>
+                    <div class="e-card-content">
+                      <p>
+                        Municipal finance workspace on Amplify with a thin API and Syncfusion UI.
+                      </p>
+                      <a
+                        class="dashboard-card-link"
+                        href="https://github.com/Bigessfour/wiley-co-web"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >Source →</a
+                      >
                     </div>
                   </div>
-                  <div class="e-card-content">
-                    <p>
-                      This portfolio — agent-assisted build (context rules, MCP, CI-gated deploy),
-                      serverless visitor counter, EJ2 UI, and IaC on GitHub Actions.
-                    </p>
-                    <a class="dashboard-card-link" href="#aws-resources">View stack →</a>
-                  </div>
-                </div>
-                <div class="project-tile e-card glass-card">
-                  <div class="e-card-header">
-                    <div class="e-card-header-caption">
-                      <div class="e-card-header-title">Ollama Chat on AWS</div>
-                      <div class="e-card-sub-title">ALB · ASG · Terraform</div>
+                  <div class="project-tile e-card glass-card">
+                    <div class="e-card-header">
+                      <div class="e-card-header-caption">
+                        <div class="e-card-header-title">TIKR</div>
+                        <div class="e-card-sub-title">Blazor · SQLite · Ollama</div>
+                      </div>
+                    </div>
+                    <div class="e-card-content">
+                      <p>Local-first clerk knowledge tracker for small-town offices.</p>
+                      <a
+                        class="dashboard-card-link"
+                        href="https://github.com/Bigessfour/TIKR-Town-Institutional-Knowledge-Tracker"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >Source →</a
+                      >
                     </div>
                   </div>
-                  <div class="e-card-content">
-                    <p>React + Flask + Ollama behind an ALB with private-subnet ASGs.</p>
-                    <p class="text-muted">
-                      AWS demo stack is powered down for cost — architecture and IaC live in the
-                      repo; redeploy via Terraform when needed for interviews.
-                    </p>
-                    <a
-                      class="dashboard-card-link"
-                      href="https://github.com/Bigessfour/ollama-chat"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      >Source →</a
-                    >
-                  </div>
-                </div>
-                <div class="project-tile e-card glass-card">
-                  <div class="e-card-header">
-                    <div class="e-card-header-caption">
-                      <div class="e-card-header-title">LangChain Assistant</div>
-                      <div class="e-card-sub-title">Python · Bedrock · LangChain</div>
+                  <div class="project-tile e-card glass-card">
+                    <div class="e-card-header">
+                      <div class="e-card-header-caption">
+                        <div class="e-card-header-title">Ollama Chat on AWS</div>
+                        <div class="e-card-sub-title">ALB · ASG · Terraform</div>
+                      </div>
+                    </div>
+                    <div class="e-card-content">
+                      <p>React + Flask + Ollama behind an ALB. Demo stack powered down for cost.</p>
+                      <a
+                        class="dashboard-card-link"
+                        href="https://github.com/Bigessfour/ollama-chat"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >Source →</a
+                      >
                     </div>
                   </div>
-                  <div class="e-card-content">
-                    <p>
-                      Multilingual AI assistant on LangChain + Amazon Bedrock — Code Platoon week 13
-                      foundations lab.
-                    </p>
-                    <a
-                      class="dashboard-card-link"
-                      href="https://github.com/Bigessfour/langchain-assistant"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      >Source →</a
-                    >
-                  </div>
-                </div>
-                <div class="project-tile e-card glass-card">
-                  <div class="e-card-header">
-                    <div class="e-card-header-caption">
-                      <div class="e-card-header-title">Bob</div>
-                      <div class="e-card-sub-title">Unity · ML-Agents · RL</div>
+                  <div class="project-tile e-card glass-card">
+                    <div class="e-card-header">
+                      <div class="e-card-header-caption">
+                        <div class="e-card-header-title">LangChain Assistant</div>
+                        <div class="e-card-sub-title">Python · Bedrock</div>
+                      </div>
+                    </div>
+                    <div class="e-card-content">
+                      <p>Multilingual assistant on LangChain + Amazon Bedrock.</p>
+                      <a
+                        class="dashboard-card-link"
+                        href="https://github.com/Bigessfour/langchain-assistant"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >Source →</a
+                      >
                     </div>
                   </div>
-                  <div class="e-card-content">
-                    <p>
-                      Deep RL demo — an orange cube learns free throws with Unity ML-Agents and PPO.
-                    </p>
-                    <a
-                      class="dashboard-card-link"
-                      href="https://github.com/Bigessfour/Bob"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      >Source →</a
-                    >
+                  <div class="project-tile e-card glass-card">
+                    <div class="e-card-header">
+                      <div class="e-card-header-caption">
+                        <div class="e-card-header-title">Bob</div>
+                        <div class="e-card-sub-title">Unity · ML-Agents</div>
+                      </div>
+                    </div>
+                    <div class="e-card-content">
+                      <p>Deep RL demo — an orange cube learns free throws with PPO.</p>
+                      <a
+                        class="dashboard-card-link"
+                        href="https://github.com/Bigessfour/Bob"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >Source →</a
+                      >
+                    </div>
                   </div>
-                </div>
+                </details>
               </div>
             </article>
           </div>
@@ -474,26 +484,32 @@
                   <span aria-hidden="true">HMA</span>
                 </a>
               </div>
-              <h4 class="dashboard-milestones__title">Career milestones</h4>
-              <ul class="dashboard-milestones">
-                <li>Town of Wiley — production municipal site on AWS Amplify (townofwiley.gov)</li>
-                <li>
-                  Wiley Widget — Blazor/Syncfusion finance workspace (source on GitHub; custom
-                  domain TLS pending)
-                </li>
-                <li>TIKR — local-first clerk knowledge tracker (Blazor + SQLite + Ollama)</li>
-                <li>
-                  Code Platoon Echo — AI Cloud &amp; DevOps cohort (<a
-                    href="https://github.com/Bigessfour/aico-echo"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >aico-echo</a
-                  >)
-                </li>
-                <li>Cloud Resume Challenge — Terraform + GitHub Actions pipeline live</li>
-                <li>Serverless visitor counter API (API Gateway + Lambda + DynamoDB)</li>
-                <li>Ollama Chat — AWS ALB/ASG architecture (repo; stack powered down for cost)</li>
-              </ul>
+              <details class="disclosure-block disclosure-block--compact">
+                <summary>Career milestones</summary>
+                <ul class="dashboard-milestones">
+                  <li>
+                    Town of Wiley — production municipal site on AWS Amplify (townofwiley.gov)
+                  </li>
+                  <li>
+                    Wiley Widget — Blazor/Syncfusion finance workspace (source on GitHub; custom
+                    domain TLS pending)
+                  </li>
+                  <li>TIKR — local-first clerk knowledge tracker (Blazor + SQLite + Ollama)</li>
+                  <li>
+                    Code Platoon Echo — AI Cloud &amp; DevOps cohort (<a
+                      href="https://github.com/Bigessfour/aico-echo"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >aico-echo</a
+                    >)
+                  </li>
+                  <li>Cloud Resume Challenge — Terraform + GitHub Actions pipeline live</li>
+                  <li>Serverless visitor counter API (API Gateway + Lambda + DynamoDB)</li>
+                  <li>
+                    Ollama Chat — AWS ALB/ASG architecture (repo; stack powered down for cost)
+                  </li>
+                </ul>
+              </details>
               <a
                 class="dashboard-card-link"
                 href="https://www.credly.com/users/stephen-mckitrick"
@@ -525,7 +541,11 @@
       <!-- Projects (full section) -->
       <section id="projects" aria-labelledby="projects-heading">
         <p class="section-label">Projects</p>
-        <h2 id="projects-heading" class="section-title">Selected Projects</h2>
+        <h2 id="projects-heading" class="section-title">Featured Projects</h2>
+        <p class="section-lead">
+          Four pieces a hiring manager can verify in a minute — production impact first, then the
+          rest behind a disclosure.
+        </p>
         <div class="projects-grid">
           <article class="e-card glass-card stub-card">
             <div class="e-card-header">
@@ -549,57 +569,6 @@
                 >
                 <a
                   href="https://github.com/Bigessfour/Townofwiley"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Source code →</a
-                >
-              </p>
-            </div>
-          </article>
-          <article class="e-card glass-card stub-card">
-            <div class="e-card-header">
-              <div class="e-card-header-caption">
-                <div class="e-card-header-title">Wiley Widget (wiley-co-web)</div>
-                <div class="e-card-sub-title">
-                  Blazor WASM · .NET · Syncfusion · Aurora · App Runner
-                </div>
-              </div>
-            </div>
-            <div class="e-card-content">
-              <p>
-                Wiley Widget for AWS — hosted Blazor WebAssembly municipal finance workspace with
-                Syncfusion panel-first UI, Aurora PostgreSQL, thin API on App Runner, Cognito auth,
-                QuickBooks import pipeline, and Jarvis AI recommendations via xAI/Grok integration.
-              </p>
-              <p class="dashboard-card-links">
-                <a
-                  href="https://github.com/Bigessfour/wiley-co-web"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Source code →</a
-                >
-              </p>
-            </div>
-          </article>
-          <article class="e-card glass-card stub-card">
-            <div class="e-card-header">
-              <div class="e-card-header-caption">
-                <div class="e-card-header-title">TIKR — Town Institutional Knowledge Tracker</div>
-                <div class="e-card-sub-title">
-                  .NET 10 · Blazor · Syncfusion · SQLite · Ollama · Docker
-                </div>
-              </div>
-            </div>
-            <div class="e-card-content">
-              <p>
-                Local-first “town clerk’s second brain” for small Colorado municipalities —
-                deadlines, documents, and institutional knowledge on Synology/NAS with optional
-                local Ollama AI. Built for one-person clerk offices that cannot depend on the public
-                cloud.
-              </p>
-              <p class="dashboard-card-links">
-                <a
-                  href="https://github.com/Bigessfour/TIKR-Town-Institutional-Knowledge-Tracker"
                   target="_blank"
                   rel="noopener noreferrer"
                   >Source code →</a
@@ -679,7 +648,7 @@
                 quality gates before every production release.
               </p>
               <p class="dashboard-card-links">
-                <a href="#aws-resources">AWS Resources →</a>
+                <a href="#aws-resources">Architecture →</a>
                 <a
                   href="https://github.com/Bigessfour/CloudResumeChallenge-frontend"
                   target="_blank"
@@ -695,78 +664,128 @@
               </p>
             </div>
           </article>
-          <article class="e-card glass-card stub-card">
-            <div class="e-card-header">
-              <div class="e-card-header-caption">
-                <div class="e-card-header-title">Ollama Chat on AWS</div>
-                <div class="e-card-sub-title">React · Flask · Ollama · ALB · Terraform</div>
-              </div>
-            </div>
-            <div class="e-card-content">
-              <p>
-                Full-stack AI chat — React SPA, Flask API, and Ollama (gemma:2b) behind an ALB with
-                private-subnet Auto Scaling Groups, Terraform IaC, and GHCR container delivery.
-              </p>
-              <p class="text-muted">
-                AWS demo stack is powered down for cost — architecture and IaC live in the repo;
-                redeploy via Terraform when needed for interviews.
-              </p>
-              <p class="dashboard-card-links">
-                <a
-                  href="https://github.com/Bigessfour/ollama-chat"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Source code →</a
-                >
-              </p>
-            </div>
-          </article>
-          <article class="e-card glass-card stub-card">
-            <div class="e-card-header">
-              <div class="e-card-header-caption">
-                <div class="e-card-header-title">LangChain Assistant</div>
-                <div class="e-card-sub-title">Python · LangChain · Amazon Bedrock · Streamlit</div>
-              </div>
-            </div>
-            <div class="e-card-content">
-              <p>
-                Multilingual AI assistant from Code Platoon’s AI Cloud week 13 — LangChain
-                foundations on Amazon Bedrock with CLI and Streamlit entry points, CI-gated tests.
-              </p>
-              <p class="dashboard-card-links">
-                <a
-                  href="https://github.com/Bigessfour/langchain-assistant"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Source code →</a
-                >
-              </p>
-            </div>
-          </article>
-          <article class="e-card glass-card stub-card">
-            <div class="e-card-header">
-              <div class="e-card-header-caption">
-                <div class="e-card-header-title">Bob — Free Throw RL Demo</div>
-                <div class="e-card-sub-title">Unity 6 · ML-Agents · C# · Python · PPO</div>
-              </div>
-            </div>
-            <div class="e-card-content">
-              <p>
-                Fun deep-reinforcement-learning portfolio piece — Bob the orange cube learns to sink
-                free throws in a Unity lab with ML-Agents PPO training, in-scene scoreboard, and
-                success-rate graphs.
-              </p>
-              <p class="dashboard-card-links">
-                <a
-                  href="https://github.com/Bigessfour/Bob"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Source code →</a
-                >
-              </p>
-            </div>
-          </article>
         </div>
+        <details class="disclosure-block">
+          <summary>Additional projects</summary>
+          <div class="projects-grid">
+            <article class="e-card glass-card stub-card">
+              <div class="e-card-header">
+                <div class="e-card-header-caption">
+                  <div class="e-card-header-title">Wiley Widget (wiley-co-web)</div>
+                  <div class="e-card-sub-title">
+                    Blazor WASM · .NET · Syncfusion · Aurora · App Runner
+                  </div>
+                </div>
+              </div>
+              <div class="e-card-content">
+                <p>
+                  Municipal finance workspace with Syncfusion UI, Aurora PostgreSQL, thin API on App
+                  Runner, Cognito auth, and QuickBooks import.
+                </p>
+                <p class="dashboard-card-links">
+                  <a
+                    href="https://github.com/Bigessfour/wiley-co-web"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Source code →</a
+                  >
+                </p>
+              </div>
+            </article>
+            <article class="e-card glass-card stub-card">
+              <div class="e-card-header">
+                <div class="e-card-header-caption">
+                  <div class="e-card-header-title">TIKR — Town Institutional Knowledge Tracker</div>
+                  <div class="e-card-sub-title">
+                    .NET 10 · Blazor · Syncfusion · SQLite · Ollama · Docker
+                  </div>
+                </div>
+              </div>
+              <div class="e-card-content">
+                <p>
+                  Local-first clerk knowledge tracker for small Colorado municipalities — deadlines
+                  and documents on Synology/NAS with optional local Ollama.
+                </p>
+                <p class="dashboard-card-links">
+                  <a
+                    href="https://github.com/Bigessfour/TIKR-Town-Institutional-Knowledge-Tracker"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Source code →</a
+                  >
+                </p>
+              </div>
+            </article>
+            <article class="e-card glass-card stub-card">
+              <div class="e-card-header">
+                <div class="e-card-header-caption">
+                  <div class="e-card-header-title">Ollama Chat on AWS</div>
+                  <div class="e-card-sub-title">React · Flask · Ollama · ALB · Terraform</div>
+                </div>
+              </div>
+              <div class="e-card-content">
+                <p>
+                  Full-stack AI chat behind an ALB with private-subnet Auto Scaling Groups. Demo
+                  stack is powered down for cost; IaC stays in the repo.
+                </p>
+                <p class="dashboard-card-links">
+                  <a
+                    href="https://github.com/Bigessfour/ollama-chat"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Source code →</a
+                  >
+                </p>
+              </div>
+            </article>
+            <article class="e-card glass-card stub-card">
+              <div class="e-card-header">
+                <div class="e-card-header-caption">
+                  <div class="e-card-header-title">LangChain Assistant</div>
+                  <div class="e-card-sub-title">
+                    Python · LangChain · Amazon Bedrock · Streamlit
+                  </div>
+                </div>
+              </div>
+              <div class="e-card-content">
+                <p>
+                  Multilingual AI assistant from Code Platoon week 13 — LangChain on Amazon Bedrock
+                  with CLI and Streamlit entry points.
+                </p>
+                <p class="dashboard-card-links">
+                  <a
+                    href="https://github.com/Bigessfour/langchain-assistant"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Source code →</a
+                  >
+                </p>
+              </div>
+            </article>
+            <article class="e-card glass-card stub-card">
+              <div class="e-card-header">
+                <div class="e-card-header-caption">
+                  <div class="e-card-header-title">Bob — Free Throw RL Demo</div>
+                  <div class="e-card-sub-title">Unity 6 · ML-Agents · C# · Python · PPO</div>
+                </div>
+              </div>
+              <div class="e-card-content">
+                <p>
+                  Deep-reinforcement-learning demo — an orange cube learns free throws with Unity
+                  ML-Agents PPO.
+                </p>
+                <p class="dashboard-card-links">
+                  <a
+                    href="https://github.com/Bigessfour/Bob"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Source code →</a
+                  >
+                </p>
+              </div>
+            </article>
+          </div>
+        </details>
       </section>
 
       <!-- Experience -->
@@ -822,678 +841,646 @@
         <p class="section-label">Skills</p>
         <h2 id="skills-heading" class="section-title">Technical Skills</h2>
         <div class="e-card glass-card stub-card">
-          <div class="e-card-content skills-grid">
-            <div class="skills-category">
-              <h3 class="skills-category__title">Software</h3>
-              <p>
-                Visual Studio, GitHub, Microsoft Access/Excel (VBA/Pivot), SharePoint, Flask, React
-                (Code Platoon — Bedrock module), Amazon SageMaker &amp; Bedrock consoles
-              </p>
-            </div>
-            <div class="skills-category">
-              <h3 class="skills-category__title">Operating Systems</h3>
-              <p>Windows, macOS</p>
-            </div>
-            <div class="skills-category">
-              <h3 class="skills-category__title">Programming</h3>
-              <p>C# (.NET), SQL, Python &amp; Flask, VBA, HTML/CSS basics</p>
-            </div>
-            <div class="skills-category skills-category--data">
-              <h3 class="skills-category__title">
-                Data Analytics (Google Professional Certificate)
-              </h3>
-              <p>
-                <strong>Tools:</strong> SQL, Tableau, Python, Microsoft Excel &amp; Google Sheets,
-                Kaggle, presentation tools (Google Slides / PowerPoint)
-              </p>
-              <p>
-                <strong>Practice:</strong> ask data-driven questions; prepare, clean, and process
-                datasets; exploratory analysis; dashboards and stakeholder visualizations;
-                recommendations from analysis; capstone case study
-              </p>
-              <p>
-                <strong>AI for analytics:</strong> data cleaning and structuring, complex formulas,
-                analysis prep, and visualization planning (per
-                <a
-                  href="https://grow.google/enroll-certificates/data-analytics-mid/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Google Data Analytics Certificate</a
-                >
-                curriculum)
-              </p>
-              <p class="skills-category__cred">
-                <a
-                  href="https://www.credly.com/badges/445eab05-2280-420f-82ae-831cc9f85689"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Verify on Credly →</a
-                >
-              </p>
-            </div>
-            <div class="skills-category skills-category--platoon">
-              <h3 class="skills-category__title">Tools &amp; Methods</h3>
-              <p>
-                Agile/Scrum, Data Pipelines, Remote Dev Environments, Unix/CLI &amp; shell
-                workflows, Terraform (IaC, modules, remote state), GitHub Actions CI/CD, AWS
-                deployments &amp; networking fundamentals, Kubernetes, LangChain, Amazon SageMaker
-                (ML pipelines), Amazon Bedrock (RAG, agents &amp; flows), Amazon Lex, prompt
-                engineering &amp; production AI evaluation
-              </p>
-              <p class="skills-category__cred">
-                <strong>Code Platoon (Echo):</strong>
-                <a
-                  href="https://github.com/Bigessfour/aico-echo"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >aico-echo curriculum →</a
-                >
-                ·
-                <a
-                  href="https://www.codeplatoon.org/ai-cloud-devops-program"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >program overview →</a
-                >
-              </p>
-            </div>
-            <div class="skills-category skills-category--agentic">
-              <h3 class="skills-category__title">Agentic Development (Cloud Resume Challenge)</h3>
-              <p>
-                <strong>Workflow:</strong> context-first agent development — repository rules for
-                static EJ2, Syncfusion MCP for component guidance, plan-then-implement prompts, and
-                scoped follow-ups (markup, theme, controls, CI, deploy).
-              </p>
-              <p>
-                <strong>Governance:</strong> human review before merge; ESLint, HTMLHint, and
-                Prettier in CI; deploy pipeline blocks committed secrets and generates runtime
-                config at release.
-              </p>
-              <p>
-                <strong>Delivered:</strong> mockup-aligned landing, OIDC GitHub Actions →
-                S3/CloudFront, visitor API wiring, and iterative portfolio updates on a static CDN
-                stack.
-              </p>
-              <p class="skills-category__cred">
-                <a
-                  href="https://github.com/Bigessfour/CloudResumeChallenge-frontend/blob/main/docs/DEV_SETUP.md"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Contributor agent setup (Cursor + MCP) →</a
-                >
-                ·
-                <a
-                  href="https://github.com/Bigessfour/CloudResumeChallenge-frontend"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >frontend repo →</a
-                >
-              </p>
-            </div>
-            <div class="skills-category skills-category--cloud">
-              <h3 class="skills-category__title">Cloud &amp; DevOps (Cloud Resume Challenge)</h3>
-              <p>
-                AWS serverless stack deployed with Terraform and GitHub Actions OIDC — see the
-                <a href="#aws-resources">AWS Resources</a> section for challenge progress and live
-                infrastructure inventory.
-              </p>
-            </div>
+          <div class="e-card-content">
+            <ul class="skill-chip-row" aria-label="Cloud and DevOps">
+              <li>Terraform</li>
+              <li>AWS (S3, CloudFront, Lambda, API Gateway, DynamoDB)</li>
+              <li>GitHub Actions OIDC</li>
+              <li>IAM least privilege</li>
+            </ul>
+            <ul class="skill-chip-row" aria-label="Languages and platforms">
+              <li>C# / .NET</li>
+              <li>SQL</li>
+              <li>Python</li>
+              <li>TypeScript</li>
+              <li>Angular</li>
+              <li>Blazor</li>
+            </ul>
+            <ul class="skill-chip-row" aria-label="Data and AI">
+              <li>SQL · Tableau · Python</li>
+              <li>Amazon Bedrock</li>
+              <li>SageMaker</li>
+              <li>LangChain</li>
+            </ul>
+            <details class="disclosure-block disclosure-block--compact">
+              <summary>How I work and full tool list</summary>
+              <div class="skills-grid">
+                <div class="skills-category">
+                  <h3 class="skills-category__title">Software</h3>
+                  <p>
+                    Visual Studio, GitHub, Microsoft Access/Excel (VBA/Pivot), SharePoint, Flask,
+                    React, Amazon SageMaker &amp; Bedrock consoles
+                  </p>
+                </div>
+                <div class="skills-category skills-category--data">
+                  <h3 class="skills-category__title">Data analytics</h3>
+                  <p>
+                    Google Data Analytics Professional Certificate — SQL, Tableau, Python, Excel /
+                    Sheets, stakeholder dashboards.
+                    <a
+                      href="https://www.credly.com/badges/445eab05-2280-420f-82ae-831cc9f85689"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >Verify on Credly →</a
+                    >
+                  </p>
+                </div>
+                <div class="skills-category skills-category--platoon">
+                  <h3 class="skills-category__title">Code Platoon (Echo)</h3>
+                  <p>
+                    Terraform, GitHub Actions, Kubernetes, SageMaker, Bedrock RAG/agents, prompt
+                    evaluation.
+                    <a
+                      href="https://github.com/Bigessfour/aico-echo"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >Curriculum →</a
+                    >
+                  </p>
+                </div>
+                <div class="skills-category skills-category--agentic">
+                  <h3 class="skills-category__title">Agentic development</h3>
+                  <p>
+                    Context-first agent workflows, human review before merge, CI quality gates, and
+                    secrets injected at deploy — never committed.
+                    <a
+                      href="https://github.com/Bigessfour/CloudResumeChallenge-frontend/blob/main/docs/DEV_SETUP.md"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >Contributor setup →</a
+                    >
+                  </p>
+                </div>
+              </div>
+            </details>
           </div>
         </div>
       </section>
 
       <!-- AWS Resources (Cloud Resume Challenge) -->
       <section id="aws-resources" aria-labelledby="aws-resources-heading">
-        <p class="section-label">Cloud Resume Challenge</p>
-        <h2 id="aws-resources-heading" class="section-title">AWS Resources</h2>
+        <p class="section-label">Architecture</p>
+        <h2 id="aws-resources-heading" class="section-title">Architecture Deep Dive</h2>
         <p class="aws-resources-intro">
-          Progress against the
-          <a
-            href="https://cloudresumechallenge.dev/docs/the-challenge/aws/"
-            target="_blank"
-            rel="noopener noreferrer"
-            >official AWS challenge</a
-          >
-          and the Terraform-managed services running this portfolio. Full architecture diagram and
-          runbook live in the
+          Private S3 + CloudFront OAC, custom domain, security headers, and a serverless visitor
+          counter (API Gateway + Lambda + DynamoDB) — all Terraform, deployed with GitHub Actions
+          OIDC. Diagram and runbook:
           <a
             href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/docs/ARCHITECTURE.md"
             target="_blank"
             rel="noopener noreferrer"
-            >infra repo</a
+            >infra ARCHITECTURE.md</a
+          >
+          ·
+          <a href="blog.html">build story</a>
+          ·
+          <a
+            href="https://cloudresumechallenge.dev/docs/the-challenge/aws/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >CRC spec</a
           >.
         </p>
 
-        <div class="e-card glass-card stub-card aws-resources-block">
-          <div class="e-card-header">
-            <div class="e-card-header-caption">
-              <div class="e-card-header-title">Challenge Progress</div>
-              <div class="e-card-sub-title">16 steps · 15 complete · 1 remaining (blog post)</div>
+        <details class="disclosure-block">
+          <summary>CRC steps, resource inventory, and security controls</summary>
+
+          <div class="e-card glass-card stub-card aws-resources-block">
+            <div class="e-card-header">
+              <div class="e-card-header-caption">
+                <div class="e-card-header-title">Challenge Progress</div>
+                <div class="e-card-sub-title">16 steps · 16 complete</div>
+              </div>
+            </div>
+            <div class="e-card-content aws-resources-accordion-wrap">
+              <div
+                id="aws-resources-accordion"
+                aria-label="Cloud Resume Challenge steps by phase"
+              ></div>
             </div>
           </div>
-          <div class="e-card-content aws-resources-accordion-wrap">
-            <div
-              id="aws-resources-accordion"
-              aria-label="Cloud Resume Challenge steps by phase"
-            ></div>
+
+          <h3 class="aws-resources-subtitle">Production Stack</h3>
+          <div class="aws-resource-grid">
+            <article class="e-card glass-card aws-resource-card">
+              <div class="e-card-content">
+                <h4 class="aws-resource-card__name">Amazon S3</h4>
+                <p class="aws-resource-card__purpose">
+                  Private static website bucket — HTML, CSS, JS assets
+                </p>
+                <p class="aws-resource-card__steps">CRC steps 4–5</p>
+                <a
+                  class="aws-resource-card__link"
+                  href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/environments/prod/storage.tf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >storage.tf →</a
+                >
+              </div>
+            </article>
+            <article class="e-card glass-card aws-resource-card">
+              <div class="e-card-content">
+                <h4 class="aws-resource-card__name">Amazon CloudFront</h4>
+                <p class="aws-resource-card__purpose">
+                  HTTPS CDN with OAC, security headers, www redirect
+                </p>
+                <p class="aws-resource-card__steps">CRC steps 5–6</p>
+                <a
+                  class="aws-resource-card__link"
+                  href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/environments/prod/cdn.tf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >cdn.tf →</a
+                >
+              </div>
+            </article>
+            <article class="e-card glass-card aws-resource-card">
+              <div class="e-card-content">
+                <h4 class="aws-resource-card__name">AWS Certificate Manager</h4>
+                <p class="aws-resource-card__purpose">
+                  TLS certificate in us-east-1 for CloudFront
+                </p>
+                <p class="aws-resource-card__steps">CRC step 5</p>
+                <a
+                  class="aws-resource-card__link"
+                  href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/environments/prod/dns.tf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >dns.tf →</a
+                >
+              </div>
+            </article>
+            <article class="e-card glass-card aws-resource-card">
+              <div class="e-card-content">
+                <h4 class="aws-resource-card__name">Amazon Route 53</h4>
+                <p class="aws-resource-card__purpose">
+                  Hosted zone, apex/www aliases, cert validation
+                </p>
+                <p class="aws-resource-card__steps">CRC step 6</p>
+                <a
+                  class="aws-resource-card__link"
+                  href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/environments/prod/dns.tf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >dns.tf →</a
+                >
+              </div>
+            </article>
+            <article class="e-card glass-card aws-resource-card">
+              <div class="e-card-content">
+                <h4 class="aws-resource-card__name">API Gateway HTTP API</h4>
+                <p class="aws-resource-card__purpose">
+                  GET /visitors endpoint with CORS for the resume site
+                </p>
+                <p class="aws-resource-card__steps">CRC steps 7–9</p>
+                <a
+                  class="aws-resource-card__link"
+                  href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/environments/prod/visitor_counter.tf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >visitor_counter.tf →</a
+                >
+              </div>
+            </article>
+            <article class="e-card glass-card aws-resource-card">
+              <div class="e-card-content">
+                <h4 class="aws-resource-card__name">AWS Lambda</h4>
+                <p class="aws-resource-card__purpose">
+                  Python 3.12 visitor counter — atomic DynamoDB increment
+                </p>
+                <p class="aws-resource-card__steps">CRC steps 9–10</p>
+                <a
+                  class="aws-resource-card__link"
+                  href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/lambda/visitor_counter/handler.py"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >handler.py →</a
+                >
+              </div>
+            </article>
+            <article class="e-card glass-card aws-resource-card">
+              <div class="e-card-content">
+                <h4 class="aws-resource-card__name">Amazon DynamoDB</h4>
+                <p class="aws-resource-card__purpose">On-demand table storing visitor hit count</p>
+                <p class="aws-resource-card__steps">CRC step 8</p>
+                <a
+                  class="aws-resource-card__link"
+                  href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/environments/prod/visitor_counter.tf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >visitor_counter.tf →</a
+                >
+              </div>
+            </article>
+            <article class="e-card glass-card aws-resource-card">
+              <div class="e-card-content">
+                <h4 class="aws-resource-card__name">Amazon CloudWatch Logs</h4>
+                <p class="aws-resource-card__purpose">
+                  Lambda execution logs with 14-day retention
+                </p>
+                <p class="aws-resource-card__steps">Ops / observability</p>
+                <a
+                  class="aws-resource-card__link"
+                  href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/environments/prod/visitor_counter.tf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >visitor_counter.tf →</a
+                >
+              </div>
+            </article>
           </div>
-        </div>
 
-        <h3 class="aws-resources-subtitle">Production Stack</h3>
-        <div class="aws-resource-grid">
-          <article class="e-card glass-card aws-resource-card">
-            <div class="e-card-content">
-              <h4 class="aws-resource-card__name">Amazon S3</h4>
-              <p class="aws-resource-card__purpose">
-                Private static website bucket — HTML, CSS, JS assets
-              </p>
-              <p class="aws-resource-card__steps">CRC steps 4–5</p>
-              <a
-                class="aws-resource-card__link"
-                href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/environments/prod/storage.tf"
-                target="_blank"
-                rel="noopener noreferrer"
-                >storage.tf →</a
-              >
-            </div>
-          </article>
-          <article class="e-card glass-card aws-resource-card">
-            <div class="e-card-content">
-              <h4 class="aws-resource-card__name">Amazon CloudFront</h4>
-              <p class="aws-resource-card__purpose">
-                HTTPS CDN with OAC, security headers, www redirect
-              </p>
-              <p class="aws-resource-card__steps">CRC steps 5–6</p>
-              <a
-                class="aws-resource-card__link"
-                href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/environments/prod/cdn.tf"
-                target="_blank"
-                rel="noopener noreferrer"
-                >cdn.tf →</a
-              >
-            </div>
-          </article>
-          <article class="e-card glass-card aws-resource-card">
-            <div class="e-card-content">
-              <h4 class="aws-resource-card__name">AWS Certificate Manager</h4>
-              <p class="aws-resource-card__purpose">TLS certificate in us-east-1 for CloudFront</p>
-              <p class="aws-resource-card__steps">CRC step 5</p>
-              <a
-                class="aws-resource-card__link"
-                href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/environments/prod/dns.tf"
-                target="_blank"
-                rel="noopener noreferrer"
-                >dns.tf →</a
-              >
-            </div>
-          </article>
-          <article class="e-card glass-card aws-resource-card">
-            <div class="e-card-content">
-              <h4 class="aws-resource-card__name">Amazon Route 53</h4>
-              <p class="aws-resource-card__purpose">
-                Hosted zone, apex/www aliases, cert validation
-              </p>
-              <p class="aws-resource-card__steps">CRC step 6</p>
-              <a
-                class="aws-resource-card__link"
-                href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/environments/prod/dns.tf"
-                target="_blank"
-                rel="noopener noreferrer"
-                >dns.tf →</a
-              >
-            </div>
-          </article>
-          <article class="e-card glass-card aws-resource-card">
-            <div class="e-card-content">
-              <h4 class="aws-resource-card__name">API Gateway HTTP API</h4>
-              <p class="aws-resource-card__purpose">
-                GET /visitors endpoint with CORS for the resume site
-              </p>
-              <p class="aws-resource-card__steps">CRC steps 7–9</p>
-              <a
-                class="aws-resource-card__link"
-                href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/environments/prod/visitor_counter.tf"
-                target="_blank"
-                rel="noopener noreferrer"
-                >visitor_counter.tf →</a
-              >
-            </div>
-          </article>
-          <article class="e-card glass-card aws-resource-card">
-            <div class="e-card-content">
-              <h4 class="aws-resource-card__name">AWS Lambda</h4>
-              <p class="aws-resource-card__purpose">
-                Python 3.12 visitor counter — atomic DynamoDB increment
-              </p>
-              <p class="aws-resource-card__steps">CRC steps 9–10</p>
-              <a
-                class="aws-resource-card__link"
-                href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/lambda/visitor_counter/handler.py"
-                target="_blank"
-                rel="noopener noreferrer"
-                >handler.py →</a
-              >
-            </div>
-          </article>
-          <article class="e-card glass-card aws-resource-card">
-            <div class="e-card-content">
-              <h4 class="aws-resource-card__name">Amazon DynamoDB</h4>
-              <p class="aws-resource-card__purpose">On-demand table storing visitor hit count</p>
-              <p class="aws-resource-card__steps">CRC step 8</p>
-              <a
-                class="aws-resource-card__link"
-                href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/environments/prod/visitor_counter.tf"
-                target="_blank"
-                rel="noopener noreferrer"
-                >visitor_counter.tf →</a
-              >
-            </div>
-          </article>
-          <article class="e-card glass-card aws-resource-card">
-            <div class="e-card-content">
-              <h4 class="aws-resource-card__name">Amazon CloudWatch Logs</h4>
-              <p class="aws-resource-card__purpose">Lambda execution logs with 14-day retention</p>
-              <p class="aws-resource-card__steps">Ops / observability</p>
-              <a
-                class="aws-resource-card__link"
-                href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/environments/prod/visitor_counter.tf"
-                target="_blank"
-                rel="noopener noreferrer"
-                >visitor_counter.tf →</a
-              >
-            </div>
-          </article>
-        </div>
+          <h3 class="aws-resources-subtitle">Security &amp; Resilience (Free Tier)</h3>
+          <p class="aws-resources-intro aws-resources-intro--compact">
+            Documented protections from
+            <a
+              href="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/welcome.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              >AWS security guidance</a
+            >. Paid services (WAF, Shield Advanced, GuardDuty) are intentionally not used. No
+            account IDs, role ARNs, or alert emails are published here.
+          </p>
+          <div class="aws-resource-grid aws-security-grid">
+            <article class="e-card glass-card aws-resource-card aws-security-card">
+              <div class="e-card-content">
+                <span class="security-status security-status--automatic">Automatic</span>
+                <h4 class="aws-resource-card__name">AWS Shield Standard</h4>
+                <p class="aws-resource-card__purpose">
+                  Managed DDoS protection at the CloudFront and Route 53 edge — included for all AWS
+                  customers.
+                </p>
+                <a
+                  class="aws-resource-card__link"
+                  href="https://docs.aws.amazon.com/waf/latest/developerguide/ddos-standard-summary.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >AWS docs →</a
+                >
+              </div>
+            </article>
+            <article class="e-card glass-card aws-resource-card aws-security-card">
+              <div class="e-card-content">
+                <span class="security-status security-status--active">Active</span>
+                <h4 class="aws-resource-card__name">S3 Block Public Access &amp; Encryption</h4>
+                <p class="aws-resource-card__purpose">
+                  All four block-public settings, SSE-S3 (AES256), versioning, and bucket-owner
+                  enforced ownership.
+                </p>
+                <a
+                  class="aws-resource-card__link"
+                  href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >AWS docs →</a
+                >
+                <a
+                  class="aws-resource-card__link"
+                  href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/environments/prod/storage.tf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >storage.tf →</a
+                >
+              </div>
+            </article>
+            <article class="e-card glass-card aws-resource-card aws-security-card">
+              <div class="e-card-content">
+                <span class="security-status security-status--active">Active</span>
+                <h4 class="aws-resource-card__name">CloudFront OAC &amp; HTTPS-Only S3</h4>
+                <p class="aws-resource-card__purpose">
+                  Origin Access Control for private S3 reads plus DenyInsecureTransport on the
+                  bucket policy.
+                </p>
+                <a
+                  class="aws-resource-card__link"
+                  href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >AWS docs →</a
+                >
+                <a
+                  class="aws-resource-card__link"
+                  href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/environments/prod/cdn.tf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >cdn.tf →</a
+                >
+              </div>
+            </article>
+            <article class="e-card glass-card aws-resource-card aws-security-card">
+              <div class="e-card-content">
+                <span class="security-status security-status--active">Active</span>
+                <h4 class="aws-resource-card__name">Security Response Headers</h4>
+                <p class="aws-resource-card__purpose">
+                  CloudFront policy adds HSTS, XSS protection, frame deny, and referrer policy on
+                  every response.
+                </p>
+                <a
+                  class="aws-resource-card__link"
+                  href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/response-headers-policies.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >AWS docs →</a
+                >
+                <a
+                  class="aws-resource-card__link"
+                  href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/environments/prod/cdn.tf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >cdn.tf →</a
+                >
+              </div>
+            </article>
+            <article class="e-card glass-card aws-resource-card aws-security-card">
+              <div class="e-card-content">
+                <span class="security-status security-status--active">Active</span>
+                <h4 class="aws-resource-card__name">GitHub Actions OIDC</h4>
+                <p class="aws-resource-card__purpose">
+                  CI/CD uses short-lived STS credentials — no long-lived AWS access keys in GitHub.
+                </p>
+                <a
+                  class="aws-resource-card__link"
+                  href="https://aws.amazon.com/blogs/security/use-iam-roles-to-connect-github-actions-to-actions-in-aws/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >AWS docs →</a
+                >
+                <a
+                  class="aws-resource-card__link"
+                  href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/bootstrap/main.tf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >bootstrap/main.tf →</a
+                >
+              </div>
+            </article>
+            <article class="e-card glass-card aws-resource-card aws-security-card">
+              <div class="e-card-content">
+                <span class="security-status security-status--active">Active</span>
+                <h4 class="aws-resource-card__name">OIDC Scoped to main</h4>
+                <p class="aws-resource-card__purpose">
+                  IAM trust policy allows only the infra and frontend repos on the main branch to
+                  assume the deploy role.
+                </p>
+                <a
+                  class="aws-resource-card__link"
+                  href="https://aws.amazon.com/blogs/security/use-iam-roles-to-connect-github-actions-to-actions-in-aws/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >AWS docs →</a
+                >
+                <a
+                  class="aws-resource-card__link"
+                  href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/bootstrap/main.tf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >bootstrap/main.tf →</a
+                >
+              </div>
+            </article>
+            <article class="e-card glass-card aws-resource-card aws-security-card">
+              <div class="e-card-content">
+                <span class="security-status security-status--active">Active</span>
+                <h4 class="aws-resource-card__name">API Gateway Throttling</h4>
+                <p class="aws-resource-card__purpose">
+                  HTTP API stage rate and burst limits return 429 when traffic exceeds configured
+                  thresholds.
+                </p>
+                <a
+                  class="aws-resource-card__link"
+                  href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-throttling.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >AWS docs →</a
+                >
+                <a
+                  class="aws-resource-card__link"
+                  href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/environments/prod/visitor_counter.tf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >visitor_counter.tf →</a
+                >
+              </div>
+            </article>
+            <article class="e-card glass-card aws-resource-card aws-security-card">
+              <div class="e-card-content">
+                <span class="security-status security-status--active">Active</span>
+                <h4 class="aws-resource-card__name">CORS Origin Allowlist</h4>
+                <p class="aws-resource-card__purpose">
+                  Visitor API accepts browser requests only from production site origins (plus
+                  localhost for local dev).
+                </p>
+                <a
+                  class="aws-resource-card__link"
+                  href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >AWS docs →</a
+                >
+                <a
+                  class="aws-resource-card__link"
+                  href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/environments/prod/visitor_counter.tf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >visitor_counter.tf →</a
+                >
+              </div>
+            </article>
+            <article class="e-card glass-card aws-resource-card aws-security-card">
+              <div class="e-card-content">
+                <span class="security-status security-status--active">Active</span>
+                <h4 class="aws-resource-card__name">Lambda Least Privilege</h4>
+                <p class="aws-resource-card__purpose">
+                  Execution role grants DynamoDB GetItem and UpdateItem on the visitor counter table
+                  only.
+                </p>
+                <a
+                  class="aws-resource-card__link"
+                  href="https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >AWS docs →</a
+                >
+                <a
+                  class="aws-resource-card__link"
+                  href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/environments/prod/visitor_counter.tf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >visitor_counter.tf →</a
+                >
+              </div>
+            </article>
+            <article class="e-card glass-card aws-resource-card aws-security-card">
+              <div class="e-card-content">
+                <span class="security-status security-status--active">Active</span>
+                <h4 class="aws-resource-card__name">Lambda Concurrency Cap</h4>
+                <p class="aws-resource-card__purpose">
+                  Reserved concurrency limits parallel executions to reduce runaway cost during
+                  abuse.
+                </p>
+                <a
+                  class="aws-resource-card__link"
+                  href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-concurrency.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >AWS docs →</a
+                >
+                <a
+                  class="aws-resource-card__link"
+                  href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/environments/prod/visitor_counter.tf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >visitor_counter.tf →</a
+                >
+              </div>
+            </article>
+            <article class="e-card glass-card aws-resource-card aws-security-card">
+              <div class="e-card-content">
+                <span class="security-status security-status--active">Active</span>
+                <h4 class="aws-resource-card__name">IAM Access Analyzer</h4>
+                <p class="aws-resource-card__purpose">
+                  External-access analyzer monitors for unintended public or cross-account resource
+                  access.
+                </p>
+                <a
+                  class="aws-resource-card__link"
+                  href="https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >AWS docs →</a
+                >
+                <a
+                  class="aws-resource-card__link"
+                  href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/environments/prod/security.tf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >security.tf →</a
+                >
+              </div>
+            </article>
+            <article class="e-card glass-card aws-resource-card aws-security-card">
+              <div class="e-card-content">
+                <span class="security-status security-status--configured">Configured</span>
+                <h4 class="aws-resource-card__name">AWS Budgets Alerts</h4>
+                <p class="aws-resource-card__purpose">
+                  Monthly cost budget notifies the account owner on forecast and actual spend —
+                  alert email set in private tfvars only.
+                </p>
+                <a
+                  class="aws-resource-card__link"
+                  href="https://aws.amazon.com/aws-cost-management/aws-budgets/pricing/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >AWS docs →</a
+                >
+                <a
+                  class="aws-resource-card__link"
+                  href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/environments/prod/budgets.tf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >budgets.tf →</a
+                >
+              </div>
+            </article>
+            <article class="e-card glass-card aws-resource-card aws-security-card">
+              <div class="e-card-content">
+                <span class="security-status security-status--active">Active</span>
+                <h4 class="aws-resource-card__name">CloudWatch Alarms</h4>
+                <p class="aws-resource-card__purpose">
+                  Standard Lambda metrics trigger alarms on errors and unusually high daily
+                  invocations.
+                </p>
+                <a
+                  class="aws-resource-card__link"
+                  href="https://aws.amazon.com/cloudwatch/pricing/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >AWS docs →</a
+                >
+                <a
+                  class="aws-resource-card__link"
+                  href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/environments/prod/security.tf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >security.tf →</a
+                >
+              </div>
+            </article>
+          </div>
+          <p class="aws-security-footnote">
+            GitHub supply chain: branch protection, secret scanning, Dependabot, and manual approval
+            on infra prod deploys (repo settings). Secrets and license keys are injected at deploy —
+            never committed to source control.
+          </p>
 
-        <h3 class="aws-resources-subtitle">Security &amp; Resilience (Free Tier)</h3>
-        <p class="aws-resources-intro aws-resources-intro--compact">
-          Documented protections from
-          <a
-            href="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/welcome.html"
-            target="_blank"
-            rel="noopener noreferrer"
-            >AWS security guidance</a
-          >. Paid services (WAF, Shield Advanced, GuardDuty) are intentionally not used. No account
-          IDs, role ARNs, or alert emails are published here.
-        </p>
-        <div class="aws-resource-grid aws-security-grid">
-          <article class="e-card glass-card aws-resource-card aws-security-card">
-            <div class="e-card-content">
-              <span class="security-status security-status--automatic">Automatic</span>
-              <h4 class="aws-resource-card__name">AWS Shield Standard</h4>
-              <p class="aws-resource-card__purpose">
-                Managed DDoS protection at the CloudFront and Route 53 edge — included for all AWS
-                customers.
-              </p>
-              <a
-                class="aws-resource-card__link"
-                href="https://docs.aws.amazon.com/waf/latest/developerguide/ddos-standard-summary.html"
-                target="_blank"
-                rel="noopener noreferrer"
-                >AWS docs →</a
-              >
-            </div>
-          </article>
-          <article class="e-card glass-card aws-resource-card aws-security-card">
-            <div class="e-card-content">
-              <span class="security-status security-status--active">Active</span>
-              <h4 class="aws-resource-card__name">S3 Block Public Access &amp; Encryption</h4>
-              <p class="aws-resource-card__purpose">
-                All four block-public settings, SSE-S3 (AES256), versioning, and bucket-owner
-                enforced ownership.
-              </p>
-              <a
-                class="aws-resource-card__link"
-                href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html"
-                target="_blank"
-                rel="noopener noreferrer"
-                >AWS docs →</a
-              >
-              <a
-                class="aws-resource-card__link"
-                href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/environments/prod/storage.tf"
-                target="_blank"
-                rel="noopener noreferrer"
-                >storage.tf →</a
-              >
-            </div>
-          </article>
-          <article class="e-card glass-card aws-resource-card aws-security-card">
-            <div class="e-card-content">
-              <span class="security-status security-status--active">Active</span>
-              <h4 class="aws-resource-card__name">CloudFront OAC &amp; HTTPS-Only S3</h4>
-              <p class="aws-resource-card__purpose">
-                Origin Access Control for private S3 reads plus DenyInsecureTransport on the bucket
-                policy.
-              </p>
-              <a
-                class="aws-resource-card__link"
-                href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html"
-                target="_blank"
-                rel="noopener noreferrer"
-                >AWS docs →</a
-              >
-              <a
-                class="aws-resource-card__link"
-                href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/environments/prod/cdn.tf"
-                target="_blank"
-                rel="noopener noreferrer"
-                >cdn.tf →</a
-              >
-            </div>
-          </article>
-          <article class="e-card glass-card aws-resource-card aws-security-card">
-            <div class="e-card-content">
-              <span class="security-status security-status--active">Active</span>
-              <h4 class="aws-resource-card__name">Security Response Headers</h4>
-              <p class="aws-resource-card__purpose">
-                CloudFront policy adds HSTS, XSS protection, frame deny, and referrer policy on
-                every response.
-              </p>
-              <a
-                class="aws-resource-card__link"
-                href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/response-headers-policies.html"
-                target="_blank"
-                rel="noopener noreferrer"
-                >AWS docs →</a
-              >
-              <a
-                class="aws-resource-card__link"
-                href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/environments/prod/cdn.tf"
-                target="_blank"
-                rel="noopener noreferrer"
-                >cdn.tf →</a
-              >
-            </div>
-          </article>
-          <article class="e-card glass-card aws-resource-card aws-security-card">
-            <div class="e-card-content">
-              <span class="security-status security-status--active">Active</span>
-              <h4 class="aws-resource-card__name">GitHub Actions OIDC</h4>
-              <p class="aws-resource-card__purpose">
-                CI/CD uses short-lived STS credentials — no long-lived AWS access keys in GitHub.
-              </p>
-              <a
-                class="aws-resource-card__link"
-                href="https://aws.amazon.com/blogs/security/use-iam-roles-to-connect-github-actions-to-actions-in-aws/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >AWS docs →</a
-              >
-              <a
-                class="aws-resource-card__link"
-                href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/bootstrap/main.tf"
-                target="_blank"
-                rel="noopener noreferrer"
-                >bootstrap/main.tf →</a
-              >
-            </div>
-          </article>
-          <article class="e-card glass-card aws-resource-card aws-security-card">
-            <div class="e-card-content">
-              <span class="security-status security-status--active">Active</span>
-              <h4 class="aws-resource-card__name">OIDC Scoped to main</h4>
-              <p class="aws-resource-card__purpose">
-                IAM trust policy allows only the infra and frontend repos on the main branch to
-                assume the deploy role.
-              </p>
-              <a
-                class="aws-resource-card__link"
-                href="https://aws.amazon.com/blogs/security/use-iam-roles-to-connect-github-actions-to-actions-in-aws/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >AWS docs →</a
-              >
-              <a
-                class="aws-resource-card__link"
-                href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/bootstrap/main.tf"
-                target="_blank"
-                rel="noopener noreferrer"
-                >bootstrap/main.tf →</a
-              >
-            </div>
-          </article>
-          <article class="e-card glass-card aws-resource-card aws-security-card">
-            <div class="e-card-content">
-              <span class="security-status security-status--active">Active</span>
-              <h4 class="aws-resource-card__name">API Gateway Throttling</h4>
-              <p class="aws-resource-card__purpose">
-                HTTP API stage rate and burst limits return 429 when traffic exceeds configured
-                thresholds.
-              </p>
-              <a
-                class="aws-resource-card__link"
-                href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-throttling.html"
-                target="_blank"
-                rel="noopener noreferrer"
-                >AWS docs →</a
-              >
-              <a
-                class="aws-resource-card__link"
-                href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/environments/prod/visitor_counter.tf"
-                target="_blank"
-                rel="noopener noreferrer"
-                >visitor_counter.tf →</a
-              >
-            </div>
-          </article>
-          <article class="e-card glass-card aws-resource-card aws-security-card">
-            <div class="e-card-content">
-              <span class="security-status security-status--active">Active</span>
-              <h4 class="aws-resource-card__name">CORS Origin Allowlist</h4>
-              <p class="aws-resource-card__purpose">
-                Visitor API accepts browser requests only from production site origins (plus
-                localhost for local dev).
-              </p>
-              <a
-                class="aws-resource-card__link"
-                href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html"
-                target="_blank"
-                rel="noopener noreferrer"
-                >AWS docs →</a
-              >
-              <a
-                class="aws-resource-card__link"
-                href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/environments/prod/visitor_counter.tf"
-                target="_blank"
-                rel="noopener noreferrer"
-                >visitor_counter.tf →</a
-              >
-            </div>
-          </article>
-          <article class="e-card glass-card aws-resource-card aws-security-card">
-            <div class="e-card-content">
-              <span class="security-status security-status--active">Active</span>
-              <h4 class="aws-resource-card__name">Lambda Least Privilege</h4>
-              <p class="aws-resource-card__purpose">
-                Execution role grants DynamoDB GetItem and UpdateItem on the visitor counter table
-                only.
-              </p>
-              <a
-                class="aws-resource-card__link"
-                href="https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html"
-                target="_blank"
-                rel="noopener noreferrer"
-                >AWS docs →</a
-              >
-              <a
-                class="aws-resource-card__link"
-                href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/environments/prod/visitor_counter.tf"
-                target="_blank"
-                rel="noopener noreferrer"
-                >visitor_counter.tf →</a
-              >
-            </div>
-          </article>
-          <article class="e-card glass-card aws-resource-card aws-security-card">
-            <div class="e-card-content">
-              <span class="security-status security-status--active">Active</span>
-              <h4 class="aws-resource-card__name">Lambda Concurrency Cap</h4>
-              <p class="aws-resource-card__purpose">
-                Reserved concurrency limits parallel executions to reduce runaway cost during abuse.
-              </p>
-              <a
-                class="aws-resource-card__link"
-                href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-concurrency.html"
-                target="_blank"
-                rel="noopener noreferrer"
-                >AWS docs →</a
-              >
-              <a
-                class="aws-resource-card__link"
-                href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/environments/prod/visitor_counter.tf"
-                target="_blank"
-                rel="noopener noreferrer"
-                >visitor_counter.tf →</a
-              >
-            </div>
-          </article>
-          <article class="e-card glass-card aws-resource-card aws-security-card">
-            <div class="e-card-content">
-              <span class="security-status security-status--active">Active</span>
-              <h4 class="aws-resource-card__name">IAM Access Analyzer</h4>
-              <p class="aws-resource-card__purpose">
-                External-access analyzer monitors for unintended public or cross-account resource
-                access.
-              </p>
-              <a
-                class="aws-resource-card__link"
-                href="https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html"
-                target="_blank"
-                rel="noopener noreferrer"
-                >AWS docs →</a
-              >
-              <a
-                class="aws-resource-card__link"
-                href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/environments/prod/security.tf"
-                target="_blank"
-                rel="noopener noreferrer"
-                >security.tf →</a
-              >
-            </div>
-          </article>
-          <article class="e-card glass-card aws-resource-card aws-security-card">
-            <div class="e-card-content">
-              <span class="security-status security-status--configured">Configured</span>
-              <h4 class="aws-resource-card__name">AWS Budgets Alerts</h4>
-              <p class="aws-resource-card__purpose">
-                Monthly cost budget notifies the account owner on forecast and actual spend — alert
-                email set in private tfvars only.
-              </p>
-              <a
-                class="aws-resource-card__link"
-                href="https://aws.amazon.com/aws-cost-management/aws-budgets/pricing/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >AWS docs →</a
-              >
-              <a
-                class="aws-resource-card__link"
-                href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/environments/prod/budgets.tf"
-                target="_blank"
-                rel="noopener noreferrer"
-                >budgets.tf →</a
-              >
-            </div>
-          </article>
-          <article class="e-card glass-card aws-resource-card aws-security-card">
-            <div class="e-card-content">
-              <span class="security-status security-status--active">Active</span>
-              <h4 class="aws-resource-card__name">CloudWatch Alarms</h4>
-              <p class="aws-resource-card__purpose">
-                Standard Lambda metrics trigger alarms on errors and unusually high daily
-                invocations.
-              </p>
-              <a
-                class="aws-resource-card__link"
-                href="https://aws.amazon.com/cloudwatch/pricing/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >AWS docs →</a
-              >
-              <a
-                class="aws-resource-card__link"
-                href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/environments/prod/security.tf"
-                target="_blank"
-                rel="noopener noreferrer"
-                >security.tf →</a
-              >
-            </div>
-          </article>
-        </div>
-        <p class="aws-security-footnote">
-          GitHub supply chain: branch protection, secret scanning, Dependabot, and manual approval
-          on infra prod deploys (repo settings). Secrets and license keys are injected at deploy —
-          never committed to source control.
-        </p>
-
-        <h3 class="aws-resources-subtitle">DevOps / IaC Foundation</h3>
-        <div class="aws-resource-grid">
-          <article class="e-card glass-card aws-resource-card">
-            <div class="e-card-content">
-              <h4 class="aws-resource-card__name">Amazon S3 (Terraform state)</h4>
-              <p class="aws-resource-card__purpose">
-                Remote state storage for infrastructure versioning
-              </p>
-              <p class="aws-resource-card__steps">CRC step 12</p>
-              <a
-                class="aws-resource-card__link"
-                href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/bootstrap/main.tf"
-                target="_blank"
-                rel="noopener noreferrer"
-                >bootstrap/main.tf →</a
-              >
-            </div>
-          </article>
-          <article class="e-card glass-card aws-resource-card">
-            <div class="e-card-content">
-              <h4 class="aws-resource-card__name">Amazon DynamoDB (state lock)</h4>
-              <p class="aws-resource-card__purpose">
-                Terraform state locking — prevents concurrent applies
-              </p>
-              <p class="aws-resource-card__steps">CRC step 12</p>
-              <a
-                class="aws-resource-card__link"
-                href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/bootstrap/main.tf"
-                target="_blank"
-                rel="noopener noreferrer"
-                >bootstrap/main.tf →</a
-              >
-            </div>
-          </article>
-          <article class="e-card glass-card aws-resource-card">
-            <div class="e-card-content">
-              <h4 class="aws-resource-card__name">IAM OIDC Provider</h4>
-              <p class="aws-resource-card__purpose">
-                GitHub Actions federation — no long-lived AWS keys in CI
-              </p>
-              <p class="aws-resource-card__steps">CRC steps 14–15</p>
-              <a
-                class="aws-resource-card__link"
-                href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/bootstrap/main.tf"
-                target="_blank"
-                rel="noopener noreferrer"
-                >bootstrap/main.tf →</a
-              >
-            </div>
-          </article>
-          <article class="e-card glass-card aws-resource-card">
-            <div class="e-card-content">
-              <h4 class="aws-resource-card__name">IAM Roles &amp; Policies</h4>
-              <p class="aws-resource-card__purpose">
-                Scoped permissions for Terraform apply and S3 deploy
-              </p>
-              <p class="aws-resource-card__steps">CRC steps 14–15</p>
-              <a
-                class="aws-resource-card__link"
-                href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/bootstrap/main.tf"
-                target="_blank"
-                rel="noopener noreferrer"
-                >bootstrap/main.tf →</a
-              >
-            </div>
-          </article>
-        </div>
+          <h3 class="aws-resources-subtitle">DevOps / IaC Foundation</h3>
+          <div class="aws-resource-grid">
+            <article class="e-card glass-card aws-resource-card">
+              <div class="e-card-content">
+                <h4 class="aws-resource-card__name">Amazon S3 (Terraform state)</h4>
+                <p class="aws-resource-card__purpose">
+                  Remote state storage for infrastructure versioning
+                </p>
+                <p class="aws-resource-card__steps">CRC step 12</p>
+                <a
+                  class="aws-resource-card__link"
+                  href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/bootstrap/main.tf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >bootstrap/main.tf →</a
+                >
+              </div>
+            </article>
+            <article class="e-card glass-card aws-resource-card">
+              <div class="e-card-content">
+                <h4 class="aws-resource-card__name">Amazon DynamoDB (state lock)</h4>
+                <p class="aws-resource-card__purpose">
+                  Terraform state locking — prevents concurrent applies
+                </p>
+                <p class="aws-resource-card__steps">CRC step 12</p>
+                <a
+                  class="aws-resource-card__link"
+                  href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/bootstrap/main.tf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >bootstrap/main.tf →</a
+                >
+              </div>
+            </article>
+            <article class="e-card glass-card aws-resource-card">
+              <div class="e-card-content">
+                <h4 class="aws-resource-card__name">IAM OIDC Provider</h4>
+                <p class="aws-resource-card__purpose">
+                  GitHub Actions federation — no long-lived AWS keys in CI
+                </p>
+                <p class="aws-resource-card__steps">CRC steps 14–15</p>
+                <a
+                  class="aws-resource-card__link"
+                  href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/bootstrap/main.tf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >bootstrap/main.tf →</a
+                >
+              </div>
+            </article>
+            <article class="e-card glass-card aws-resource-card">
+              <div class="e-card-content">
+                <h4 class="aws-resource-card__name">IAM Roles &amp; Policies</h4>
+                <p class="aws-resource-card__purpose">
+                  Scoped permissions for Terraform apply and S3 deploy
+                </p>
+                <p class="aws-resource-card__steps">CRC steps 14–15</p>
+                <a
+                  class="aws-resource-card__link"
+                  href="https://github.com/Bigessfour/CloudResumeChallenge-infra/blob/main/bootstrap/main.tf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >bootstrap/main.tf →</a
+                >
+              </div>
+            </article>
+          </div>
+        </details>
 
         <div class="e-card glass-card stub-card aws-resources-block">
           <div class="e-card-content">
@@ -1769,7 +1756,7 @@
             </div>
           </div>
           <div class="e-card-content">
-            <p>Wiley, Colorado · TS/SCI clearance</p>
+            <p>Wiley, Colorado</p>
             <div class="contact-links">
               <a href="mailto:bigessfour@gmail.com">bigessfour@gmail.com</a>
               <a href="tel:+17196402230">719-640-2230</a>
@@ -1782,58 +1769,70 @@
               <a href="https://github.com/Bigessfour" target="_blank" rel="noopener noreferrer"
                 >GitHub — @Bigessfour</a
               >
-              <a
-                href="https://github.com/Bigessfour/aico-echo"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Code Platoon curriculum (aico-echo)</a
-              >
-              <a
-                href="https://github.com/Bigessfour/CloudResumeChallenge-frontend"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Frontend repo</a
-              >
-              <a
-                href="https://github.com/Bigessfour/CloudResumeChallenge-infra"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Infrastructure repo</a
-              >
-              <a
-                href="https://github.com/Bigessfour/ollama-chat"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Ollama Chat repo</a
-              >
-              <a href="https://townofwiley.gov/" target="_blank" rel="noopener noreferrer"
-                >Town of Wiley site</a
-              >
-              <a
-                href="https://github.com/Bigessfour/Townofwiley"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Town of Wiley repo</a
-              >
-              <a
-                href="https://github.com/Bigessfour/wiley-co-web"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Wiley Widget repo</a
-              >
-              <a
-                href="https://d1imxsgur21071.cloudfront.net"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Hangar Liquor live app</a
-              >
-              <a
-                href="https://github.com/Bigessfour/HangarLiquorStore"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Hangar Liquor repo</a
-              >
+              <a href="blog.html">Challenge blog</a>
             </div>
+            <details class="disclosure-block disclosure-block--compact">
+              <summary>Project and repo links</summary>
+              <div class="contact-links">
+                <a
+                  href="https://github.com/Bigessfour/CloudResumeChallenge-frontend"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Frontend repo</a
+                >
+                <a
+                  href="https://github.com/Bigessfour/CloudResumeChallenge-infra"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Infrastructure repo</a
+                >
+                <a href="https://townofwiley.gov/" target="_blank" rel="noopener noreferrer"
+                  >Town of Wiley site</a
+                >
+                <a
+                  href="https://github.com/Bigessfour/Townofwiley"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Town of Wiley repo</a
+                >
+                <a
+                  href="https://github.com/Bigessfour/BusBuddy-3"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >BusBuddy repo</a
+                >
+                <a
+                  href="https://d1imxsgur21071.cloudfront.net"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Hangar Liquor live app</a
+                >
+                <a
+                  href="https://github.com/Bigessfour/HangarLiquorStore"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Hangar Liquor repo</a
+                >
+                <a
+                  href="https://github.com/Bigessfour/wiley-co-web"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Wiley Widget repo</a
+                >
+                <a
+                  href="https://github.com/Bigessfour/aico-echo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Code Platoon curriculum</a
+                >
+                <a
+                  href="https://github.com/Bigessfour/ollama-chat"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Ollama Chat repo</a
+                >
+              </div>
+            </details>
           </div>
         </div>
       </section>
@@ -1843,7 +1842,9 @@
           Built for the
           <a href="https://cloudresumechallenge.dev/" target="_blank" rel="noopener noreferrer"
             >Cloud Resume Challenge</a
-          >.
+          >
+          ·
+          <a href="blog.html">Build story</a>.
         </p>
       </footer>
     </main>

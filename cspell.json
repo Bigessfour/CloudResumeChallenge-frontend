@@ -17,7 +17,16 @@
     "ollama",
     "Ollama",
     "gemma",
-    "GHCR"
+    "GHCR",
+    "McKitrick",
+    "BusBuddy",
+    "Credly",
+    "Wiley",
+    "OIDC",
+    "AppSync",
+    "DynamoDB",
+    "Porkbun",
+    "townofwiley"
   ],
   "ignorePaths": ["node_modules", ".git", "dist", "*.min.js", "skills-lock.json", ".agents"]
 }
