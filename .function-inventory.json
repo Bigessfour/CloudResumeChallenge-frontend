@@ -1,0 +1,5 @@
+{
+  "stack": "vanilla-js",
+  "tracking_mode": "surfaces",
+  "surfaces": ["index.html", "blog.html", "resume.html", "js/app.js"]
+}

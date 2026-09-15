@@ -60,11 +60,13 @@ Open [http://127.0.0.1:8000](http://127.0.0.1:8000).
 
 ## Scripts
 
-| Command                        | Description                                                 |
-| ------------------------------ | ----------------------------------------------------------- |
-| `npm run serve`                | Local static server on port 8000                            |
-| `npm run ci`                   | Lint + format check (matches GitHub Actions)                |
-| `npm run syncfusion:provision` | Generate license files from env or `syncfusion-license.txt` |
+| Command                        | Description                                                    |
+| ------------------------------ | -------------------------------------------------------------- |
+| `npm run serve`                | Local static server on port 8000                               |
+| `npm run ci`                   | Lint + format check (matches GitHub Actions validate job)      |
+| `npm run test:e2e`             | Playwright smokes against the local static server              |
+| `npm run resume:pdf`           | Rebuild `assets/stephen-mckitrick-resume.pdf` from resume.html |
+| `npm run syncfusion:provision` | Generate license files from env or `syncfusion-license.txt`    |
 
 ## Roadmap
 
@@ -78,9 +80,9 @@ Open [http://127.0.0.1:8000](http://127.0.0.1:8000).
 - [x] Lambda pytest suite — 7 tests, moto-mocked, gates terraform apply (CRC step 11)
 - [x] Backend CI/CD — `TF_VAR_*` injection from GitHub Actions vars (CRC step 14)
 - [x] Challenge blog post (CRC step 16) — [blog.html](blog.html)
-- [ ] Cache-Control headers via per-pattern S3 sync (see [docs/CACHE_CONTROL_PLAN.md](docs/CACHE_CONTROL_PLAN.md))
-- [ ] Light Playwright coverage for visitor counter and featured sections
-- [ ] Downloadable PDF resume
+- [x] Cache-Control headers via per-pattern S3 sync (see [docs/CACHE_CONTROL_PLAN.md](docs/CACHE_CONTROL_PLAN.md))
+- [x] Light Playwright coverage for visitor counter and featured sections
+- [x] Downloadable PDF resume ([assets/stephen-mckitrick-resume.pdf](assets/stephen-mckitrick-resume.pdf))
 
 ## Documentation
 

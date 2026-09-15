@@ -92,7 +92,12 @@ jobs:
             --exclude "skills-lock.json" \
             --exclude "syncfusion-license.txt*" \
             --exclude "js/syncfusion-license.example.js" \
-            --exclude "js/config.example.js"
+            --exclude "js/config.example.js" \
+            --exclude ".function-inventory.json" \
+            --exclude "tests/*" \
+            --exclude "playwright.config.js" \
+            --exclude "playwright-report/*" \
+            --exclude "test-results/*"
 
       # Pass 2 — set Cache-Control per content kind via in-place server-side copy.
       # This implements Phase 1 of docs/CACHE_CONTROL_PLAN.md. The strategy:
@@ -124,14 +129,32 @@ jobs:
             --content-type "text/css; charset=utf-8" \
             --cache-control "public, max-age=300, must-revalidate"
 
-      - name: Set Cache-Control on images
+      - name: Set Cache-Control and Content-Type on images
         run: |
-          for ext in png jpg jpeg gif webp svg ico; do
+          set_image() {
+            local ext="$1"
+            local ctype="$2"
             aws s3 cp "s3://${S3_BUCKET}" "s3://${S3_BUCKET}" \
               --recursive --exclude "*" --include "*.${ext}" \
               --metadata-directive REPLACE \
+              --content-type "${ctype}" \
               --cache-control "public, max-age=86400, stale-while-revalidate=604800"
-          done
+          }
+          set_image png "image/png"
+          set_image jpg "image/jpeg"
+          set_image jpeg "image/jpeg"
+          set_image gif "image/gif"
+          set_image webp "image/webp"
+          set_image svg "image/svg+xml"
+          set_image ico "image/x-icon"
+
+      - name: Set Cache-Control on PDF
+        run: |
+          aws s3 cp "s3://${S3_BUCKET}" "s3://${S3_BUCKET}" \
+            --recursive --exclude "*" --include "*.pdf" \
+            --metadata-directive REPLACE \
+            --content-type "application/pdf" \
+            --cache-control "no-cache, must-revalidate"
 
       - name: Invalidate CloudFront cache
         run: |
@@ -172,6 +195,15 @@ jobs:
           check "/" "no-cache"
           check "/js/app.js" "max-age=300"
           check "/css/styles.css" "max-age=300"
+
+          og_type=$(curl -sI "${HOST}/assets/images/og-image.png" \
+            | tr -d '\r' \
+            | awk -F': ' 'tolower($1)=="content-type"{print $2}')
+          if [[ "${og_type}" != image/png* ]]; then
+            echo "::error ::Unexpected Content-Type on og-image.png: '${og_type}'"
+            exit 1
+          fi
+          echo "OK /assets/images/og-image.png → ${og_type}"
 
       - name: Summary
         run: |

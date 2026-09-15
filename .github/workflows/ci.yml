@@ -47,6 +47,9 @@ jobs:
           grep -q 'ej2.min.js' index.html || (echo "index.html must reference Syncfusion CDN" && exit 1)
           test -f assets/images/og-image.png || (echo "og-image.png missing" && exit 1)
           grep -q 'og-image.png' index.html || (echo "index.html must use PNG Open Graph image" && exit 1)
+          test -f resume.html || (echo "resume.html missing" && exit 1)
+          test -f assets/stephen-mckitrick-resume.pdf || (echo "PDF resume missing" && exit 1)
+          grep -q 'stephen-mckitrick-resume.pdf' index.html || (echo "index.html must link the PDF resume" && exit 1)
           echo "Structure checks passed."
 
       - name: Lint JavaScript
@@ -61,10 +64,32 @@ jobs:
       - name: Link hygiene (dead or private URLs)
         run: |
           set -euo pipefail
-          FILES="index.html blog.html js/app.js"
+          FILES="index.html blog.html resume.html js/app.js"
           FORBIDDEN='d1imxsgur21071|BusBuddy-3|github.com/Bigessfour/aico-echo'
           if grep -En "$FORBIDDEN" $FILES; then
             echo "ERROR: Found dead CloudFront or private-repo URLs in site content."
             exit 1
           fi
           echo "Link hygiene checks passed."
+
+  e2e:
+    name: Playwright
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Run end-to-end smokes
+        run: npm run test:e2e
