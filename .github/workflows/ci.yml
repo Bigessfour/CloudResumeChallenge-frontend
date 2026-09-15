@@ -55,3 +55,14 @@ jobs:
 
       - name: Check formatting
         run: npm run format:check
+
+      - name: Link hygiene (removed projects and broken patterns)
+        run: |
+          set -euo pipefail
+          FILES="index.html blog.html js/app.js"
+          FORBIDDEN='Hangar Liquor|d1imxsgur21071|BusBuddy-3|github.com/Bigessfour/aico-echo'
+          if grep -En "$FORBIDDEN" $FILES; then
+            echo "ERROR: Found removed or broken link patterns in site content."
+            exit 1
+          fi
+          echo "Link hygiene checks passed."

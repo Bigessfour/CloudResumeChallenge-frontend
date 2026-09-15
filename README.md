@@ -19,7 +19,7 @@ Companion repo: [CloudResumeChallenge-infra](https://github.com/Bigessfour/Cloud
 - Serverless visitor counter (API Gateway + Lambda + DynamoDB) with accessible UI (`aria-live`, skeleton, count-up)
 - CI + OIDC deploy — no long-lived AWS keys in GitHub
 - Outcome-led portfolio narrative (municipal production site, 30% error reduction, veteran path)
-- Quality gates: ESLint, Prettier, HTMLHint, structure checks
+- Quality gates: ESLint, Prettier, HTMLHint, structure checks, and link-hygiene guardrails in CI
 
 ## Architecture
 
@@ -115,6 +115,6 @@ See [CONTRIBUTING.md](CONTRIBUTING.md). Developer tooling details: [docs/DEV_SET
 
 ## Author
 
-**Stephen McKitrick** — Veteran DevOps Engineer · Serverless · Infrastructure Automation
+**Stephen McKitrick** — Veteran · Cloud & DevOps Engineer · Serverless · Infrastructure Automation
 
 - GitHub: [@Bigessfour](https://github.com/Bigessfour)

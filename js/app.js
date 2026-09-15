@@ -19,10 +19,6 @@
 (function () {
   "use strict";
 
-  // Fallback shown when the Lambda visitor API is unreachable or unset.
-  // Keep this realistic so the page never looks broken in local dev.
-  const DEMO_VISITOR_COUNT = 3214;
-
   // Max time we'll wait for the visitor API before falling back.
   const VISITOR_FETCH_TIMEOUT_MS = 8000;
 
@@ -39,8 +35,6 @@
 
     initParticles();
 
-    // MCP AppBar metadata: colorMode, mode (Regular|Dense|Prominent), position (Top|Bottom),
-    // isSticky, cssClass — NOT mode:"Top" (that belongs on position).
     const appBar = new ej.navigations.AppBar({
       colorMode: "Dark",
       mode: "Regular",
@@ -51,7 +45,6 @@
     });
     appBar.appendTo("#site-appbar");
 
-    // MCP Button + AppBar sample: e-inherit hamburger with e-icons e-menu.
     const menuBtn = new ej.buttons.Button({
       cssClass: "e-inherit e-appbar-menu-btn",
       iconCss: "e-icons e-menu",
@@ -68,7 +61,6 @@
       menuBtn.element.setAttribute("aria-expanded", isOpen ? "true" : "false");
     });
 
-    // MCP Button: content, isPrimary/outline via cssClass, iconCss, iconPosition.
     const ctaExperience = new ej.buttons.Button({
       content: "View work",
       isPrimary: true,
@@ -129,7 +121,7 @@
     mount.appendChild(buttonHost);
 
     const visitorBtn = new ej.buttons.Button({
-      content: "Live Visitor Counter: …",
+      content: "Visitor count: …",
       cssClass: "visitor-pill",
       isPrimary: true,
       isToggle: false,
@@ -143,29 +135,31 @@
     buttonHost.style.display = "none";
     visitorBtn.appendTo(buttonHost);
 
-    const finalize = (count, { fallback = false } = {}) => {
+    const finalize = (count, { fallback = false, fallbackReason = "unavailable" } = {}) => {
       const skeleton = mount.querySelector("[data-skeleton]");
       if (skeleton) skeleton.remove();
       buttonHost.style.display = "";
       visitorBtn.disabled = false;
+
+      if (fallback) {
+        applyVisitorFallbackState(visitorBtn, mount, fallbackReason);
+        console.warn("[visitor-counter] Showing fallback — not a live count.");
+        return;
+      }
+
+      visitorBtn.cssClass = "visitor-pill";
+      mount.setAttribute("aria-label", "Visitor count");
 
       if (prefersReducedMotion) {
         setVisitorLabel(visitorBtn, count);
         return;
       }
       animateCount(visitorBtn, 0, count, 1400);
-
-      if (fallback) {
-        console.warn(
-          "[visitor-counter] Using demo count. Wire window.VISITOR_API_CONFIG to your API Gateway URL once the Lambda is deployed."
-        );
-      } else {
-        console.log("[visitor-counter] Live count rendered:", count);
-      }
+      console.log("[visitor-counter] Live count rendered:", count);
     };
 
     if (!apiUrl) {
-      finalize(DEMO_VISITOR_COUNT, { fallback: true });
+      finalize(null, { fallback: true, fallbackReason: "demo" });
       return;
     }
 
@@ -184,20 +178,28 @@
       .then((data) => {
         const count = typeof data.count === "number" ? data.count : null;
         if (count === null) {
-          finalize(DEMO_VISITOR_COUNT, { fallback: true });
+          finalize(null, { fallback: true, fallbackReason: "unavailable" });
         } else {
           finalize(count);
         }
       })
       .catch((error) => {
         console.warn("[visitor-counter] fallback:", error.message);
-        finalize(DEMO_VISITOR_COUNT, { fallback: true });
+        finalize(null, { fallback: true, fallbackReason: "unavailable" });
       })
       .finally(() => clearTimeout(timer));
   }
 
+  function applyVisitorFallbackState(button, mount, reason) {
+    button.cssClass = "visitor-pill visitor-pill--fallback";
+    button.content =
+      reason === "demo" ? "Visitor count: Demo (local preview)" : "Visitor count: Unavailable";
+    mount.setAttribute("aria-label", "Visitor count unavailable");
+  }
+
   function setVisitorLabel(button, count) {
-    button.content = "Live Visitor Counter: " + count.toLocaleString();
+    button.cssClass = "visitor-pill";
+    button.content = "Visitor count: " + count.toLocaleString();
   }
 
   // requestAnimationFrame-driven count-up with easeOutCubic curve.
@@ -231,7 +233,6 @@
   // Accordions
   // ──────────────────────────────────────────────────────────────────────────
 
-  // MCP Accordion defaults: SlideDown/SlideUp animation; honor reduced motion.
   function accordionAnimation() {
     const duration = prefersReducedMotion ? 0 : 400;
     return {
@@ -248,8 +249,6 @@
       return;
     }
 
-    // MCP Accordion: expandMode, width, height, animation, enableHtmlSanitizer,
-    // items[].header|content|iconCss|expanded|id — toggle icons via CSS only.
     const accordion = new ej.navigations.Accordion({
       expandMode: "Single",
       width: "100%",
@@ -264,7 +263,7 @@
           iconCss: "e-icons e-trending-chart",
           expanded: false,
           content:
-            "Led 12-person team for on-time routes; built Access/SQL and VBA tools plus BusBuddy (C# + SQL) — 30% error reduction. <a href='#experience'>Full timeline →</a>",
+            "Led 12-person team for on-time routes; built Access/SQL and VBA tools plus BusBuddy Windows desktop app (.NET / WPF / SQL) — 30% error reduction. <a href='#experience'>Full timeline →</a>",
         },
         {
           id: "dash-army-msg",
@@ -278,14 +277,14 @@
           header: "Cloud Resume Challenge",
           iconCss: "e-icons e-cloud",
           content:
-            "AWS Cloud Practitioner certified. This portfolio: context rules + Syncfusion MCP, plan-then-implement agent prompts, <code>npm run ci</code> before deploy, OIDC GitHub Actions to S3/CloudFront, and serverless visitor counter (Terraform + API Gateway + Lambda + DynamoDB). <a href='https://github.com/Bigessfour/CloudResumeChallenge-frontend/blob/main/docs/DEV_SETUP.md' target='_blank' rel='noopener noreferrer'>Agent setup →</a>",
+            "AWS Cloud Practitioner certified. This portfolio: context-first agent workflows, <code>npm run ci</code> before deploy, OIDC GitHub Actions to S3/CloudFront, and serverless visitor counter (Terraform + API Gateway + Lambda + DynamoDB). <a href='https://github.com/Bigessfour/CloudResumeChallenge-frontend/blob/main/docs/DEV_SETUP.md' target='_blank' rel='noopener noreferrer'>Dev setup →</a>",
         },
         {
           id: "dash-code-platoon",
           header: "Code Platoon — AI Cloud & DevOps (Echo)",
           iconCss: "e-icons e-graduation",
           content:
-            "Cohort curriculum: Terraform, GitHub Actions CI/CD, SageMaker, Kubernetes, Amazon Bedrock (RAG, agents), and capstone delivery. <a href='https://github.com/Bigessfour/aico-echo' target='_blank' rel='noopener noreferrer'>aico-echo →</a>",
+            "Cohort curriculum: Terraform, GitHub Actions CI/CD, SageMaker, Kubernetes, Amazon Bedrock (RAG, agents), and capstone delivery. <a href='https://www.codeplatoon.org/ai-cloud-devops-program' target='_blank' rel='noopener noreferrer'>Program page →</a>",
         },
         {
           id: "dash-town-wiley",
@@ -436,13 +435,12 @@
     ];
 
     const chart = new ej.charts.Chart({
-      // MCP Chart: theme + axes + multi-series + tooltip/legend/zoom
       theme: "Material3Dark",
       width: "100%",
       height: "100%",
       title: "Career Transformation Arc",
       titleStyle: { color: "#e9d5ff", size: "14px", fontWeight: "600" },
-      subTitle: "Ops → Tooling → Cloud → IaC → AI",
+      subTitle: "Illustrative progression — not scored metrics",
       subTitleStyle: { color: "#94a3b8", size: "11px" },
       enableAnimation: !prefersReducedMotion,
       enableHtmlSanitizer: true,
@@ -454,12 +452,10 @@
         majorTickLines: { width: 0 },
       },
       primaryYAxis: {
+        visible: false,
         minimum: 0,
         maximum: 100,
-        interval: 25,
-        labelFormat: "{value}",
-        labelStyle: { color: "#94a3b8", size: "10px" },
-        majorGridLines: { width: 1, color: "rgba(255,255,255,0.08)", dashArray: "4,4" },
+        majorGridLines: { width: 0 },
         majorTickLines: { width: 0 },
       },
       series: [
@@ -528,7 +524,7 @@
         shared: true,
         fill: "#1f2937",
         textStyle: { color: "#e7ecf3" },
-        format: "${point.x}: <b>${point.y}</b>",
+        format: "${point.x}",
       },
       legendSettings: {
         visible: true,
@@ -564,7 +560,7 @@
         role: "Transportation Manager",
         period: "2014 – Sep 2025",
         highlights:
-          "Led 12-person team for 100% on-time routes; accountable for $500K+ equipment. Engineered Access/SQL databases and VBA/Excel tools; cut errors 30%. Developed BusBuddy C# app (GitHub portfolio) for real-time SQL-integrated reporting. Resolved cross-dept conflicts; adapted to hybrid ops mirroring agile sprints.",
+          "Led 12-person team for 100% on-time routes; accountable for $500K+ equipment. Engineered Access/SQL databases and VBA/Excel tools; cut errors 30%. Developed BusBuddy Windows desktop app (.NET / WPF / SQL Server) for real-time SQL-integrated reporting. Resolved cross-dept conflicts; adapted to hybrid ops mirroring agile sprints.",
       },
       {
         organization: "U.S. Army (global, incl. Iraq)",
@@ -629,7 +625,6 @@
           clipMode: "EllipsisWithTooltip",
         },
       ],
-      // MCP Grid usage sample + portfolio export needs
       allowPaging: true,
       pageSettings: { pageSize: 5, pageCount: 5, pageSizes: [5, 10, 25, "All"] },
       allowSorting: true,
