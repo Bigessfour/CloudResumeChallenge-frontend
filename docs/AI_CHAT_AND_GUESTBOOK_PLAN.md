@@ -1,7 +1,9 @@
 # AI Chat + Secured Guest Book — Living Plan
 
+> **Recruiter note:** This is a frozen idea, not unfinished production work. The live CRC site does not include a guest book or WAF.
+>
 > **Last updated:** 2026-06-20
-> **Phase:** 0 / 7 (not started — planning frozen, awaiting execution greenlight)
+> **Phase:** 0 / 7 (not started — planning frozen, out of scope for the shipped site)
 > **Owner:** Stephen McKitrick
 > **Companion infra plan:** queued for [`Bigessfour/CloudResumeChallenge-infra`](https://github.com/Bigessfour/CloudResumeChallenge-infra)
 > **Cursor execution mirror:** `.cursor/plans/ai_chat_+_secured_guest_book_*.plan.md` (auto-managed by Cursor; do not hand-edit)
