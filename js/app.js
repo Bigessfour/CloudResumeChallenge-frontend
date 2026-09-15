@@ -21,6 +21,10 @@
 
   // Max time we'll wait for the visitor API before falling back.
   const VISITOR_FETCH_TIMEOUT_MS = 8000;
+  const VISITOR_FALLBACK_COPY = {
+    demo: "Visitor count: Demo (local preview)",
+    unavailable: "Visitor count: Unavailable",
+  };
 
   // Honor the OS "reduce motion" setting for accessibility.
   const prefersReducedMotion =
@@ -135,36 +139,38 @@
     buttonHost.style.display = "none";
     visitorBtn.appendTo(buttonHost);
 
-    const finalize = (count, { fallback = false, fallbackReason = "unavailable" } = {}) => {
+    const reveal = () => {
       const skeleton = mount.querySelector("[data-skeleton]");
       if (skeleton) skeleton.remove();
       buttonHost.style.display = "";
       visitorBtn.disabled = false;
+    };
 
-      if (fallback) {
-        applyVisitorFallbackState(visitorBtn, mount, fallbackReason);
-        console.warn("[visitor-counter] Showing fallback — not a live count.");
-        return;
-      }
-
+    const showLiveCount = (count) => {
+      reveal();
       visitorBtn.cssClass = "visitor-pill";
       mount.setAttribute("aria-label", "Visitor count");
-
       if (prefersReducedMotion) {
         setVisitorLabel(visitorBtn, count);
         return;
       }
       animateCount(visitorBtn, 0, count, 1400);
-      console.log("[visitor-counter] Live count rendered:", count);
+    };
+
+    const showFallback = (kind) => {
+      reveal();
+      visitorBtn.cssClass = "visitor-pill visitor-pill--fallback";
+      visitorBtn.content = VISITOR_FALLBACK_COPY[kind] || VISITOR_FALLBACK_COPY.unavailable;
+      mount.setAttribute("aria-label", "Visitor count unavailable");
+      console.warn("[visitor-counter] Showing fallback — not a live count.");
     };
 
     if (!apiUrl) {
-      finalize(null, { fallback: true, fallbackReason: "demo" });
+      showFallback("demo");
       return;
     }
 
-    // AbortController gives us a clean timeout — important so users on flaky
-    // networks see the demo count instead of a stuck spinner.
+    // Time out so a flaky network gets Unavailable instead of a stuck skeleton.
     const controller = new AbortController();
     const timer = setTimeout(() => controller.abort(), VISITOR_FETCH_TIMEOUT_MS);
 
@@ -178,23 +184,16 @@
       .then((data) => {
         const count = typeof data.count === "number" ? data.count : null;
         if (count === null) {
-          finalize(null, { fallback: true, fallbackReason: "unavailable" });
+          showFallback("unavailable");
         } else {
-          finalize(count);
+          showLiveCount(count);
         }
       })
       .catch((error) => {
         console.warn("[visitor-counter] fallback:", error.message);
-        finalize(null, { fallback: true, fallbackReason: "unavailable" });
+        showFallback("unavailable");
       })
       .finally(() => clearTimeout(timer));
-  }
-
-  function applyVisitorFallbackState(button, mount, reason) {
-    button.cssClass = "visitor-pill visitor-pill--fallback";
-    button.content =
-      reason === "demo" ? "Visitor count: Demo (local preview)" : "Visitor count: Unavailable";
-    mount.setAttribute("aria-label", "Visitor count unavailable");
   }
 
   function setVisitorLabel(button, count) {
