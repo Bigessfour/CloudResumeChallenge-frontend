@@ -259,7 +259,7 @@ body {
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.35);
 }
 
-#site-appbar .brand-aws {
+#site-appbar .brand-mark {
   display: flex;
   align-items: center;
   margin-right: 0.5rem;
@@ -268,13 +268,13 @@ body {
   filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.45));
 }
 
-#site-appbar .brand-aws__logo {
+#site-appbar .brand-mark__logo {
   width: 52px;
   height: 28px;
   display: block;
 }
 
-#site-appbar .brand-aws:focus-visible {
+#site-appbar .brand-mark:focus-visible {
   outline: 2px solid var(--neon-purple);
   outline-offset: 4px;
   border-radius: 4px;
@@ -1143,7 +1143,7 @@ section {
   position: relative;
 }
 
-.visitor-pill.e-btn::before {
+.visitor-pill.e-btn:not(.visitor-pill--fallback)::before {
   content: "";
   display: inline-block;
   width: 8px;
@@ -1154,6 +1154,13 @@ section {
   box-shadow: 0 0 8px #22c55e;
   animation: livePulse 2s ease-in-out infinite;
   vertical-align: middle;
+}
+
+.visitor-pill.e-btn.visitor-pill--fallback {
+  border-color: rgba(148, 163, 184, 0.45) !important;
+  background: rgba(148, 163, 184, 0.1) !important;
+  color: #cbd5e1 !important;
+  box-shadow: none !important;
 }
 
 @keyframes livePulse {
@@ -1438,6 +1445,20 @@ section {
   color: var(--accent-cyan);
   background: rgba(34, 211, 238, 0.12);
   border: 1px solid rgba(34, 211, 238, 0.35);
+}
+
+.security-status--not-configured {
+  color: #fbbf24;
+  background: rgba(251, 191, 36, 0.12);
+  border: 1px solid rgba(251, 191, 36, 0.35);
+}
+
+.dashboard-card-note {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.82rem;
+  color: var(--muted);
+  font-style: italic;
 }
 
 .aws-security-footnote {

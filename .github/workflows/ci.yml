@@ -45,6 +45,8 @@ jobs:
           grep -q 'css/styles.css' index.html || (echo "index.html must link css/styles.css" && exit 1)
           grep -q 'js/app.js' index.html || (echo "index.html must link js/app.js" && exit 1)
           grep -q 'ej2.min.js' index.html || (echo "index.html must reference Syncfusion CDN" && exit 1)
+          test -f assets/images/og-image.png || (echo "og-image.png missing" && exit 1)
+          grep -q 'og-image.png' index.html || (echo "index.html must use PNG Open Graph image" && exit 1)
           echo "Structure checks passed."
 
       - name: Lint JavaScript
@@ -55,3 +57,14 @@ jobs:
 
       - name: Check formatting
         run: npm run format:check
+
+      - name: Link hygiene (dead or private URLs)
+        run: |
+          set -euo pipefail
+          FILES="index.html blog.html js/app.js"
+          FORBIDDEN='d1imxsgur21071|BusBuddy-3|github.com/Bigessfour/aico-echo'
+          if grep -En "$FORBIDDEN" $FILES; then
+            echo "ERROR: Found dead CloudFront or private-repo URLs in site content."
+            exit 1
+          fi
+          echo "Link hygiene checks passed."
