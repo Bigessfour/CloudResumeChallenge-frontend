@@ -33,6 +33,29 @@ test("blog and printable resume pages load", async ({ page }) => {
   await page.goto("/resume.html");
   await expect(page.locator("h1")).toHaveText("Stephen McKitrick");
   await expect(page.locator("body")).toContainText("BusBuddy");
+  await expect(page.locator("body")).toContainText("2026 Code Platoon AI Cloud DevOps");
+  await expect(
+    page.locator(
+      'a[href="https://credsverse.com/credentials/2d918167-b1c0-4178-acd0-b00a6c100d22"]'
+    )
+  ).toBeVisible();
+});
+
+test("Code Platoon certification shows completion with Credsverse verify link", async ({
+  page,
+}) => {
+  await page.goto("/#certifications");
+  const card = page.locator("#certifications").getByRole("link", {
+    name: /2026 Code Platoon AI Cloud DevOps certificate on Credsverse/i,
+  });
+  await expect(card).toBeVisible();
+  await expect(card).toHaveAttribute(
+    "href",
+    "https://credsverse.com/credentials/2d918167-b1c0-4178-acd0-b00a6c100d22"
+  );
+  await expect(card.getByText("Certificate of Completion")).toBeVisible();
+  await expect(card.getByText("Issued November 2026")).toBeVisible();
+  await expect(card.getByText("In Progress")).toHaveCount(0);
 });
 
 test("site HTML does not advertise dead or private project URLs", async ({ request }) => {
