@@ -283,7 +283,7 @@
           header: "Code Platoon — AI Cloud & DevOps (Echo)",
           iconCss: "e-icons e-graduation",
           content:
-            "Cohort curriculum: Terraform, GitHub Actions CI/CD, SageMaker, Kubernetes, Amazon Bedrock (RAG, agents), and capstone delivery. <a href='https://www.codeplatoon.org/ai-cloud-devops-program' target='_blank' rel='noopener noreferrer'>Program page →</a>",
+            "Completed the AI Cloud and DevOps Engineering Program (Certificate of Completion, November 2026). Curriculum: Terraform, GitHub Actions CI/CD, SageMaker, Kubernetes, Amazon Bedrock (RAG, agents), and capstone delivery. <a href='https://credsverse.com/credentials/2d918167-b1c0-4178-acd0-b00a6c100d22' target='_blank' rel='noopener noreferrer'>Verify credential →</a>",
         },
         {
           id: "dash-town-wiley",
